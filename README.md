@@ -1,4 +1,4 @@
-# sleepholic
+# Sleepholic
 
 A new Flutter project.
 
