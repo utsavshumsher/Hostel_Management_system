@@ -32,7 +32,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: Text(
                       "Login",
                       style:
-                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 45, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
@@ -41,6 +41,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 margin: EdgeInsets.all(30),
                 child: Column(
                   children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Email',
+                            style: TextStyle(color: Colors.black, fontSize: 20),
+                          ),
+                        )
+                      ],
+                    ),
                     Container(
                       // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                       decoration: BoxDecoration(
@@ -50,13 +62,25 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: TextFormField(
                         decoration: InputDecoration(
                             border: InputBorder.none,
-                            label: Text("Email"),
+                            // label: Text("Email"),
                             hintText: "Please enter your email",
                             prefixIcon: Icon(Icons.accessibility_outlined)),
                       ),
                     ),
                     SizedBox(
-                      height: 30,
+                      height: 20,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Password',
+                            style: TextStyle(color: Colors.black, fontSize: 20),
+                          ),
+                        )
+                      ],
                     ),
                     Container(
                       // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
@@ -67,13 +91,14 @@ class _LoginScreenState extends State<LoginScreen> {
                       child: TextFormField(
                         obscureText: true,
                         decoration: InputDecoration(
-                            label: Text("Password"),
+                            border: InputBorder.none,
+                            // label: Text("Password"),
                             hintText: "Please enter your password",
                             prefixIcon: Icon(Icons.visibility)),
                       ),
                     ),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         TextButton(
                           onPressed: () {},
@@ -88,8 +113,18 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
               ),
               Container(
-                  child:
-                      ElevatedButton(onPressed: () {}, child: Text("Login"))),
+                width: 340,
+                height: 50,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                      primary: Colors.blue,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      )),
+                  child: Text("Login"),
+                ),
+              ),
               SizedBox(
                 height: 10,
               ),
@@ -102,7 +137,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   children: [
                     TextSpan(
-                      text: "Sign Up",
+                      text: "Sign Up!",
                       style: const TextStyle(
                         color: Colors.redAccent,
                         fontSize: 18,
