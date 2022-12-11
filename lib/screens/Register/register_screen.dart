@@ -17,10 +17,11 @@ class _RegisterScreen extends State<RegisterScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Color.fromARGB(255, 168, 236, 171),
+      backgroundColor:Color.fromARGB(255, 255, 239, 203),
       appBar: AppBar(title: Text("Registration"),),
       body: Column(
         children: [
+
 
 
           Container(
@@ -33,6 +34,7 @@ class _RegisterScreen extends State<RegisterScreen> {
               ),
             ),
           ),
+
           Container(
             margin: EdgeInsets.all(10),
             child: TextFormField(
