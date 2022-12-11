@@ -27,9 +27,55 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
         ),
       ),
 
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            SizedBox(
+              height: Height/100*500,
+            ),
+            ElevatedButton(onPressed: () {
+              // EdgeInsets.symmetric(horizontal: 90);
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => RegisterScreen(),
+                ),
+              );
+            },
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 30, vertical: 8)
+
+                ),
+                child: Text("Join Now")),
+
+            ElevatedButton(onPressed: () {
+              Navigator.of(context).pushReplacement(
+                MaterialPageRoute(
+                  builder: (BuildContext context) => LoginScreen(),
+                ),
+              );
+            },
+                style: ElevatedButton.styleFrom(
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
+                    padding: EdgeInsets.symmetric(
+                        horizontal: 35, vertical: 8)
+                ),
+                child: Text("Login"))
+          ],
 
 
-        );
+        ),
+      ),
 
+    );
   }
 }
