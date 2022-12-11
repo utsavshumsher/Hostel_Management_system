@@ -42,7 +42,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                     // EdgeInsets.symmetric(horizontal: 90);
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (BuildContext context) => LoginScreen(),
+                        builder: (BuildContext context) => RegisterScreen(),
                       ),
                     );
                   },
@@ -60,7 +60,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
                   ElevatedButton(onPressed: () {
                     Navigator.of(context).pushReplacement(
                       MaterialPageRoute(
-                        builder: (BuildContext context) => RegisterScreen(),
+                        builder: (BuildContext context) => LoginScreen(),
                       ),
                     );
                   },
