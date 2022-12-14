@@ -61,13 +61,41 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(
-                        decoration: InputDecoration(
+                        decoration: const InputDecoration(
                             border: InputBorder.none,
                             // label: Text("Email"),
-                            hintText: "Enter your name",
+                            hintText: "FulL Name",
                             prefixIcon: Icon(Icons.accessibility_outlined)),
                       ),
                     ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Phone Number',
+                            style: TextStyle(color: Color.fromRGBO(
+                                143, 142, 142, 1.0),fontSize: 17),
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            // label: Text("Email"),
+                            hintText: "Phone Number",
+                            prefixIcon: Icon(Icons.phone)),
+                      ),
+                    ),
+
 
                     SizedBox(
                       height: 8,
@@ -97,7 +125,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             // label: Text("Password"),
-                            hintText: "Please enter your password",
+                            hintText: "Password",
                             prefixIcon: Icon(Icons.visibility)),
                       ),
                     ),

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/OTP/ChangePassword.dart';
+import 'package:sleepholic/OTP/PhoneNumber.dart';
+import 'package:sleepholic/OTP/verification.dart';
 import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
 import 'package:sleepholic/screens/login/loginScreen.dart';
 
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: WelcomeScreen()
+      home: PhoneNumber()
     );
   }
 }
