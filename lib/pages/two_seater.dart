@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-// import 'package:rooms/pages/threeseater.dart';
+import 'package:sleepholic/pages/three_seater.dart';
 
 class Two_Seater extends StatelessWidget {
   const Two_Seater({super.key});
@@ -14,10 +14,10 @@ class Two_Seater extends StatelessWidget {
               actions: [
                 InkWell(
                   onTap: () {
-                    // Navigator.push(
-                    //     context,
-                    //     MaterialPageRoute(
-                    //         builder: (context) => Three_Seater()));
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => Three_Seater()));
                   },
                   child: Icon(Icons.arrow_forward),
                 )
