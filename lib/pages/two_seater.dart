@@ -68,7 +68,7 @@ class Two_Seater extends StatelessWidget {
                         alignment: Alignment.center,
                         margin: EdgeInsets.all(7),
                         height: 75,
-                        width: 110,
+                        width: 135,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             color: Color.fromARGB(255, 147, 219, 222),
@@ -99,10 +99,10 @@ class Two_Seater extends StatelessWidget {
                           ),
                         ),
                         height: 75,
-                        width: 100,
+                        width: 135,
                         padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 185, 215, 215),
+                            color: Color.fromARGB(255, 147, 219, 222),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                                 width: 2,
@@ -118,7 +118,7 @@ class Two_Seater extends StatelessWidget {
                       Container(
                         alignment: Alignment.center,
                         height: 75,
-                        width: 110,
+                        width: 130,
                         margin: EdgeInsets.all(7),
                         child: Text(
                           "NPR 80,000/year",
@@ -127,7 +127,7 @@ class Two_Seater extends StatelessWidget {
                           ),
                         ),
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 185, 215, 215),
+                            color: Color.fromARGB(255, 147, 219, 222),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                                 width: 2,
@@ -147,30 +147,20 @@ class Two_Seater extends StatelessWidget {
                   ),
                   Container(
                     child: Center(
-                      child: InkWell(
-                        splashColor: Color.fromARGB(255, 182, 49, 25),
-                        onTap: (() {}),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(5),
+                        ),
+                        onPressed: (() {}),
                         child: Container(
                           alignment: Alignment.center,
-                          height: 50,
+                          height: 40,
                           width: 250,
                           child: Text(
                             "Book Now",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                                fontWeight: FontWeight.bold, fontSize: 23),
                           ),
-                          decoration: BoxDecoration(
-                              color: Colors.white70,
-                              borderRadius: BorderRadius.circular(12),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 171, 131, 178),
-                                    spreadRadius: 6,
-                                    blurRadius: 8,
-                                    offset: Offset(4, 9))
-                              ],
-                              border:
-                                  Border.all(width: 1, color: Colors.purple)),
                         ),
                       ),
                     ),

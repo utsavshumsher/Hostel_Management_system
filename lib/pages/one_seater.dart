@@ -44,7 +44,7 @@ class One_Seater extends StatelessWidget {
               )),
           SliverToBoxAdapter(
             child: Container(
-              color: Color(0xfff6ea),
+              color: Color.fromARGB(80, 210, 117, 117),
               child: ListView(
                 shrinkWrap: true,
                 children: [
@@ -68,7 +68,7 @@ class One_Seater extends StatelessWidget {
                         alignment: Alignment.center,
                         margin: EdgeInsets.all(7),
                         height: 75,
-                        width: 110,
+                        width: 135,
                         padding: EdgeInsets.all(10),
                         decoration: BoxDecoration(
                             color: Color.fromARGB(255, 147, 219, 222),
@@ -99,7 +99,7 @@ class One_Seater extends StatelessWidget {
                           ),
                         ),
                         height: 75,
-                        width: 100,
+                        width: 135,
                         padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
                             color: Color.fromARGB(255, 147, 219, 222),
@@ -118,7 +118,7 @@ class One_Seater extends StatelessWidget {
                       Container(
                         alignment: Alignment.center,
                         height: 75,
-                        width: 110,
+                        width: 130,
                         margin: EdgeInsets.all(7),
                         child: Text(
                           "NPR 2,40,000/year",
