@@ -44,7 +44,7 @@ class One_Seater extends StatelessWidget {
               )),
           SliverToBoxAdapter(
             child: Container(
-              color: Color.fromARGB(80, 210, 117, 117),
+              color: Color(0xfff6ea),
               child: ListView(
                 shrinkWrap: true,
                 children: [
@@ -54,7 +54,7 @@ class One_Seater extends StatelessWidget {
                       "Bedroom, Bathrrom, kitchen etc facilities are available in our hostel",
                       style: (TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 15,
+                        fontSize: 17,
                       )),
                     ),
                   ),
@@ -102,7 +102,7 @@ class One_Seater extends StatelessWidget {
                         width: 100,
                         padding: EdgeInsets.all(5),
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 185, 215, 215),
+                            color: Color.fromARGB(255, 147, 219, 222),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                                 width: 2,
@@ -127,7 +127,7 @@ class One_Seater extends StatelessWidget {
                           ),
                         ),
                         decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 185, 215, 215),
+                            color: Color.fromARGB(255, 147, 219, 222),
                             borderRadius: BorderRadius.circular(12),
                             border: Border.all(
                                 width: 2,
@@ -147,30 +147,20 @@ class One_Seater extends StatelessWidget {
                   ),
                   Container(
                     child: Center(
-                      child: InkWell(
-                        splashColor: Color.fromARGB(255, 182, 49, 25),
-                        onTap: (() {}),
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                          padding: EdgeInsets.all(5),
+                        ),
+                        onPressed: (() {}),
                         child: Container(
                           alignment: Alignment.center,
-                          height: 50,
+                          height: 40,
                           width: 250,
                           child: Text(
                             "Book Now",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                                fontWeight: FontWeight.bold, fontSize: 23),
                           ),
-                          decoration: BoxDecoration(
-                              color: Colors.white70,
-                              borderRadius: BorderRadius.circular(12),
-                              boxShadow: [
-                                BoxShadow(
-                                    color: Color.fromARGB(255, 171, 131, 178),
-                                    spreadRadius: 6,
-                                    blurRadius: 8,
-                                    offset: Offset(4, 9))
-                              ],
-                              border:
-                                  Border.all(width: 1, color: Colors.purple)),
                         ),
                       ),
                     ),
