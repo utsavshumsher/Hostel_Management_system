@@ -138,6 +138,49 @@ class _laundryState extends State<laundry> {
                 ),
               ),
             ),
+            SizedBox(
+              height: 50,
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 70,
+                decoration: BoxDecoration(
+                    color: Colors.brown,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 13, top: 8, bottom: 8),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 120,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15)),
+                        child: Text(
+                          "Friday",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 25),
+                        ),
+                      ),
+                      SizedBox(
+                        width: 40,
+                      ),
+                      Container(
+                        child: Text(
+                          "White Clothes",
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 28,
+                              color: Colors.white),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+            ),
           ]),
         ),
       ),
