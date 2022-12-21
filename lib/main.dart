@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/laundry.dart';
 import 'package:sleepholic/pages/one_seater.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: One_Seater(),
+      home: laundry(),
     );
   }
 }
