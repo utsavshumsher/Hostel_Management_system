@@ -14,9 +14,12 @@ class Food extends StatelessWidget {
               padding: const EdgeInsets.only(top: 30, left: 20),
               child: Row(
                 children: [
-                  Icon(
-                    Icons.arrow_back,
-                    size: 35,
+                  InkWell(
+                    onTap: (() {}),
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 35,
+                    ),
                   ),
                   SizedBox(
                     width: 30,
@@ -41,7 +44,7 @@ class Food extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 50,
+            height: 40,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 5),
