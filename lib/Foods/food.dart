@@ -35,8 +35,7 @@ class Food extends StatelessWidget {
                     width: 40,
                   ),
                   CircleAvatar(
-                    backgroundImage: NetworkImage(
-                        "https://media.istockphoto.com/id/694189032/photo/hand-held-bbq-favorites.jpg?s=170667a&w=is&k=20&c=wk8eMpw-RZOtDEzwWXHyStrBbChWHpyPUqbWk3kHloo="),
+                    backgroundImage: AssetImage("assets/images/Food.jpg"),
                     radius: 75,
                   ),
                 ],
