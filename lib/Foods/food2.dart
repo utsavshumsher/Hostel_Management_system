@@ -51,7 +51,8 @@ class second extends StatelessWidget {
               children: [
                 Container(
                   child: CircleAvatar(
-                      backgroundImage: AssetImage("assets/images/muffin.avif"),
+                      backgroundImage:
+                          AssetImage("assets/images/Wednesday.avif"),
                       radius: 45),
                 ),
                 SizedBox(
@@ -113,7 +114,7 @@ class second extends StatelessWidget {
                 margin: EdgeInsets.only(left: 4),
                 child: CircleAvatar(
                   backgroundImage: AssetImage(
-                    "assets/images/Monday.jpg",
+                    "assets/images/Thrusday.avif",
                   ),
                   radius: 50,
                 ),
