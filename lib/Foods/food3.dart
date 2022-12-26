@@ -66,9 +66,9 @@ class third extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(right: 120),
+                      margin: EdgeInsets.only(right: 100),
                       child: Text(
-                        "Friday",
+                        "Saturday",
                         style: TextStyle(
                             fontSize: 28, fontWeight: FontWeight.bold),
                       ),
@@ -77,9 +77,9 @@ class third extends StatelessWidget {
                       height: 5,
                     ),
                     Container(
-                      margin: EdgeInsets.only(right: 60),
+                      margin: EdgeInsets.only(left: 10),
                       child: Text(
-                        "BrakFast:-  Muffins & milk",
+                        "BrakFast:-  Puri Tarkari jerry",
                         style: TextStyle(
                           fontSize: 18,
                         ),
@@ -89,9 +89,8 @@ class third extends StatelessWidget {
                       height: 2,
                     ),
                     Container(
-                      margin: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Lunch:- Dal, Rice, Mixed Vegetables, \n curry & Yougret",
+                        "Lunch:- Dal, Rice, fish curry \n & Yougret",
                         style: TextStyle(fontSize: 17),
                       ),
                     ),
@@ -99,9 +98,9 @@ class third extends StatelessWidget {
                       height: 2,
                     ),
                     Container(
-                      margin: EdgeInsets.only(right: 60),
+                      margin: EdgeInsets.only(left: 10),
                       child: Text(
-                        "Dinner:- Fried rice and egg",
+                        "Dinner:- Dal, Rice, Gedagudi \n and Achar",
                         style: TextStyle(fontSize: 18),
                       ),
                     ),
