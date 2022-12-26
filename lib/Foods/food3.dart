@@ -48,7 +48,7 @@ class third extends StatelessWidget {
             ),
           ),
           SizedBox(
-            height: 40,
+            height: 90,
           ),
           Padding(
             padding: const EdgeInsets.only(left: 5),
@@ -57,7 +57,7 @@ class third extends StatelessWidget {
                 Container(
                   child: CircleAvatar(
                       backgroundImage:
-                          AssetImage("assets/images/Wednesday.avif"),
+                          AssetImage("assets/images/Saturday.avif"),
                       radius: 45),
                 ),
                 SizedBox(
@@ -66,7 +66,7 @@ class third extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                      margin: EdgeInsets.only(right: 100),
+                      margin: EdgeInsets.only(right: 100, top: 10),
                       child: Text(
                         "Saturday",
                         style: TextStyle(
@@ -109,6 +109,19 @@ class third extends StatelessWidget {
               ],
             ),
           ),
+          SizedBox(
+            height: 80,
+          ),
+          Container(
+            child: Text(
+              "Thank You",
+              style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 40,
+                  fontStyle: FontStyle.italic,
+                  color: Color.fromARGB(255, 104, 59, 73)),
+            ),
+          )
         ],
       ),
     );
