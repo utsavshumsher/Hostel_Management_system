@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/Foods/food.dart';
 
 class second extends StatelessWidget {
   const second({super.key});
@@ -15,7 +16,10 @@ class second extends StatelessWidget {
               child: Row(
                 children: [
                   InkWell(
-                    onTap: (() {}),
+                    onTap: (() {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Food()));
+                    }),
                     child: Icon(
                       Icons.arrow_back,
                       size: 35,
@@ -170,7 +174,7 @@ class second extends StatelessWidget {
                 margin: EdgeInsets.only(left: 4),
                 child: CircleAvatar(
                   backgroundImage: AssetImage(
-                    "assets/images/Tuesday.jpg",
+                    "assets/images/Friday.avif",
                   ),
                   radius: 50,
                 ),

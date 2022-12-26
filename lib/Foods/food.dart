@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/Foods/food2.dart';
 
 class Food extends StatelessWidget {
   const Food({super.key});
@@ -217,7 +218,10 @@ class Food extends StatelessWidget {
             width: 300,
             height: 50,
             child: ElevatedButton(
-              onPressed: (() {}),
+              onPressed: (() {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => second()));
+              }),
               style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 47, 60, 85),
                   shape: RoundedRectangleBorder(
