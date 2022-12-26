@@ -51,7 +51,7 @@ class second extends StatelessWidget {
               children: [
                 Container(
                   child: CircleAvatar(
-                      backgroundImage: AssetImage("assets/images/Sunday.jpg"),
+                      backgroundImage: AssetImage("assets/images/muffin.avif"),
                       radius: 45),
                 ),
                 SizedBox(
@@ -180,7 +180,7 @@ class second extends StatelessWidget {
               Column(
                 children: [
                   Container(
-                    margin: EdgeInsets.only(right: 170),
+                    margin: EdgeInsets.only(right: 200),
                     child: Text(
                       "Friday",
                       style:
@@ -188,21 +188,22 @@ class second extends StatelessWidget {
                     ),
                   ),
                   Container(
-                      margin: EdgeInsets.only(right: 18),
+                      margin: EdgeInsets.only(right: 70),
                       child: Text(
-                        "Breakfast:- Sausage and Pancake",
+                        "Breakfast:- Toast and Coffee",
                         style: TextStyle(fontSize: 17),
                       )),
                   Container(
                     margin: EdgeInsets.only(right: 50),
                     child: Text(
-                      "Lunch:- Dal, Rice, Paneer and \n Golbheda ko achar ",
+                      "Lunch:- Dal, Rice, Mutton curry \n and Golbheda ko achar ",
                       style: TextStyle(fontSize: 17),
                     ),
                   ),
                   Container(
+                    margin: EdgeInsets.only(right: 60),
                     child: Text(
-                      "Dinner:- Dal, Rice, Mushroom curry \n & Prawn",
+                      "Dinner:- Dal, Rice, Cauliflower \n & Prawn",
                       style: TextStyle(fontSize: 17),
                     ),
                   )
