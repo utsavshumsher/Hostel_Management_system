@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/model/user.dart';
+import 'package:sleepholic/repository/user_repository.dart';
 
 class RegisterScreen extends StatefulWidget {
   const RegisterScreen({Key? key}) : super(key: key);
@@ -9,6 +11,12 @@ class RegisterScreen extends StatefulWidget {
 }
 
 class _RegisterScreenState extends State<RegisterScreen> {
+  TextEditingController _fullNameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -61,6 +69,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(
+                        controller: _fullNameController,
                         decoration: const InputDecoration(
                             border: InputBorder.none,
                             // label: Text("Email"),
@@ -74,7 +83,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         TextButton(
                           onPressed: () {},
                           child: const Text(
-                            'Phone Number',
+                            'Email',
                             style: TextStyle(color: Color.fromRGBO(
                                 143, 142, 142, 1.0),fontSize: 17),
                           ),
@@ -88,10 +97,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(
+                        controller: _emailController,
                         decoration: const InputDecoration(
                             border: InputBorder.none,
                             // label: Text("Email"),
-                            hintText: "Phone Number",
+                            hintText: "Email",
                             prefixIcon: Icon(Icons.phone)),
                       ),
                     ),
@@ -121,6 +131,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(
+                        controller: _passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                             border: InputBorder.none,
@@ -152,6 +163,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(
+                        controller: _confirmPasswordController,
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             // label: Text("Email"),
@@ -167,7 +179,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: 250,
                 height: 40,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    User newUser = User(_emailController.text,  null, null, _fullNameController.text, _passwordController.text, null, null);
+                        UserRepository ur = UserRepository();
+                    ur.registerUser(newUser);
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(93, 108, 137, 1.0),
                       shape: RoundedRectangleBorder(
