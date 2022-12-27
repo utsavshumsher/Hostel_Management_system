@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:sleepholic/pages/four_seater.dart';
+import 'four_seater.dart';
 
 class Three_Seater extends StatelessWidget {
   const Three_Seater({super.key});
