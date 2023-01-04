@@ -1,3 +1,4 @@
+
 import 'package:flutter/material.dart'
 import 'package:sleepholic/OTP/ChangePassword.dart';
 import 'package:sleepholic/OTP/PhoneNumber.dart';
@@ -6,6 +7,9 @@ import 'package:sleepholic/screens/Register/register_screen.dart';
 import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
 import 'package:sleepholic/screens/login/loginScreen.dart';
 import 'package:sleepholic/dashboard.dart';
+import 'package:flutter/material.dart';
+import 'package:sleepholic/profile.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +22,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+
 
 
       title: 'Flutter Demo',
@@ -40,6 +45,9 @@ class MyApp extends StatelessWidget {
       ),
 
       home: Dashboard(),
+
+      home: wow(),
+
     );
   }
 }
