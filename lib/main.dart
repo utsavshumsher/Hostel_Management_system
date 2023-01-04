@@ -5,6 +5,8 @@ import 'package:sleepholic/OTP/verification.dart';
 import 'package:sleepholic/screens/Register/register_screen.dart';
 import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
 import 'package:sleepholic/screens/login/loginScreen.dart';
+import 'package:sleepholic/dashboard.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -30,6 +32,8 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         // primarySwatch: Colors.blue,
       ),
+
+      home: Dashboard(),
     );
   }
 }
