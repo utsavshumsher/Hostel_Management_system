@@ -33,12 +33,16 @@ class Dashboard extends StatelessWidget {
                   size: 35,
                 ),
                 SizedBox(
-                  width: 59,
+                  width: 50,
                 ),
-                Icon(
-                  Icons.home,
-                  size: 42,
-                  color: Colors.white,
+                InkWell( onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Dashboard()));
+                },
+                  child: Icon(
+                    Icons.home,
+                    size: 35,
+                    color: Colors.white,
+                  ),
                 ),
                 SizedBox(
                   width: 50,
@@ -84,41 +88,45 @@ class Dashboard extends StatelessWidget {
                     bottomRight: Radius.circular(10))),
             child: Column(
               children: [
-                Row(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(left: 10),
-                      child: Column(
-                        children: [
-                          Container(
-                            margin: EdgeInsets.only(right: 120),
-                            child: Icon(
-                              Icons.home,
-                              size: 40,
-                              color: Colors.white,
+                SingleChildScrollView( scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(left: 10),
+                        child: Column(
+                          children: [
+                            Container(
+                              margin: EdgeInsets.only(right: 120),
+                              child: Icon(
+                                Icons.home,
+                                size: 40,
+                                color: Colors.white,
+                              ),
                             ),
+                            Text(
+                              "Sleepholic",
+                              style: TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 35,
+                                  color: Colors.white),
+                            )
+                          ],
+                        ),
+                      ),
+                      SizedBox(
+                        width: 80,
+                      ),
+                      
+                         Container(
+                          margin: EdgeInsets.only(top: 30),
+                          child: CircleAvatar(
+                            backgroundImage: AssetImage("assets/images/logo.png"),
+                            radius: 70,
                           ),
-                          Text(
-                            "Sleepholic",
-                            style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                fontSize: 35,
-                                color: Colors.white),
-                          )
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      width: 80,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(top: 50),
-                      child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/hostel.jpg"),
-                        radius: 70,
-                      ),
-                    ),
-                  ],
+                        ),
+                      
+                    ],
+                  ),
                 ),
                 SizedBox(
                   height: 40,
@@ -240,7 +248,7 @@ class Dashboard extends StatelessWidget {
             ),
           ),
           Positioned(
-              top: 695,
+              top: 660,
               left: 120,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(

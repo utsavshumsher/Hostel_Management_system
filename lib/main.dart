@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'package:sleepholic/Foods/food.dart';
-import 'package:sleepholic/Foods/food2.dart';
-import 'package:sleepholic/Foods/food3.dart';
+
+import 'package:sleepholic/dashboard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -15,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Food(),
+      home: Dashboard(),
     );
   }
 }
