@@ -12,7 +12,7 @@ class complain extends StatelessWidget {
             Container(
               height: 1000,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 76, 225, 255),
+                  color: Color.fromARGB(255, 246, 234, 255),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30))),
@@ -39,7 +39,7 @@ class complain extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(left: 50, top: 50),
                       child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/think.png"),
+                        // backgroundImage: AssetImage("assets/images/think.png"),
                         radius: 40,
                       ),
                     ),
