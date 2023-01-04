@@ -31,22 +31,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  motion_toast:
-  flutter_svg:
-  cupertino_icons:
-  # network call --> dio / http
-  dio:
-  json_serializable:
-  json_annotation:
-  image_picker:
-  mime:  # check for uploaded file type
-  fluttertoast:
-  http_parser:  # for media type
-  # hami developer ko lagi ho
-  dio_logging_interceptor:
-
-  intl: ^0.17.0
-
 
   motion_toast:
   flutter_svg:
@@ -61,6 +45,7 @@ dependencies:
   # hami developer ko lagi ho
   dio_logging_interceptor:
   pin_code_fields: ^7.4.0
+  intl: ^0.18.0
 
 
 
