@@ -17,6 +17,7 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
   final form = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
+
     var Height = MediaQuery.of(context).size.height;
     return Container(
       height: Height,
@@ -75,7 +76,68 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
 
         ),
       ),
+    return Scaffold(
+        body: Column(
+            children: <Widget>[
+              Expanded(
+                child: Container(
+                  decoration: const BoxDecoration(
+                      image: DecorationImage(
+                          image: AssetImage("assets/images/Sleepholic.jpg"),
+                          fit: BoxFit.cover
+                      )
+                  ),
+                ),
+              ),
 
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: [
+                  // const SizedBox(
+                  //   height: 500,
+                  // ),
+                  ElevatedButton(onPressed: () {
+                    // EdgeInsets.symmetric(horizontal: 90);
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => RegisterScreen(),
+                      ),
+                    );
+                  },
+                      style: ElevatedButton.styleFrom(
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30.0),
+                      ),
+                      backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 30, vertical: 8)
+
+                  ),
+                      child: Text("Join Now")),
+
+                  ElevatedButton(onPressed: () {
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => LoginScreen(),
+                      ),
+                    );
+                  },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30.0),
+                        ),
+                        backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
+                          padding: EdgeInsets.symmetric(
+                              horizontal: 35, vertical: 8)
+                      ),
+                      child: Text("Login"))
+                ],
+
+
+              ),
+
+            ]
+        )
     );
   }
 }
