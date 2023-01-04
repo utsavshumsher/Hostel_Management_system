@@ -22,8 +22,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
+                    
                     child: Image.asset(
-                      "assets/images/MAKE YOURSELF ATA HOME.jpg",
+                      "assets/images/MAKE YOURSELF ATA HOME.jpg", fit: BoxFit.cover,
                       height: 250,
                       width: 250,
                     ),
@@ -128,23 +129,27 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 10,
               ),
-              RichText(
-                text: TextSpan(
-                  text: "Dont have account? ",
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontSize: 18,
+              InkWell( 
+                splashColor: Colors.blue,
+                onTap: (){} ,
+                child: RichText(
+                  text: TextSpan(
+                    text: "Dont have account? ",
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "Sign Up!",
+                        style: const TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 18,
+                        ),
+                        recognizer: TapGestureRecognizer()..onTap = () {},
+                      )
+                    ],
                   ),
-                  children: [
-                    TextSpan(
-                      text: "Sign Up!",
-                      style: const TextStyle(
-                        color: Colors.redAccent,
-                        fontSize: 18,
-                      ),
-                      recognizer: TapGestureRecognizer()..onTap = () {},
-                    )
-                  ],
                 ),
               ),
             ],
