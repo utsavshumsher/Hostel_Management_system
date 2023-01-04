@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart'
 import 'package:sleepholic/OTP/ChangePassword.dart';
 import 'package:sleepholic/OTP/PhoneNumber.dart';
 import 'package:sleepholic/OTP/verification.dart';
@@ -36,4 +36,12 @@ class MyApp extends StatelessWidget {
       home: Dashboard(),
     );
   }
+}
+
+void main(List<String> args) {
+
+  
+  AppBar:AppBar(
+    
+  );
 }
