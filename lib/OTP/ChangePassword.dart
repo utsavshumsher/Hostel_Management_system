@@ -23,10 +23,15 @@ class  _ChangePasswordState extends State<ChangePassword> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
+
                     height: 200,
                     child: Image.asset(
                       "assets/images/MAKE YOURSELF ATA HOME.jpg",
                       fit: BoxFit.cover,
+                    child: Image.asset(
+                      "assets/images/MAKE YOURSELF ATA HOME.jpg", fit: BoxFit.cover,
+                      height: 250,
+                      width: 250,
                     ),
                   ),
                   Container(
@@ -131,6 +136,29 @@ class  _ChangePasswordState extends State<ChangePassword> {
               ),
               SizedBox(
                 height: 10,
+              )
+              InkWell( 
+                splashColor: Colors.blue,
+                onTap: (){} ,
+                child: RichText(
+                  text: TextSpan(
+                    text: "Dont have account? ",
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 18,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "Sign Up!",
+                        style: const TextStyle(
+                          color: Colors.redAccent,
+                          fontSize: 18,
+                        ),
+                        recognizer: TapGestureRecognizer()..onTap = () {},
+                      )
+                    ],
+                  ),
+                ),
               ),
             ],
           ),
