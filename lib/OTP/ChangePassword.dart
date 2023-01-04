@@ -1,6 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
+import '../screens/login/login_screen.dart';
+
 
 class ChangePassword extends StatefulWidget {
   const ChangePassword ({Key? key}) : super(key: key);
@@ -28,8 +30,6 @@ class  _ChangePasswordState extends State<ChangePassword> {
                     child: Image.asset(
                       "assets/images/MAKE YOURSELF ATA HOME.jpg",
                       fit: BoxFit.cover,
-                    child: Image.asset(
-                      "assets/images/MAKE YOURSELF ATA HOME.jpg", fit: BoxFit.cover,
                       height: 250,
                       width: 250,
                     ),
@@ -136,7 +136,7 @@ class  _ChangePasswordState extends State<ChangePassword> {
               ),
               SizedBox(
                 height: 10,
-              )
+              ),
               InkWell( 
                 splashColor: Colors.blue,
                 onTap: (){} ,
