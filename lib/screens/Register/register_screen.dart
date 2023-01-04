@@ -1,93 +1,223 @@
-import 'package:flutter/cupertino.dart';
+
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/model/user.dart';
+import 'package:sleepholic/repository/user_repository.dart';
 
 class RegisterScreen extends StatefulWidget {
-  const RegisterScreen({super.key});
+  const RegisterScreen({Key? key}) : super(key: key);
 
   @override
-  State<RegisterScreen> createState() => _RegisterScreen();
+  _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-class _RegisterScreen extends State<RegisterScreen> {
-  TextEditingController FullName = new TextEditingController();
-  TextEditingController Email = new TextEditingController();
-  TextEditingController PhoneNumber = new TextEditingController();
-  TextEditingController password = new TextEditingController();
-  bool showPassword = false;
+class _RegisterScreenState extends State<RegisterScreen> {
+  TextEditingController _fullNameController = TextEditingController();
+  TextEditingController _emailController = TextEditingController();
+  TextEditingController _passwordController = TextEditingController();
+  TextEditingController _confirmPasswordController = TextEditingController();
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor:Color.fromARGB(255, 255, 239, 203),
-      appBar: AppBar(title: Text("Registration"),),
-      body: Column(
-        children: [
-
-
-
-          Container(
-            margin: EdgeInsets.all(10),
-            child: TextFormField(
-              controller: FullName,
-              decoration: InputDecoration(
-                // prefixIcon: Icon(Icons.),
-                hintText: "Please Enter Your FullName",
+      backgroundColor: Color(0xFFFFF6EA),
+      body: SingleChildScrollView(
+        child: SafeArea(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Container(
+                    child: Image.asset(
+                      "assets/images/MAKE YOURSELF ATA HOME.jpg",
+                      height: 200,
+                      width: 200,
+                    ),
+                  ),
+                  Container(
+                    child: Text(
+                      "Sign Up",
+                      style:
+                      TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ],
               ),
-            ),
-          ),
+              Container(
+                margin: EdgeInsets.all(30),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Full Name',
+                            style: TextStyle(color: Color.fromRGBO(
+                                143, 142, 142, 1.0),fontSize: 17),
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: TextFormField(
+                        controller: _fullNameController,
+                        decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            // label: Text("Email"),
+                            hintText: "FulL Name",
+                            prefixIcon: Icon(Icons.accessibility_outlined)),
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Email',
+                            style: TextStyle(color: Color.fromRGBO(
+                                143, 142, 142, 1.0),fontSize: 17),
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: TextFormField(
+                        controller: _emailController,
+                        decoration: const InputDecoration(
+                            border: InputBorder.none,
+                            // label: Text("Email"),
+                            hintText: "Email",
+                            prefixIcon: Icon(Icons.phone)),
+                      ),
+                    ),
 
-          Container(
-            margin: EdgeInsets.all(10),
-            child: TextFormField(
-              controller: Email,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.email),
-                hintText: "Please Enter Your Email",
+
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            'Password',
+                            style: TextStyle(color: Color.fromRGBO(143, 134, 134, 1.0), fontSize: 17),
+                          ),
+                        )
+                      ],
+                    ),
+
+
+                    Container(
+                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: TextFormField(
+                        controller: _passwordController,
+                        obscureText: true,
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            // label: Text("Password"),
+                            hintText: "Password",
+                            prefixIcon: Icon(Icons.visibility)),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 8,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        TextButton(
+                          onPressed: () {},
+                          child: const Text(
+                            ' Confirm Password',
+                            style: TextStyle(color: Color.fromRGBO(
+                                143, 142, 142, 1.0),fontSize: 17),
+                          ),
+                        )
+                      ],
+                    ),
+                    Container(
+                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                      decoration: BoxDecoration(
+                        color: Colors.grey,
+                        borderRadius: BorderRadius.circular(30),
+                      ),
+                      child: TextFormField(
+                        controller: _confirmPasswordController,
+                        decoration: InputDecoration(
+                            border: InputBorder.none,
+                            // label: Text("Email"),
+                            hintText: "Confirm Password",
+                            prefixIcon: Icon(Icons.visibility)),
+                      ),
+                    ),
+
+                  ],
+                ),
               ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: TextFormField(
-              controller: PhoneNumber,
-              decoration: InputDecoration(
-                prefixIcon: Icon(Icons.phone),
-                hintText: "Please Enter Your Phone Number",
+              Container(
+                width: 250,
+                height: 40,
+                child: ElevatedButton(
+                  onPressed: () {
+                    User newUser = User(_emailController.text,  null, null, _fullNameController.text, _passwordController.text, null, null);
+                        UserRepository ur = UserRepository();
+                    ur.registerUser(newUser);
+                  },
+                  style: ElevatedButton.styleFrom(
+                      primary: Color.fromRGBO(93, 108, 137, 1.0),
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(30),
+                      )),
+                  child: Text("Sign Up"),
+                ),
               ),
-            ),
+              SizedBox(
+                height: 10,
+              ),
+              RichText(
+                text: TextSpan(
+                  text: "Already Have an Account? ",
+                  style: const TextStyle(
+                    color:  Color.fromRGBO(93, 108, 137, 1.0),
+                    fontSize: 16,
+                  ),
+                  children: [
+                    TextSpan(
+                      text: "Login",
+                      style: const TextStyle(
+                        color:  Color.fromRGBO(21, 34, 56, 1.0),
+                        fontSize: 18,
+                      ),
+                      recognizer: TapGestureRecognizer()..onTap = () {},
+                    )
+                  ],
+                ),
+              ),
+            ],
           ),
-          Container(
-            margin: EdgeInsets.all(10),
-            child: TextFormField(
-                controller: password,
-                obscureText: !showPassword,
-                decoration: InputDecoration(
-                    prefixIcon: Icon(Icons.password),
-                    hintText: "Please Enter Your Password",
-                    suffixIcon: showPassword ?
-
-                    InkWell(
-                        onTap: (){
-                          setState(() {
-
-                          });
-                        },
-                        child: Icon(Icons.panorama_fish_eye))
-                        :
-                    InkWell(
-                        onTap: (){
-                          setState(() {
-                            showPassword = !showPassword;
-                          });
-                        },
-                        child: Icon(Icons.remove_red_eye))
-                )
-            ),
-          ),
-          Container(),
-          ElevatedButton(onPressed: (){
-            Navigator.of(context).pop();
-          }, child: Text("Go Back")),
-        ],
+        ),
       ),
     );
   }
