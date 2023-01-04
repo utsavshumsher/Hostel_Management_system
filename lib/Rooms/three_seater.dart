@@ -29,7 +29,7 @@ class Three_Seater extends StatelessWidget {
                 SizedBox(
                   width: 12,
                 ),
-                Text("Three Seater Room")
+                Text("Three Seater Room",style: TextStyle(fontWeight: FontWeight.bold),)
               ]),
               background: Image.asset(
                 "assets/images/threeseater.png",
@@ -37,105 +37,86 @@ class Three_Seater extends StatelessWidget {
               ),
             ),
           ),
-          SliverToBoxAdapter(
+           SliverToBoxAdapter(
             child: Container(
-              color: Color.fromARGB(80, 210, 117, 117),
+              color: Color.fromRGBO(255, 246, 234,1),
               child: ListView(
                 shrinkWrap: true,
                 children: [
                   Container(
-                    margin: EdgeInsets.all(15),
+                    margin: EdgeInsets.only(left: 20, bottom:10, right: 5),
                     child: Text(
                       "Bedroom, Bathrrom, kitchen etc facilities are available in our hostel",
                       style: (TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 15,
+                        fontSize: 19,
                       )),
                     ),
                   ),
                   SizedBox(
                     height: 5,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Container(
-                        alignment: Alignment.center,
-                        margin: EdgeInsets.all(7),
-                        height: 75,
-                        width: 135,
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 147, 219, 222),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                                width: 2,
-                                color: Color.fromARGB(255, 122, 162, 169)),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Color.fromARGB(255, 171, 131, 178),
-                                  spreadRadius: 0.5,
-                                  blurRadius: 56,
-                                  offset: Offset(4, 7))
-                            ]),
-                        child: Text(
-                          "NPR 15,000/month",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                  SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Card(
+                          color: Color.fromRGBO(93, 108, 137,1),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          child: Container(
+                            alignment: Alignment.center,
+                            margin: EdgeInsets.all(7),
+                            height: 75,
+                            width: 135,
+                            padding: EdgeInsets.all(10),
+                            decoration: BoxDecoration(
+                                ),
+                            child: Text(
+                              "NPR 12,000/month",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold, color: Colors.white,fontSize: 16
+                              ),
+                            ),
                           ),
                         ),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        child: Text(
-                          "NPR 30,000/two month",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                        SizedBox(width: 20,),
+                        Card(
+                          color: Color.fromARGB(255, 177, 174, 174),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          child: Container(
+                            alignment: Alignment.center,
+                            child: Text(
+                              "NPR 24,000/ \n Two month",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold,color: Colors.black,fontSize: 16
+                              ),
+                            ),
+                            height: 90,
+                            width: 155,
+                            padding: EdgeInsets.all(7),
                           ),
                         ),
-                        height: 75,
-                        width: 135,
-                        padding: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 147, 219, 222),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                                width: 2,
-                                color: Color.fromARGB(255, 207, 198, 198)),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Color.fromARGB(255, 171, 131, 178),
-                                  spreadRadius: 0.5,
-                                  blurRadius: 56,
-                                  offset: Offset(4, 7))
-                            ]),
-                      ),
-                      Container(
-                        alignment: Alignment.center,
-                        height: 75,
-                        width: 130,
-                        margin: EdgeInsets.all(7),
-                        child: Text(
-                          "NPR 80,000/year",
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
+                        SizedBox(width: 20,),
+                        Card(
+                          color: Color.fromARGB(255, 177, 174, 174),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                          child: Container(
+                            alignment: Alignment.center,
+                            height: 75,
+                            width: 130,
+                            margin: EdgeInsets.all(7),
+                            child: Text(
+                              "NPR 1,44,000/ \n Year",
+                              style: TextStyle(
+                                fontWeight: FontWeight.bold, color: Colors.black, fontSize: 16
+                              ),
+                            ),
+                       
                           ),
-                        ),
-                        decoration: BoxDecoration(
-                            color: Color.fromARGB(255, 147, 219, 222),
-                            borderRadius: BorderRadius.circular(12),
-                            border: Border.all(
-                                width: 2,
-                                color: Color.fromARGB(255, 207, 198, 198)),
-                            boxShadow: [
-                              BoxShadow(
-                                  color: Color.fromARGB(255, 171, 131, 178),
-                                  spreadRadius: 0.5,
-                                  blurRadius: 56,
-                                  offset: Offset(4, 7))
-                            ]),
-                      )
-                    ],
+                        )
+                      ],
+                    ),
                   ),
                   SizedBox(
                     height: 32,
@@ -145,6 +126,8 @@ class Three_Seater extends StatelessWidget {
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.all(5),
+                          backgroundColor:  Color.fromRGBO(93, 108, 137,1),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
                         ),
                         onPressed: (() {}),
                         child: Container(
@@ -161,7 +144,7 @@ class Three_Seater extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 32,
+                    height: 40,
                   )
                 ],
               ),
