@@ -22,7 +22,6 @@ class _LoginScreenState extends State<LoginScreen> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    
                     child: Image.asset(
                       "assets/images/MAKE YOURSELF ATA HOME.jpg", fit: BoxFit.cover,
                       height: 250,

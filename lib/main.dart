@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
 import 'package:sleepholic/screens/login/loginScreen.dart';
 
 void main() {
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       home: const LoginScreen(),
+
     );
   }
 }
