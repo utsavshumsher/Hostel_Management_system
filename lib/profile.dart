@@ -13,86 +13,69 @@ class _wowState extends State<wow> {
     return Scaffold(
       body: Stack(children: [
         Container(
+          
+
           color: Color(0xff123456),
-          child: Align(
-              alignment: Alignment.bottomLeft,
-              child: Row(
-                children: [
-                  Padding(padding: EdgeInsets.only(left: 10, bottom: 100)),
-                  Icon(
-                    Icons.logout_outlined,
-                    size: 40,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.red,
-                        padding: EdgeInsets.all(8),
-                        minimumSize: Size(3, 0)),
-                    child: Text(
-                      "Log Out",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 17),
-                    ),
-                  )
-                ],
-              )),
+          
         ),
         Container(
-          height: 760,
+          height: 710,
           width: 600,
           decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(70),
-                  bottomRight: Radius.circular(70))),
+                  bottomLeft: Radius.circular(0),
+                  bottomRight: Radius.circular(40))),
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 490),
-                child: Row(
-                  children: [
-                    Padding(padding: EdgeInsets.only(left: 4)),
-                    Container(
-                      alignment: Alignment.center,
-                      height: 90,
-                      width: 210,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 200, 193, 193),
-                          borderRadius: BorderRadius.only(
-                              topLeft: Radius.circular(5),
-                              bottomLeft: Radius.circular(5))),
-                      child: Text(
-                        "NPR 20,000",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 20),
-                      ),
-                    ),
-                    SizedBox(
-                      width: 2,
-                    ),
-                    Container(
-                      alignment: Alignment.center,
-                      height: 90,
-                      width: 210,
-                      decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 200, 193, 193),
-                          borderRadius: BorderRadius.only(
-                              topRight: Radius.circular(5),
-                              bottomRight: Radius.circular(5))),
-                      child: ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                            backgroundColor: Color(0xff123456),
-                            padding: EdgeInsets.all(15)),
+                padding: const EdgeInsets.only(top: 450),
+                child: SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
+                    children: [
+                      Padding(padding: EdgeInsets.only(left: 4)),
+                      Container(
+                        alignment: Alignment.center,
+                        height: 90,
+                        width: 210,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 200, 193, 193),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(5),
+                                bottomLeft: Radius.circular(5))),
                         child: Text(
-                          "Fone Pay",
+                          "NPR 20,000",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 15),
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                       ),
-                    ),
-                  ],
+                      SizedBox(
+                        width: 2,
+                      ),
+                      Container(
+                        alignment: Alignment.center,
+                        height: 90,
+                        width: 210,
+                        decoration: BoxDecoration(
+                            color: Color.fromARGB(255, 200, 193, 193),
+                            borderRadius: BorderRadius.only(
+                                topRight: Radius.circular(5),
+                                bottomRight: Radius.circular(5))),
+                        child: ElevatedButton(
+                          onPressed: () {},
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Color(0xff123456),
+                              padding: EdgeInsets.all(15)),
+                          child: Text(
+                            "Fone Pay",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 15),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               SizedBox(
@@ -162,51 +145,54 @@ class _wowState extends State<wow> {
           decoration: BoxDecoration(
               color: Color(0xff123456),
               borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(80),
-                  bottomRight: Radius.circular(80))),
+                  bottomLeft: Radius.circular(40),
+                  bottomRight: Radius.circular(0))),
           child: Column(
             children: [
               Padding(padding: const EdgeInsets.only(left: 10, top: 35)),
-              Row(
-                children: [
-                  InkWell(
-                    onTap: () {},
-                    child: Icon(
-                      Icons.arrow_back,
-                      size: 35,
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    InkWell(
+                      onTap: () {},
+                      child: Icon(
+                        Icons.arrow_back,
+                        size: 35,
+                      ),
                     ),
-                  ),
-                  SizedBox(
-                    width: 280,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        shadowColor: Colors.blue,
-                        padding: EdgeInsets.all(7),
-                        minimumSize: Size(0, 0)),
-                    child: Icon(
-                      Icons.call,
-                      size: 35,
+                    SizedBox(
+                      width: 230,
                     ),
-                  ),
-                  SizedBox(
-                    width: 10,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        shadowColor: Colors.blue,
-                        padding: EdgeInsets.all(7),
-                        minimumSize: Size(0, 0)),
-                    child: Icon(
-                      Icons.message,
-                      size: 35,
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          shadowColor: Colors.blue,
+                          padding: EdgeInsets.all(7),
+                          minimumSize: Size(0, 0)),
+                      child: Icon(
+                        Icons.call,
+                        size: 35,
+                      ),
                     ),
-                  ),
-                ],
+                    SizedBox(
+                      width: 10,
+                    ),
+                    ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black,
+                          shadowColor: Colors.blue,
+                          padding: EdgeInsets.all(7),
+                          minimumSize: Size(0, 0)),
+                      child: Icon(
+                        Icons.message,
+                        size: 35,
+                      ),
+                    ),
+                  ],
+                ),
               ),
               SizedBox(
                 height: 25,
@@ -229,7 +215,7 @@ class _wowState extends State<wow> {
                 child: Text(
                   "Softwarica College of Information technology and E-commerce",
                   style: TextStyle(
-                      color: Color.fromARGB(255, 162, 149, 149),
+                      color: Color.fromARGB(255, 206, 202, 202),
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 ),
@@ -238,16 +224,24 @@ class _wowState extends State<wow> {
           ),
         ),
         Positioned(
-          top: 259,
-          left: 13,
+          top: 230,
+          left:20,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(20),
             child: Image.asset(
-              "assets/images/profile.jpg",
+              "assets/images/Roshan.jpg",
               scale: 10,
             ),
           ),
         ),
+        Positioned(
+          top: 720,
+          left: 270,
+          child: ElevatedButton( 
+            style: ElevatedButton.styleFrom( padding: EdgeInsets.all(10),minimumSize: Size(120, 40), backgroundColor: Colors.red, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8), )),
+            onPressed: () {
+            
+          }, child: Row(children: [Icon(Icons.logout ,size: 25, color: Colors.white,), Text("Log-out", style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 20),)],)))
       ]),
     );
   }

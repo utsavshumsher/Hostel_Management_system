@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:sleepholic/laundry.dart';
+import 'package:sleepholic/profile.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -11,7 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: laundry(),
+      debugShowCheckedModeBanner: false,
+      home: wow(),
     );
   }
 }
