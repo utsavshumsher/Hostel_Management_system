@@ -228,7 +228,7 @@ class Food extends StatelessWidget {
                       borderRadius: BorderRadius.circular(18))),
               child: Container(
                 child: Text(
-                  "Next day",
+                  "Next",
                   style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 ),
               ),
