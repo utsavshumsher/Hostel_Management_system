@@ -3,19 +3,40 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/model/user.dart';
 import 'package:sleepholic/repository/user_repository.dart';
+import 'package:sleepholic/toast/toast.dart';
 
 class RegisterScreen extends StatefulWidget {
+  static String route = "RegisterScreen";
   const RegisterScreen({Key? key}) : super(key: key);
 
   @override
   _RegisterScreenState createState() => _RegisterScreenState();
 }
 
+  final _formKey = GlobalKey<FormState>();
 class _RegisterScreenState extends State<RegisterScreen> {
-  TextEditingController _fullNameController = TextEditingController();
-  TextEditingController _emailController = TextEditingController();
-  TextEditingController _passwordController = TextEditingController();
-  TextEditingController _confirmPasswordController = TextEditingController();
+final _emailController = TextEditingController(text: "Test");
+final _addressController = TextEditingController(text: "Test");
+final _fullNameController = TextEditingController(text: "Test");
+final _phoneController = TextEditingController(text: "Test");
+final _usernameController = TextEditingController(text: "Test");
+final _passwordController = TextEditingController(text: "Test");
+final _confirmPasswordController = TextEditingController(text: "Test");
+
+String radioClickedValue = "";
+bool? checkBoxValue1 = false;
+bool? checkBoxValue2 = false;
+
+  _registerUser(User user) async {
+    final isNewUserRegistered = await UserRepository().registerUser(user);
+    if (isNewUserRegistered == true) {
+      // register bhayo
+      ShowToast.displaySuccessToast(context, "Successfully Registered");
+    } else {
+      // register bhayena
+      ShowToast.displayErrorToast(context, "Error in Registered");
+    }
+  }
 
 
   @override
@@ -71,7 +92,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       ),
                       child: TextFormField(
                         controller: _fullNameController,
-                        decoration: const InputDecoration(
+                        decoration: InputDecoration(
                             border: InputBorder.none,
                             // label: Text("Email"),
                             hintText: "FulL Name",
@@ -180,10 +201,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                 width: 250,
                 height: 40,
                 child: ElevatedButton(
-                  onPressed: () {
-                    User newUser = User(_emailController.text,  null, null, _fullNameController.text, _passwordController.text, null, null);
-                        UserRepository ur = UserRepository();
-                    ur.registerUser(newUser);
+                  onPressed: () async {
+                    if (_formKey.currentState!.validate()) {
+                      final User user = User(
+                          "ss@ss.com",
+                          _addressController.text,
+                          _phoneController.text,
+                          null,
+                          _passwordController.text,
+                          _fullNameController.text
+                          );
+                      _registerUser(user);
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(93, 108, 137, 1.0),

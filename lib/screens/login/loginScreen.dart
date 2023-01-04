@@ -1,5 +1,8 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/repository/user_repository.dart';
+import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
+import 'package:sleepholic/toast/toast.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -8,7 +11,31 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+final _formKey = GlobalKey<FormState>();
+
 class _LoginScreenState extends State<LoginScreen> {
+  final emailController = TextEditingController();
+  final passwordController = TextEditingController();
+
+  _login(String email, String password) async {
+    final isNewUserLogin = await UserRepository().loginUser(email, password);
+    if (isNewUserLogin == true) {
+      // login bhayo
+      ShowToast.displaySuccessToast(context, "Successfully Login");
+      // Navigator.pushReplacementNamed(context, WelcomeScreen.route);
+    } else {
+      // login bhayena
+      ShowToast.displayErrorToast(context, "Error in Login");
+    }
+  }
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    super.dispose();
+  }
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -60,6 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(
+                        controller: emailController,
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             // label: Text("Email"),
@@ -89,6 +117,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderRadius: BorderRadius.circular(30),
                       ),
                       child: TextFormField(
+                        controller: passwordController,
                         obscureText: true,
                         decoration: InputDecoration(
                             border: InputBorder.none,
@@ -116,7 +145,9 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 340,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    _login(emailController.text, passwordController.text);
+                  },
                   style: ElevatedButton.styleFrom(
                       primary: Colors.blue,
                       shape: RoundedRectangleBorder(

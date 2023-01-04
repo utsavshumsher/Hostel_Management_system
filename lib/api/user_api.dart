@@ -1,9 +1,10 @@
+
 import 'package:dio/dio.dart';
+import 'package:sleepholic/constraints/api_url.dart';
+import 'package:sleepholic/constraints/http_services.dart';
+import 'package:sleepholic/model/user.dart';
 import 'package:sleepholic/response/login_response.dart';
 
-import '../constraints/api_url.dart';
-import '../constraints/http_services.dart';
-import '../model/user.dart';
 
 class UserAPI {
   Future<bool> registerUser(User user) async {

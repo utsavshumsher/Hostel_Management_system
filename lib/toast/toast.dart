@@ -1,3 +1,4 @@
+
 import 'package:flutter/cupertino.dart';
 import 'package:motion_toast/motion_toast.dart';
 
@@ -14,3 +15,4 @@ class ShowToast {
     MotionToast.warning(description: Text(message)).show(context);
   }
 }
+

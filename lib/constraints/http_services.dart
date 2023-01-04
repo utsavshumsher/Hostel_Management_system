@@ -1,6 +1,7 @@
+
 import 'package:dio/dio.dart';
 import 'package:dio_logging_interceptor/dio_logging_interceptor.dart';
-import 'api_url.dart';
+import 'package:sleepholic/constraints/api_url.dart';
 
 class HttpServices {
   // private named constructor
@@ -27,3 +28,4 @@ class HttpServices {
     }
   }
 }
+

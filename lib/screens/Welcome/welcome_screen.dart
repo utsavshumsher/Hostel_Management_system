@@ -7,6 +7,7 @@ import 'package:sleepholic/screens/Register/register_screen.dart';
 import 'package:sleepholic/screens/login/loginScreen.dart';
 
 class WelcomeScreen extends StatefulWidget {
+  static String route = "WelcomeScreen";
   const WelcomeScreen({super.key});
 
   @override

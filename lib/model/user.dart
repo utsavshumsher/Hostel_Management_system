@@ -1,3 +1,4 @@
+
 import 'package:json_annotation/json_annotation.dart';
 
 part 'user.g.dart';
@@ -6,16 +7,16 @@ part 'user.g.dart';
 class User {
   String? email;
   String? address;
-  String? country;
+  String? fullname;
   String? phone;
-  String? username;
+  String? profile;
   String? password;
-  bool? isAdmin = false;
 
-  User(this.email, this.address, this.phone, this.username, this.password,
-      this.country, this.isAdmin);
+  User(this.email, this.address, this.phone, this.profile, this.password,
+      this.fullname);
 
   factory User.fromJson(Map<String, dynamic> json) => _$UserFromJson(json);
 
   Map<String, dynamic> toJson() => _$UserToJson(this);
 }
+

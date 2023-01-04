@@ -1,3 +1,4 @@
+
 class LoginResponse {
   bool? success;
   String? token;
@@ -15,3 +16,4 @@ class LoginResponse {
     return {"success": success, "token": token};
   }
 }
+
