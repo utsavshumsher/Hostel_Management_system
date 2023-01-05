@@ -21,7 +21,7 @@ class complain extends StatelessWidget {
               height: 730,
               width: 5000,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 76, 108, 140),
+                  color: Color.fromARGB(255, 255, 246, 234),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(60),
                       bottomRight: Radius.circular(80))),
@@ -69,7 +69,7 @@ class complain extends StatelessWidget {
                       height: 300,
                       width: 200,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 242, 216, 248),
+                          color: Color.fromARGB(255, 237, 218, 243),
                           borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 60),
@@ -78,7 +78,8 @@ class complain extends StatelessWidget {
                             ElevatedButton(
                               onPressed: () {},
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color.fromARGB(255, 7, 7, 7),
+                                  backgroundColor: Color.fromARGB(
+                                      255, 128, 125, 125),
                                   padding: EdgeInsets.all(8)),
                               child: Icon(
                                 Icons.add_circle_outline_rounded,
@@ -100,12 +101,12 @@ class complain extends StatelessWidget {
                       height: 300,
                       width: 200,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 130, 215, 237),
+                          color: Color.fromARGB(255, 196, 244, 246),
                           borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 130, left: 20),
                         child: Text(
-                          "3 Complains",
+                          "Complains",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 29),
                         ),
@@ -118,10 +119,10 @@ class complain extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.only(top: 735),
               child: Container(
-                height: 600,
+                height: 800,
                 width: 1000,
                 decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: Color.fromARGB(255, 206, 216, 209),
                     borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(40),
                         topRight: Radius.circular(40))),

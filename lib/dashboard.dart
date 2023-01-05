@@ -1,70 +1,12 @@
 import 'package:flutter/material.dart';
 
 class Dashboard extends StatelessWidget {
-  const Dashboard({super.key});
+  // const Dashboard({super.key});
+  int _selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      bottomNavigationBar: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Container(
-          height: 53,
-          width: 420,
-          decoration: BoxDecoration(
-              color: Color(0xfff123456),
-              borderRadius: BorderRadius.only(
-                  topLeft: Radius.circular(12), topRight: Radius.circular(12))),
-          child: Padding(
-            padding: const EdgeInsets.all(10.0),
-            child: Row(
-              children: [
-                Icon(
-                  Icons.notification_add,
-                  color: Colors.white,
-                  size: 35,
-                ),
-                SizedBox(
-                  width: 50,
-                ),
-                Icon(
-                  Icons.food_bank_rounded,
-                  color: Colors.white,
-                  size: 35,
-                ),
-                SizedBox(
-                  width: 50,
-                ),
-                InkWell( onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>Dashboard()));
-                },
-                  child: Icon(
-                    Icons.home,
-                    size: 35,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  width: 50,
-                ),
-                Icon(
-                  Icons.wash,
-                  color: Colors.white,
-                  size: 35,
-                ),
-                SizedBox(
-                  width: 50,
-                ),
-                Icon(
-                  Icons.person,
-                  color: Colors.white,
-                  size: 35,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
       body: SingleChildScrollView(
         child: Stack(children: [
           Container(
@@ -82,7 +24,7 @@ class Dashboard extends StatelessWidget {
             height: 350,
             margin: EdgeInsets.only(bottom: 400),
             decoration: BoxDecoration(
-                color: Color(0xfff123456),
+                color: Color.fromARGB(255, 93, 108, 137),
                 borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10))),
