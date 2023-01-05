@@ -33,7 +33,7 @@ class Three_Seater extends StatelessWidget {
                   Text("3 Bed-Bedroom",style: TextStyle(
                       fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Color.fromRGBO(59, 59, 59, 1.0),
+                    color: Color.fromRGBO(21, 34, 56, 1.0),
 
                   ),)
               ]),
@@ -60,7 +60,7 @@ class Three_Seater extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 10,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -108,19 +108,21 @@ class Three_Seater extends StatelessWidget {
                             padding: EdgeInsets.all(7),
                           ),
                         ),
-                        SizedBox(width: 20,),
+                        SizedBox(width: 10,),
                         Card(
                           color: Color.fromARGB(255, 177, 174, 174),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                           child: Container(
                             alignment: Alignment.center,
-                            height: 75,
-                            width: 130,
+                            height: 65,
+                            width: 110,
                             margin: EdgeInsets.all(7),
                             child: Text(
                               "NPR 1,44,000/ \n Year",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold, color: Colors.black, fontSize: 16
+                                fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(59, 59, 59, 1.0),
+                                  fontSize: 14.5
                               ),
                             ),
                        
@@ -138,17 +140,17 @@ class Three_Seater extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.all(5),
                           backgroundColor:  Color.fromRGBO(93, 108, 137,1),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
                         ),
                         onPressed: (() {}),
                         child: Container(
                           alignment: Alignment.center,
-                          height: 40,
-                          width: 250,
+                          height: 30,
+                          width: 200,
                           child: Text(
                             "Book Now",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 23),
+                                fontWeight: FontWeight.bold, fontSize: 22),
                           ),
                         ),
                       ),

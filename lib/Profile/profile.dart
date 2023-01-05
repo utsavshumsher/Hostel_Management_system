@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 
-class wow extends StatefulWidget {
-  const wow({super.key});
+class Profile extends StatefulWidget {
+  const Profile ({super.key});
 
   @override
-  State<wow> createState() => _wowState();
+  State<Profile> createState() => _ProfileState();
 }
 
-class _wowState extends State<wow> {
+class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

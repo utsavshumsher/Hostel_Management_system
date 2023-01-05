@@ -11,7 +11,7 @@ class Two_Seater extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-              expandedHeight: 600,
+              expandedHeight: 520,
               actions: [
                 InkWell(
                   onTap: () {
@@ -35,7 +35,12 @@ class Two_Seater extends StatelessWidget {
                     SizedBox(
                       width: 12,
                     ),
-                    Text("Two Seater Room", style: TextStyle(fontWeight: FontWeight.bold),)
+                    Text("2 Bed- BedRoom",
+                      style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        color: Color.fromRGBO(255, 255, 255, 1.0),
+                      ),
+                    )
                   ],
                 ),
                 background: Image.asset(
@@ -52,21 +57,22 @@ class Two_Seater extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(left: 20, bottom:10, right: 5),
                     child: Text(
-                      "Bedroom, Bathrrom, kitchen etc facilities are available in our hostel",
+                      "Bedroom, Bathroom, kitchen facilities are included in our hostel",
                       style: (TextStyle(
                         fontWeight: FontWeight.bold,
-                        fontSize: 19,
+                        fontSize: 18,
                       )),
                     ),
                   ),
                   SizedBox(
-                    height: 5,
+                    height: 10,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
+                        SizedBox(width: 10,),
                         Card(
                           color: Color.fromRGBO(93, 108, 137,1),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -74,19 +80,21 @@ class Two_Seater extends StatelessWidget {
                             alignment: Alignment.center,
                             margin: EdgeInsets.all(7),
                             height: 75,
-                            width: 135,
+                            width: 115,
                             padding: EdgeInsets.all(10),
                             decoration: BoxDecoration(
                                 ),
                             child: Text(
                               "NPR 15,000/month",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold, color: Colors.white,fontSize: 16
+                                fontWeight: FontWeight.bold,
+                                  color: Colors.white,
+                                  fontSize: 15,
                               ),
                             ),
                           ),
                         ),
-                        SizedBox(width: 20,),
+                        SizedBox(width: 10,),
                         Card(
                           color: Color.fromARGB(255, 177, 174, 174),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
@@ -95,27 +103,31 @@ class Two_Seater extends StatelessWidget {
                             child: Text(
                               "NPR 30,000/ \n Two month",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold,color: Colors.black,fontSize: 16
+                                fontWeight: FontWeight.bold,
+                                color: Color.fromRGBO(59, 59, 59, 1.0),
+                                fontSize: 14.5,
                               ),
                             ),
-                            height: 90,
-                            width: 155,
+                            height: 80,
+                            width: 115,
                             padding: EdgeInsets.all(7),
                           ),
                         ),
-                        SizedBox(width: 20,),
+                        SizedBox(width: 10,),
                         Card(
                           color: Color.fromARGB(255, 177, 174, 174),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                           child: Container(
                             alignment: Alignment.center,
-                            height: 75,
-                            width: 130,
+                            height: 65,
+                            width: 105,
                             margin: EdgeInsets.all(7),
                             child: Text(
                               "NPR 1,80,000/ \n Year",
                               style: TextStyle(
-                                fontWeight: FontWeight.bold, color: Colors.black, fontSize: 16
+                                fontWeight: FontWeight.bold,
+                                  color: Color.fromRGBO(59, 59, 59, 1.0),
+                                  fontSize: 14.5
                               ),
                             ),
                        
@@ -125,7 +137,7 @@ class Two_Seater extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 32,
+                    height: 25,
                   ),
                   Container(
                     child: Center(
@@ -133,13 +145,13 @@ class Two_Seater extends StatelessWidget {
                         style: ElevatedButton.styleFrom(
                           padding: EdgeInsets.all(5),
                           backgroundColor:  Color.fromRGBO(93, 108, 137,1),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12))
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22))
                         ),
                         onPressed: (() {}),
                         child: Container(
                           alignment: Alignment.center,
-                          height: 40,
-                          width: 250,
+                          height: 30,
+                          width: 200,
                           child: Text(
                             "Book Now",
                             style: TextStyle(

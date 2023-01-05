@@ -52,7 +52,7 @@ class FourSeater extends StatelessWidget {
                     ),
                   ),
                   SizedBox(
-                    height: 3,
+                    height: 10,
                   ),
                   SingleChildScrollView(
                     scrollDirection: Axis.horizontal,
@@ -141,7 +141,7 @@ class FourSeater extends StatelessWidget {
                           child: Text(
                             "Book Now",
                             style: TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 20),
+                                fontWeight: FontWeight.bold, fontSize: 22),
                           ),
                         ),
                       ),
