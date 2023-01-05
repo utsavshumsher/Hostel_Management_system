@@ -1,4 +1,5 @@
 
+import 'package:sleepholic/Profile/profile.dart';
 import 'package:sleepholic/Rooms/four_seater.dart';
 import 'package:sleepholic/Rooms/three_seater.dart';
 import 'package:sleepholic/Rooms/two_seater.dart';
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
-      home: Profi(),
+      home: Profile(),
     );
   }
   }
