@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../screens/login/login_screen.dart';
+
 class Profile extends StatefulWidget {
   const Profile ({super.key});
 
@@ -20,7 +22,13 @@ class _ProfileState extends State<Profile> {
                 children: [
                   Padding(padding: EdgeInsets.only(left: 20, bottom: 100)),
                   ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => LoginScreen(),
+                        ),
+                      );
+                    },
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
                         backgroundColor:Color.fromRGBO(255, 246, 234, 1.0),
@@ -196,7 +204,8 @@ class _ProfileState extends State<Profile> {
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                        backgroundColor:Color.fromRGBO(255, 246, 234, 1.0),
+                        backgroundColor:Color.fromRGBO(
+                            255, 246, 234, 1.0),
                         shadowColor: Color.fromRGBO(93, 108, 137,1),
                         padding: EdgeInsets.all(7),
                         minimumSize: Size(0, 0)),
