@@ -20,15 +20,52 @@ class _ProfileState extends State<Profile> {
               alignment: Alignment.bottomLeft,
               child: Row(
                 children: [
+
                   Padding(padding: EdgeInsets.only(left: 20, bottom: 100)),
                   ElevatedButton(
-                    onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => LoginScreen(),
-                        ),
-                      );
-                    },
+                    onPressed: () => showDialog<String>(
+                      context: context,
+                      barrierDismissible: true,
+                      builder: (BuildContext context) => AlertDialog(
+                          title: const Text('Logout',
+                            style: TextStyle(
+                              fontSize: 20,
+                              fontWeight: FontWeight.bold,
+                              color:  Color.fromRGBO(93, 108, 137, 1.0),
+                            ),),
+                          content: const Text('Are you sure you want to logout?',
+                            style: TextStyle(
+                              fontSize: 15,
+                              fontWeight: FontWeight.normal,
+                              color:  Color.fromRGBO(21, 34, 56, 1.0),
+                            ),
+                          ),
+                          actions: <Widget>[
+                            TextButton(
+                              onPressed: () => Navigator.of(context).push(
+                        MaterialPageRoute(builder: (context) => LoginScreen() ),
+                              ),
+                              child: const Text('Yes',
+                              style: TextStyle(
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold,
+                                color:  Color.fromRGBO(21, 34, 56, 1.0),
+                              ),
+                              ),
+                            ),
+                            TextButton(
+                              onPressed: () => Navigator.pop(context, 'Cancel'),
+                              child: const Text('Cancel',
+                                style: TextStyle(
+                                  fontSize: 17,
+                                  fontWeight: FontWeight.bold,
+                                  color:  Color.fromRGBO(21, 34, 56, 1.0),
+                                ),
+                              ),
+                            ),
+                          ]
+                      ),
+                    ),
                     style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22)),
                         backgroundColor:Color.fromRGBO(255, 246, 234, 1.0),
