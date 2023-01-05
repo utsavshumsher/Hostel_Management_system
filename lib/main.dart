@@ -1,4 +1,5 @@
 
+import 'package:sleepholic/Laundry/laundry.dart';
 import 'package:sleepholic/Profile/profile.dart';
 import 'package:sleepholic/Rooms/four_seater.dart';
 import 'package:sleepholic/Rooms/three_seater.dart';
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
       title: 'Flutter Demo',
       theme: ThemeData(
       ),
-      home: Profile(),
+      home: laundry(),
     );
   }
   }

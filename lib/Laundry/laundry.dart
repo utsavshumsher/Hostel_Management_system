@@ -17,8 +17,8 @@ class _laundryState extends State<laundry> {
         width: 5000,
         decoration: BoxDecoration(
           gradient: LinearGradient(colors: [
-            Color.fromARGB(255, 99, 67, 55),
-            Color.fromARGB(175, 255, 255, 255)
+            Color.fromARGB(255, 93, 108, 137),
+            Color.fromARGB(255, 255, 246, 234)
             // Color(0xFF701Ebd),
             // Color(0xFF873bc),
             // Color(0xFFfe4a97)
@@ -58,28 +58,29 @@ class _laundryState extends State<laundry> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+                width: 470,
                 height: 70,
                 decoration: BoxDecoration(
-                    color: Colors.brown,
-                    borderRadius: BorderRadius.circular(20)),
+                    color: Color.fromARGB(255, 93, 108, 137),
+                    borderRadius: BorderRadius.circular(30)),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 13, top: 8, bottom: 8),
                   child: Row(
                     children: [
                       Container(
-                        width: 120,
+                        width: 100,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15)),
+                            color: Color.fromARGB(255, 255, 246, 234),
+                            borderRadius: BorderRadius.circular(25)),
                         child: Text(
                           "Sunday",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 25),
+                              fontWeight: FontWeight.bold, fontSize: 20),
                         ),
                       ),
                       SizedBox(
-                        width: 40,
+                        width: 37,
                       ),
                       Container(
                         child: Text(
@@ -87,7 +88,8 @@ class _laundryState extends State<laundry> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 28,
-                              color: Colors.white),
+                            color: Color.fromARGB(255, 255, 246, 234),
+                          ),
                         ),
                       )
                     ],
@@ -101,10 +103,11 @@ class _laundryState extends State<laundry> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+                width: 470,
                 height: 70,
                 decoration: BoxDecoration(
-                    color: Colors.brown,
-                    borderRadius: BorderRadius.circular(20)),
+                    color: Color.fromARGB(255, 255, 246, 234),
+                    borderRadius: BorderRadius.circular(30)),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 13, top: 8, bottom: 8),
                   child: Row(
@@ -114,23 +117,26 @@ class _laundryState extends State<laundry> {
                           "Bed Sheets",
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
-                              fontSize: 28,
-                              color: Colors.white),
+                              fontSize: 25,
+                            color: Color.fromARGB(255, 21, 34, 56),
+                          ),
                         ),
                       ),
                       SizedBox(
-                        width: 130,
+                        width: 150,
                       ),
                       Container(
-                        width: 120,
+                        width: 100,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15)),
+                            color: Color.fromARGB(255, 93, 108, 137),
+                            borderRadius: BorderRadius.circular(25)),
                         child: Text(
                           "Tuesday",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 25),
+                              fontWeight: FontWeight.bold, fontSize: 20,
+                          color: Color.fromARGB(255, 255, 246, 234),
+                          ),
                         ),
                       ),
                     ],
@@ -144,10 +150,11 @@ class _laundryState extends State<laundry> {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: Container(
+                width: 470,
                 height: 70,
                 decoration: BoxDecoration(
-                    color: Colors.brown,
-                    borderRadius: BorderRadius.circular(20)),
+                    color: Color.fromARGB(255, 93, 108, 137),
+                    borderRadius: BorderRadius.circular(30)),
                 child: Padding(
                   padding: const EdgeInsets.only(left: 13, top: 8, bottom: 8),
                   child: Row(
@@ -156,12 +163,14 @@ class _laundryState extends State<laundry> {
                         width: 120,
                         alignment: Alignment.center,
                         decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(15)),
+                            color: Color.fromARGB(255, 255, 246, 234),
+                            borderRadius: BorderRadius.circular(25)),
                         child: Text(
                           "Friday",
                           style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 25),
+                              fontWeight: FontWeight.bold, fontSize: 20,
+                            color: Color.fromARGB(255, 21, 34, 56),
+                          ),
                         ),
                       ),
                       SizedBox(
@@ -173,7 +182,8 @@ class _laundryState extends State<laundry> {
                           style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 28,
-                              color: Colors.white),
+                            color: Color.fromARGB(255, 255, 246, 234),
+                          ),
                         ),
                       )
                     ],
