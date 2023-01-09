@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleepholic/screens/ContactUs/ContactUs.dart';
+import 'package:sleepholic/screens/Invoice/Invoice.dart';
 
 
 
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
 
         primarySwatch: Colors.blue,
       ),
-      home: ContactUs(),
+      home: Invoice(),
 
 
     );

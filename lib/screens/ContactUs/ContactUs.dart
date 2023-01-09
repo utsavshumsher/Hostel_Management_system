@@ -14,6 +14,7 @@ class _ContactUsState extends State<ContactUs> {
       home: Scaffold(
 
 
+
         appBar: AppBar(
 
 
@@ -21,78 +22,79 @@ class _ContactUsState extends State<ContactUs> {
           backgroundColor: Color.fromRGBO(196, 164, 132, 80
           ),
         ),
+
         body:
+
       Padding(
         padding: const EdgeInsets.fromLTRB(25.0,40,25,0),
 
-        child: Form(
-          child: Column(
-            children: [
+        child: SingleChildScrollView(
+          child: Form(
+            child: Column(
+              children: [
 
-              Container(
-                margin: EdgeInsets.only(top: 0),
-                child: CircleAvatar(
-                  backgroundImage: AssetImage("assets/image6.png"),
-                  radius: 70,
+                Container(
+                  margin: EdgeInsets.only(top: 0),
+                  child: CircleAvatar(
+                    backgroundImage: AssetImage("assets/image6.png"),
+                    radius: 70,
+                  ),
                 ),
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  icon: const Icon(Icons.account_circle),
-                  hintText: 'Name',
-                    labelText: 'Name',
+                TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.account_circle),
+                    hintText: 'Name',
+                      labelText: 'Name',
 
+                  ),
                 ),
-              ),
 
 
-              TextFormField(
-                decoration: const InputDecoration(
-                  icon: const Icon(Icons.subject_rounded),
-                  hintText: 'Subject',
-                    labelText: 'Subject',
+                TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.subject_rounded),
+                    hintText: 'Subject',
+                      labelText: 'Subject',
+
+                  ),
                 ),
-              ),
-              SizedBox(
-                height: 25,
-              ),
-              TextFormField(
-                decoration: const InputDecoration(
-                  icon: const Icon(Icons.email),
-                  hintText: 'Email',
-                  labelText: 'Email',
+                SizedBox(
+                  height: 25,
+                ),
+                TextFormField(
+                  decoration: const InputDecoration(
+                    icon: const Icon(Icons.email),
+                    hintText: 'Email',
+                    labelText: 'Email',
+                  )
+                ),
+                SizedBox(
+                  height: 30,
+                ),
+                ElevatedButton(
+                    onPressed: (){
+
+                    }, child: Text(
+                  "Submit",
+                  style: TextStyle(fontSize: 25),
                 )
-              ),
-              SizedBox(
-                height: 30,
-              ),
-              ElevatedButton(
-                  onPressed: (){
 
-                  }, child: Text(
-                "Submit",
-                style: TextStyle(fontSize: 25),
-              )
+                ),
 
-              ),
-              Container(
-                child: Text("Thank you  for your queries "),
+                Container(
+                  child: Text("Thank you  for your queries! ",style: TextStyle(fontSize: 20,color: Colors.blueGrey,fontWeight: FontWeight.bold),),
+                  padding: const EdgeInsets.fromLTRB(25, 60, 25, 30),
 
-              )
 
-        ],
-          )
+                )
+
+          ],
+            )
+          ),
         ),
-
-
       ),
 
-
-
-
-
-
-        ),
+      ),
 
 
 
