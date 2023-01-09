@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:sleepholic/screens/Invoice/folder_clipper.dart';
-import 'package:sleepholic/screens/Invoice/invoice_clipper.dart';
+
+import 'folder_clipper.dart';
+import 'invoice_clipper.dart';
+
 
 Color defaultColor = Color(0XFF835454);
 class Invoice extends StatefulWidget {
