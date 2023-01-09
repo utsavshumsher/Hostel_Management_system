@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:sleepholic/Foods/food2.dart';
 import 'package:sleepholic/Foods/food_main.dart';
 import 'package:sleepholic/dashboard.dart';
+import 'package:sleepholic/homepage/homepage.dart';
 
 class Food extends StatelessWidget {
   const Food({super.key});
@@ -20,7 +21,7 @@ class Food extends StatelessWidget {
                   InkWell(
                     onTap: (() {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Dashboard()));
+                          MaterialPageRoute(builder: (context) => Homepage()));
                     }),
                     child: Icon(
                       Icons.arrow_back,
@@ -53,63 +54,66 @@ class Food extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.only(left: 5),
-            child: Row(
-              children: [
-                Container(
-                  child: CircleAvatar(
-                      backgroundImage: AssetImage("assets/images/Sunday.jpg"),
-                      radius: 40
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Container(
+                    child: CircleAvatar(
+                        backgroundImage: AssetImage("assets/images/Sunday.jpg"),
+                        radius: 40
+                    ),
                   ),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Column(
-                  children: [
-                    Container(
-                      margin: EdgeInsets.only(right: 223),
-                      child: Text(
-                        "Sunday",
-                        style: TextStyle(
-                            fontSize: 28, fontWeight: FontWeight.bold),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 7,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: 150),
-                      child: Text(
-                        "BrakFast - Cereal and Toast",
-                        style: TextStyle(
-                          fontSize: 17.5,
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Column(
+                    children: [
+                      Container(
+                        margin: EdgeInsets.only(right: 223),
+                        child: Text(
+                          "Sunday",
+                          style: TextStyle(
+                              fontSize: 28, fontWeight: FontWeight.bold),
                         ),
                       ),
-                    ),
-                    SizedBox(
-                      height: 9,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: 115),
-                      child: Text(
-                        "Lunch - Dal, Rice, Chicken Curry \n & Yogurt",
-                        style: TextStyle(fontSize: 17),
+                      SizedBox(
+                        height: 7,
                       ),
-                    ),
-                    SizedBox(
-                      height: 9,
-                    ),
-                    Container(
-                      margin: EdgeInsets.only(right: 130),
-                      child: Text(
-                        "Dinner:- Dal, Rice, Spinach,  \n"
-                            "& fries",
-                        style: TextStyle(fontSize: 18),
+                      Container(
+                        margin: EdgeInsets.only(right: 150),
+                        child: Text(
+                          "BrakFast - Cereal and Toast",
+                          style: TextStyle(
+                            fontSize: 17.5,
+                          ),
+                        ),
                       ),
-                    ),
-                  ],
-                )
-              ],
+                      SizedBox(
+                        height: 9,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 115),
+                        child: Text(
+                          "Lunch - Dal, Rice, Chicken Curry \n & Yogurt",
+                          style: TextStyle(fontSize: 17),
+                        ),
+                      ),
+                      SizedBox(
+                        height: 9,
+                      ),
+                      Container(
+                        margin: EdgeInsets.only(right: 130),
+                        child: Text(
+                          "Dinner:- Dal, Rice, Spinach,  \n"
+                              "& fries",
+                          style: TextStyle(fontSize: 18),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
             ),
           ),
           SizedBox(

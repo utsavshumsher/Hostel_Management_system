@@ -1,8 +1,9 @@
-
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/Foods/food.dart';
 import 'package:sleepholic/Foods/food2.dart';
 import 'package:sleepholic/Laundry/laundry.dart';
+import 'package:sleepholic/Payments/payment.dart';
 import 'package:sleepholic/Profile/profile.dart';
 import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/homepage/homepage.dart';
@@ -26,8 +27,9 @@ class MyApp extends StatelessWidget {
         title: 'Flutter Demo',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
+          fontFamily: GoogleFonts.alike().fontFamily,
         ),
-        home: Homepage()
+        home: payment()
 
         // routes: {
         //   "/login": (BuildContext context) => LoginScreen(),
@@ -36,3 +38,4 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+

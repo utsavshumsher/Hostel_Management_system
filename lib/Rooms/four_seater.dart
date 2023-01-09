@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
+import '../Payments/payment.dart';
+
 class FourSeater extends StatelessWidget {
   const FourSeater({super.key});
 
@@ -133,7 +135,11 @@ class FourSeater extends StatelessWidget {
                           backgroundColor:  Color.fromRGBO(93, 108, 137,1),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20))
                         ),
-                        onPressed: (() {}),
+                        onPressed: (() {
+                          Navigator.push(context, MaterialPageRoute(
+                              builder: (context) => payment()
+                          ));
+                        }),
                         child: Container(
                           alignment: Alignment.center,
                           height: 30,

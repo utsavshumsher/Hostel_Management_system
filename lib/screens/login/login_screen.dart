@@ -1,5 +1,6 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/screens/Register/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -120,7 +121,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 child: ElevatedButton(
                   onPressed: () {},
                   style: ElevatedButton.styleFrom(
-                      primary: Colors.blue,
+                      primary: Color.fromRGBO(93, 108, 137, 1.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       )),
@@ -132,7 +133,8 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               InkWell( 
                 splashColor: Colors.blue,
-                onTap: (){} ,
+                onTap: (){
+                } ,
                 child: RichText(
                   text: TextSpan(
                     text: "Dont have account? ",
@@ -147,7 +149,9 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.redAccent,
                           fontSize: 18,
                         ),
-                        recognizer: TapGestureRecognizer()..onTap = () {},
+                        recognizer: TapGestureRecognizer()..onTap = () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
+                        },
                       )
                     ],
                   ),

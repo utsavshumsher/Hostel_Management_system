@@ -6,6 +6,7 @@ import '../Foods/food.dart';
 import '../Laundry/laundry.dart';
 import '../Profile/profile.dart';
 import '../dashboard.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -17,20 +18,19 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   int idx = 0;
   List<Widget> home = [
-
-    PageViewDemo(),
     Dashboard(),
+    PageViewDemo(),
     laundry(),
     Profile(),
-
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
         bottomNavigationBar: BottomNavigationBar(
           items: [
-            BottomNavigationBarItem(icon: Icon(Icons.menu_book_sharp), label: "Menu") ,
             BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.menu_book_sharp), label: "Menu") ,
             BottomNavigationBarItem(icon: Icon(Icons.local_laundry_service), label: "Laundry"),
             BottomNavigationBarItem(icon: Icon(Icons.account_circle), label: "About us"),
           ],

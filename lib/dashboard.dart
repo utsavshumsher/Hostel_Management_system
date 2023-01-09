@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/Rooms/swiping.dart';
 
 class Dashboard extends StatelessWidget {
   // const Dashboard({super.key});
@@ -87,7 +88,13 @@ class Dashboard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(40),
                               child: InkWell(
                                 splashColor: Colors.blue,
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) => RoomViewDemo(),
+                                    ),
+                                  );
+                                },
                                 child: CircleAvatar(
                                   backgroundImage:
                                       AssetImage("assets/images/room.jpg"),
@@ -113,7 +120,13 @@ class Dashboard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(40),
                               child: InkWell(
                                 splashColor: Colors.blue,
-                                onTap: () {},
+                                onTap: () {
+                                  // Navigator.of(context).pushReplacement(
+                                  //   MaterialPageRoute(
+                                  //     builder: (BuildContext context) => ),
+                                  //   ),
+                                  // );
+                                },
                                 child: CircleAvatar(
                                   backgroundImage:
                                       AssetImage("assets/images/about.png"),
@@ -190,22 +203,23 @@ class Dashboard extends StatelessWidget {
             ),
           ),
           Positioned(
-              top: 660,
+              top: 730,
               left: 120,
               child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                      backgroundColor: Color(0xfff123456),
+                      backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
                       padding: EdgeInsets.all(10),
                       minimumSize: Size(170, 50),
                       shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(15))),
+                          borderRadius: BorderRadius.circular(30))),
                   onPressed: () {},
                   child: Text(
-                    "BookNow",
+                    "Book-Now",
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
-                        color: Colors.white),
+                        color: Colors.white
+                    ),
                   )))
         ]),
       ),

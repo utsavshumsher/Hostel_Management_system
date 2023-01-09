@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:sleepholic/Rooms/three_seater.dart';
 
+import '../Payments/payment.dart';
+
 
 class Two_Seater extends StatelessWidget {
   const Two_Seater({super.key});
@@ -147,7 +149,11 @@ class Two_Seater extends StatelessWidget {
                           backgroundColor:  Color.fromRGBO(93, 108, 137,1),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22))
                         ),
-                        onPressed: (() {}),
+                        onPressed: (() {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder:(context) => payment()
+                              ));
+                        }),
                         child: Container(
                           alignment: Alignment.center,
                           height: 30,

@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/Payments/payment.dart';
 import 'package:sleepholic/Rooms/two_seater.dart';
+import 'package:sleepholic/dashboard.dart';
+import 'package:sleepholic/homepage/homepage.dart';
 
 
 class One_Seater extends StatelessWidget {
@@ -11,18 +14,14 @@ class One_Seater extends StatelessWidget {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-              expandedHeight: 520,
-              leading: Icon(Icons.arrow_back),
-              actions: [
-                InkWell(
-                    onTap: () {
-                      Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => Two_Seater()));
-                    },
-                    child: Icon(Icons.arrow_forward))
-              ],
+      expandedHeight: 530,
+              leading: InkWell(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()
+                  )
+                  );
+                },
+                  child: Icon(Icons.arrow_back)),
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
                 title: Row(
@@ -142,7 +141,12 @@ class One_Seater extends StatelessWidget {
                           backgroundColor:  Color.fromRGBO(93, 108, 137,1),
                           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22))
                         ),
-                        onPressed: (() {}),
+                        onPressed: (() {
+                          Navigator.push(context,
+                              MaterialPageRoute(builder: (context) => payment()
+                              )
+                          );
+                        }),
                         child: Container(
                           alignment: Alignment.center,
                           height: 30,

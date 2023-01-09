@@ -1,6 +1,7 @@
 
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/screens/login/login_screen.dart';
 
 import 'package:sleepholic/toast/toast.dart';
 
@@ -79,7 +80,7 @@ bool? checkBoxValue2 = false;
                         decoration: InputDecoration(
                             border: InputBorder.none,
                             // label: Text("Email"),
-                            hintText: "FulL Name",
+                            labelText: "Full Name",
                             prefixIcon: Icon(Icons.accessibility_outlined)),
                       ),
                     ),
@@ -186,6 +187,11 @@ bool? checkBoxValue2 = false;
                 height: 40,
                 child: ElevatedButton(
                   onPressed: (){
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => LoginScreen(),
+                      ),
+                    );
                   },
                   style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(93, 108, 137, 1.0),
@@ -212,7 +218,13 @@ bool? checkBoxValue2 = false;
                         color:  Color.fromRGBO(21, 34, 56, 1.0),
                         fontSize: 18,
                       ),
-                      recognizer: TapGestureRecognizer()..onTap = () {},
+                      recognizer: TapGestureRecognizer()..onTap = () {
+                        Navigator.push(context, MaterialPageRoute(builder:
+                            (context) => LoginScreen()
+                        )
+
+                        );
+                        },
                     )
                   ],
                 ),

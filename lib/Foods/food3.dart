@@ -15,17 +15,6 @@ class third extends StatelessWidget {
               padding: const EdgeInsets.only(top: 30, left: 20),
               child: Row(
                 children: [
-                  InkWell(
-                    onTap: (() {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => second()));
-                    }),
-                    child: Icon(
-                      Icons.arrow_back,
-                      size: 35,
-                    ),
-                  ),
-
                   Container(
                     child: Text(
                       "Food Menu",
