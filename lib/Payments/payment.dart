@@ -1,9 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:rflutter_alert/rflutter_alert.dart';
 
-class payment extends StatelessWidget {
+class payment extends StatefulWidget {
   const payment({Key? key}) : super(key: key);
 
+  @override
+  State<payment> createState() => _paymentState();
+}
 
+class _paymentState extends State<payment> {
   @override
   Widget build(BuildContext context) {
     String ? paying;
@@ -69,7 +74,7 @@ class payment extends StatelessWidget {
                   onPressed: () =>
                       showDialog<String>(
                           context: context,
-                          barrierDismissible: true,
+                          barrierDismissible: false,
                           builder: (BuildContext context) =>
                               AlertDialog(
                                 title: Text(
@@ -90,7 +95,26 @@ class payment extends StatelessWidget {
                                 ),
                                 actions: <Widget>[
                                   Container(
-                                    child: TextButton(onPressed: () {},
+                                    child: TextButton(onPressed: () {
+                                      Alert(
+                                        context: context,
+                                        title: "Payment Successful",
+                                        desc: "Thankyou for choosing us.",
+                                        image: Image.asset("assets/images/success.png"),
+                                        buttons: [
+                                          DialogButton(
+                                            child: Text(
+                                              "Done",
+                                              style: TextStyle(color: Colors.white, fontSize: 20),
+                                            ),
+                                            onPressed: () { print("Done");},
+                                            color: Color.fromRGBO(
+                                                93, 108, 137, 1.0),
+                                            radius: BorderRadius.circular(18.0),
+                                          ),
+                                        ],
+                                      ).show();
+                                    },
                                         child: Text(
                                           'Yes',
                                           style: TextStyle(
@@ -99,10 +123,12 @@ class payment extends StatelessWidget {
                                                 21, 34, 56, 1.0),
                                             fontWeight: FontWeight.normal,
                                           ),
-                                        )
+                                        ),
                                     ),
                                   ),
-                                  TextButton(onPressed: () {},
+                                  TextButton(onPressed: () {
+                                    Navigator.pop(context);
+                                  },
                                       child: Text(
                                         'Cancel',
                                         style: TextStyle(
@@ -223,22 +249,6 @@ class payment extends StatelessWidget {
                 ),
               ),
             ),
-            // Positioned(
-            //     top: 600,
-            //     right: 330,
-            //     child: RadioListTile(
-            //       title: Text("Esewa"),
-            //       value: "esewa",
-            //       groupValue: paying,
-            //       onChanged: (value){
-            //         // setState(() {
-            //         //   paying = value.toString();
-            //         // });
-            //       },
-            //     )
-            // )
-
-
           ]
       ),
     );

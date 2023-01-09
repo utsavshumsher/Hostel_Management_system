@@ -5,8 +5,14 @@ import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/homepage/homepage.dart';
 
 
-class One_Seater extends StatelessWidget {
+class One_Seater extends StatefulWidget {
   const One_Seater({super.key});
+
+  @override
+  State<One_Seater> createState() => _One_SeaterState();
+}
+
+class _One_SeaterState extends State<One_Seater> {
 
   @override
   Widget build(BuildContext context) {
@@ -37,12 +43,12 @@ class One_Seater extends StatelessWidget {
                     Text("Single Bedroom", style: TextStyle(fontWeight: FontWeight.bold),)
                   ],
                 ),
-                background: 
+                background:
                    Image.asset(
                     "assets/images/oneseater.png",
                     fit: BoxFit.cover,
                   ),
-                
+
               )),
           SliverToBoxAdapter(
             child: Container(
@@ -108,23 +114,30 @@ class One_Seater extends StatelessWidget {
                           ),
                         ),
                         SizedBox(width: 10,),
-                        Card(
-                          color: Color.fromARGB(255, 177, 174, 174),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                          child: Container(
+                        GestureDetector(
+                          onTap: () {
+                            setState(() {
+
+                            });
+                            },
+                                child: Card(
+                                color: Color.fromARGB(255, 177, 174, 174),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            child: Container(
                             alignment: Alignment.center,
                             height: 65,
                             width: 110,
                             margin: EdgeInsets.all(7),
                             child: Text(
-                              "NPR 2,40,000/ \n Year",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 59, 59, 59),
-                                  fontSize: 14.5
+                            "NPR 2,40,000/ \n Year",
+                            style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            color: Color.fromARGB(255, 59, 59, 59),
+                                    fontSize: 14.5
+                                ),
                               ),
+
                             ),
-                       
                           ),
                         )
                       ],
@@ -172,3 +185,6 @@ class One_Seater extends StatelessWidget {
     );
   }
 }
+
+
+
