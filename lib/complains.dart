@@ -39,7 +39,7 @@ class complain extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(left: 50, top: 50),
                       child: CircleAvatar(
-                        // backgroundImage: AssetImage("assets/images/think.png"),
+                        backgroundImage: AssetImage("assets/images/think.png"),
                         radius: 40,
                       ),
                     ),
@@ -151,33 +151,33 @@ class complain extends StatelessWidget {
                             Container(
                               child: TextFormField(
                                 decoration:
-                                    InputDecoration(labelText: "Complain 1"),
+                                    InputDecoration(labelText: "Write your comlain here"),
                               ),
                             ),
-                            Container(
-                              child: TextFormField(
-                                decoration:
-                                    InputDecoration(labelText: "Complain 2"),
-                              ),
-                            ),
-                            Container(
-                              child: TextFormField(
-                                decoration:
-                                    InputDecoration(labelText: "Complain 3"),
-                              ),
-                            ),
-                            Container(
-                              child: TextFormField(
-                                decoration:
-                                    InputDecoration(labelText: "Complain 4"),
-                              ),
-                            ),
-                            Container(
-                              child: TextFormField(
-                                decoration:
-                                    InputDecoration(labelText: "Complain 5"),
-                              ),
-                            ),
+                            // Container(
+                            //   child: TextFormField(
+                            //     decoration:
+                            //         InputDecoration(labelText: "Complain 2"),
+                            //   ),
+                            // ),
+                            // Container(
+                            //   child: TextFormField(
+                            //     decoration:
+                            //         InputDecoration(labelText: "Complain 3"),
+                            //   ),
+                            // ),
+                            // Container(
+                            //   child: TextFormField(
+                            //     decoration:
+                            //         InputDecoration(labelText: "Complain 4"),
+                            //   ),
+                            // ),
+                            // Container(
+                            //   child: TextFormField(
+                            //     decoration:
+                            //         InputDecoration(labelText: "Complain 5"),
+                            //   ),
+                            // ),
                             SizedBox(
                               height: 30,
                             ),
@@ -188,7 +188,7 @@ class complain extends StatelessWidget {
                                     minimumSize: Size(200, 30)),
                                 onPressed: () {},
                                 child: Text(
-                                  "Done",
+                                  "Submit",
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 30),
