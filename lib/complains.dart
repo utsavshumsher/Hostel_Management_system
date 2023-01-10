@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
-class complain extends StatelessWidget {
-  const complain({super.key});
+class complain extends StatefulWidget {
+
+  @override
+  State<complain> createState() => _complainState();
+}
+
+class _complainState extends State<complain> {
+  var count = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -39,7 +45,7 @@ class complain extends StatelessWidget {
                     Container(
                       margin: EdgeInsets.only(left: 50, top: 50),
                       child: CircleAvatar(
-                        backgroundImage: AssetImage("assets/images/think.png"),
+                        backgroundImage: AssetImage("assets/images/think.jpg"),
                         radius: 40,
                       ),
                     ),
@@ -76,7 +82,72 @@ class complain extends StatelessWidget {
                         child: Column(
                           children: [
                             ElevatedButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                showModalBottomSheet(
+                                context: context, 
+                                builder: (context) {
+                                  return  Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40, right: 250),
+                      child: Text(
+                      "Complains",
+                      style: TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 28),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Write your complains on below Text-Field",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(40),
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Container(
+                              child: TextFormField(
+                                decoration:
+                                    InputDecoration(labelText: "Write your comlain here"),
+                              ),
+                            ),
+                           
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Container(
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    padding: EdgeInsets.all(5),
+                                    minimumSize: Size(200, 30)),
+                              
+                                onPressed: () {
+                                          setState(() {
+                                          count++;
+                                      });
+                                 Navigator.of(context).pop();
+                                 
+                                },
+                                child: Text(
+                                  "Submit",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 30),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                                  );
+                                });
+                              },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor: Color.fromARGB(255, 7, 7, 7),
                                   padding: EdgeInsets.all(8)),
@@ -105,7 +176,7 @@ class complain extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 130, left: 20),
                         child: Text(
-                          "3 Complains",
+                          "${count} Complains",
                           style: TextStyle(
                               fontWeight: FontWeight.bold, fontSize: 29),
                         ),
@@ -115,94 +186,7 @@ class complain extends StatelessWidget {
                 ),
               ]),
             ),
-            Padding(
-              padding: const EdgeInsets.only(top: 735),
-              child: Container(
-                height: 600,
-                width: 1000,
-                decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(40),
-                        topRight: Radius.circular(40))),
-                child: Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40, right: 250),
-                      child: Text(
-                        "Complains",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 30),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "Write your complains on below Text-Field",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(40),
-                      child: Container(
-                        child: Column(
-                          children: [
-                            Container(
-                              child: TextFormField(
-                                decoration:
-                                    InputDecoration(labelText: "Write your comlain here"),
-                              ),
-                            ),
-                            // Container(
-                            //   child: TextFormField(
-                            //     decoration:
-                            //         InputDecoration(labelText: "Complain 2"),
-                            //   ),
-                            // ),
-                            // Container(
-                            //   child: TextFormField(
-                            //     decoration:
-                            //         InputDecoration(labelText: "Complain 3"),
-                            //   ),
-                            // ),
-                            // Container(
-                            //   child: TextFormField(
-                            //     decoration:
-                            //         InputDecoration(labelText: "Complain 4"),
-                            //   ),
-                            // ),
-                            // Container(
-                            //   child: TextFormField(
-                            //     decoration:
-                            //         InputDecoration(labelText: "Complain 5"),
-                            //   ),
-                            // ),
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Container(
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    padding: EdgeInsets.all(5),
-                                    minimumSize: Size(200, 30)),
-                                onPressed: () {},
-                                child: Text(
-                                  "Submit",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 30),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                ),
-              ),
-            ),
+          
           ],
         ),
       ),
