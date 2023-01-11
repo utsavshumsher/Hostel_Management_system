@@ -1,5 +1,6 @@
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/ContactUs/ContactUs.dart';
 import 'package:sleepholic/Foods/food.dart';
 import 'package:sleepholic/Foods/food2.dart';
 import 'package:sleepholic/Laundry/laundry.dart';
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: GoogleFonts.alike().fontFamily,
         ),
-        home: Dashboard()
+        home: ContactUs()
 
         // routes: {
         //   "/login": (BuildContext context) => LoginScreen(),
