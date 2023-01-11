@@ -5,6 +5,7 @@ import 'package:sleepholic/Foods/food2.dart';
 import 'package:sleepholic/Laundry/laundry.dart';
 import 'package:sleepholic/Payments/payment.dart';
 import 'package:sleepholic/Profile/profile.dart';
+import 'package:sleepholic/complains.dart';
 import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/homepage/homepage.dart';
 import 'package:sleepholic/screens/Register/register_screen.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: GoogleFonts.alike().fontFamily,
         ),
-        home: Homepage()
+        home: complain()
 
         // routes: {
         //   "/login": (BuildContext context) => LoginScreen(),
