@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleepholic/Rooms/swiping.dart';
+import 'package:sleepholic/complains.dart';
 
 class Dashboard extends StatelessWidget {
   // const Dashboard({super.key});
@@ -152,10 +153,14 @@ class Dashboard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(40),
                               child: InkWell(
                                 splashColor: Colors.blue,
-                                onTap: (() {}),
+                                onTap: (() { Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) => complain(),
+                                    ),
+                                  );}),
                                 child: CircleAvatar(
                                   backgroundImage:
-                                      AssetImage("assets/images/comp.png"),
+                                      AssetImage("assets/images/think.jpg"),
                                   radius: 33,
                                 ),
                               ),
