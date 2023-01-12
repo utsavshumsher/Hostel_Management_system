@@ -6,6 +6,7 @@ import 'package:sleepholic/Foods/food2.dart';
 import 'package:sleepholic/Laundry/laundry.dart';
 import 'package:sleepholic/Payments/payment.dart';
 import 'package:sleepholic/Profile/profile.dart';
+import 'package:sleepholic/calendar/calendar_Screens.dart';
 import 'package:sleepholic/complains.dart';
 import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/homepage/homepage.dart';
@@ -14,6 +15,7 @@ import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
 import 'package:sleepholic/screens/login/login_screen.dart';
 
 import 'Foods/swipe.dart';
+import 'RulesScreen/rules.dart';
 
 void main() {
   runApp(const MyApp());
@@ -31,7 +33,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: GoogleFonts.alike().fontFamily,
         ),
-        home: complain()
+        home: EventCalendarScreen()
 
         // routes: {
         //   "/login": (BuildContext context) => LoginScreen(),
