@@ -18,7 +18,7 @@ class _complainState extends State<complain> {
             Container(
               height: 1000,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 246, 234, 255),
+                  color: Color.fromARGB(255, 235, 205, 195),
                   borderRadius: BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30))),
@@ -27,13 +27,13 @@ class _complainState extends State<complain> {
               height: 730,
               width: 5000,
               decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 76, 108, 140),
+                  color: Color.fromARGB(255, 208, 164, 142),
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(60),
                       bottomRight: Radius.circular(80))),
               child: Column(children: [
                 Container(
-                  margin: EdgeInsets.only(top: 40, left: 5),
+                  margin: EdgeInsets.only(top: 70, left: 15),
                   alignment: Alignment.topLeft,
                   child: Icon(
                     Icons.arrow_back,
@@ -59,7 +59,8 @@ class _complainState extends State<complain> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 40,
-                            color: Colors.white),
+                            color: Color.fromRGBO(49, 48, 48, 1.0)
+                        ),
                       ),
                     )
                   ],
@@ -71,14 +72,14 @@ class _complainState extends State<complain> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      margin: EdgeInsets.only(left: 5),
+                      margin: EdgeInsets.only(left: 10),
                       height: 300,
                       width: 200,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 242, 216, 248),
+                          color: Color.fromARGB(255, 255, 242, 231),
                           borderRadius: BorderRadius.circular(30)),
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 60),
+                        padding: const EdgeInsets.only(top: 60,),
                         child: Column(
                           children: [
                             ElevatedButton(
@@ -100,9 +101,11 @@ class _complainState extends State<complain> {
                       height: 20,
                     ),
                     Text(
-                      "Write your complains on below Text-Field",
+                      "Write your complains here",
                       style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20,
+                            color: Color.fromARGB(255, 21, 34, 56),
+                          ),
                     ),
                     Padding(
                       padding: const EdgeInsets.all(40),
@@ -112,7 +115,7 @@ class _complainState extends State<complain> {
                             Container(
                               child: TextFormField(
                                 decoration:
-                                    InputDecoration(labelText: "Write your comlain here"),
+                                    InputDecoration(labelText: "Write your complains here"),
                               ),
                             ),
                            
@@ -122,16 +125,15 @@ class _complainState extends State<complain> {
                             Container(
                               child: ElevatedButton(
                                 style: ElevatedButton.styleFrom(
+                                    backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
                                     padding: EdgeInsets.all(5),
                                     minimumSize: Size(200, 30)),
-                              
                                 onPressed: () {
                                           setState(() {
                                           count++;
                                       });
                                  Navigator.of(context).pop();
-                                 
-                                },
+                                 },
                                 child: Text(
                                   "Submit",
                                   style: TextStyle(
@@ -149,11 +151,13 @@ class _complainState extends State<complain> {
                                 });
                               },
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color.fromARGB(255, 7, 7, 7),
+                                  backgroundColor: Color.fromARGB(
+                                      255, 206, 216, 209),
                                   padding: EdgeInsets.all(8)),
                               child: Icon(
                                 Icons.add_circle_outline_rounded,
                                 size: 60,
+                                color: Color.fromARGB(255, 47, 69, 105),
                               ),
                             ),
                             SizedBox(
@@ -167,11 +171,11 @@ class _complainState extends State<complain> {
                       ),
                     ),
                     Container(
-                      margin: EdgeInsets.only(right: 5),
+                      margin: EdgeInsets.only(right: 7),
                       height: 300,
                       width: 200,
                       decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 130, 215, 237),
+                          color: Color.fromARGB(255, 239, 213, 181),
                           borderRadius: BorderRadius.circular(30)),
                       child: Padding(
                         padding: const EdgeInsets.only(top: 130, left: 20),
