@@ -42,7 +42,7 @@ class _FoodRatingState extends State<FoodRating>{
               ),
              );
           }),
-          glowColor: Color(0xffffcb00),
+        //  glowColor: Color(0xffffcb00),
 
         ),
       ),
