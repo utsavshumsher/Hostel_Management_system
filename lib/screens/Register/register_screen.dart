@@ -1,4 +1,3 @@
-
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/screens/login/login_screen.dart';
@@ -13,16 +12,21 @@ class RegisterScreen extends StatefulWidget {
   _RegisterScreenState createState() => _RegisterScreenState();
 }
 
-  final _formKey = GlobalKey<FormState>();
 class _RegisterScreenState extends State<RegisterScreen> {
-final _emailController = TextEditingController(text: "Test");
-final _fullNameController = TextEditingController(text: "Test");
-final _passwordController = TextEditingController(text: "Test");
-final _confirmPasswordController = TextEditingController(text: "Test");
+  final _formKey = GlobalKey<FormState>();
 
-String radioClickedValue = "";
-bool? checkBoxValue1 = false;
-bool? checkBoxValue2 = false;
+  var email = "";
+  var password = "";
+  var confirmpassword = "";
+
+  final emailController = TextEditingController();
+  final _fullNameController = TextEditingController();
+  final passwordController = TextEditingController();
+  final confirmPasswordController = TextEditingController();
+
+  String radioClickedValue = "";
+  bool? checkBoxValue1 = false;
+  bool? checkBoxValue2 = false;
 
   @override
   Widget build(BuildContext context) {
@@ -47,160 +51,162 @@ bool? checkBoxValue2 = false;
                     child: Text(
                       "Sign Up",
                       style:
-                      TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+                          TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
                     ),
                   ),
                 ],
               ),
-              Container(
-                margin: EdgeInsets.all(30),
-                child: Column(
-                  children: [
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Full Name',
-                            style: TextStyle(color: Color.fromRGBO(
-                                143, 142, 142, 1.0),fontSize: 17),
-                          ),
-                        )
-                      ],
-                    ),
-                    Container(
-                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(30),
+              Form(
+                key: _formKey,
+                child: Container(
+                  margin: EdgeInsets.all(30),
+                  child: Column(
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'Full Name',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(143, 142, 142, 1.0),
+                                  fontSize: 17),
+                            ),
+                          )
+                        ],
                       ),
-                      child: TextFormField(
-                        controller: _fullNameController,
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            // label: Text("Email"),
-                            labelText: "Full Name",
-                            prefixIcon: Icon(Icons.accessibility_outlined)),
+                      Container(
+                        // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: TextFormField(
+                          controller: _fullNameController,
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              // label: Text("Email"),
+                              labelText: "Full Name",
+                              prefixIcon: Icon(Icons.accessibility_outlined)),
+                        ),
                       ),
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Email',
-                            style: TextStyle(color: Color.fromRGBO(
-                                143, 142, 142, 1.0),fontSize: 17),
-                          ),
-                        )
-                      ],
-                    ),
-                    Container(
-                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(30),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'Email',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(143, 142, 142, 1.0),
+                                  fontSize: 17),
+                            ),
+                          )
+                        ],
                       ),
-                      child: TextFormField(
-                        controller: _emailController,
-                        decoration: const InputDecoration(
-                            border: InputBorder.none,
-                            // label: Text("Email"),
-                            hintText: "Email",
-                            prefixIcon: Icon(Icons.phone)),
+                      Container(
+                        // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: TextFormField(
+                          controller: emailController,
+                          decoration: const InputDecoration(
+                              border: InputBorder.none,
+                              // label: Text("Email"),
+                              hintText: "Email",
+                              prefixIcon: Icon(Icons.phone)),
+                        ),
                       ),
-                    ),
-
-
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            'Password',
-                            style: TextStyle(color: Color.fromRGBO(143, 134, 134, 1.0), fontSize: 17),
-                          ),
-                        )
-                      ],
-                    ),
-
-
-                    Container(
-                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(30),
+                      SizedBox(
+                        height: 8,
                       ),
-                      child: TextFormField(
-                        controller: _passwordController,
-                        obscureText: true,
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            // label: Text("Password"),
-                            hintText: "Password",
-                            prefixIcon: Icon(Icons.visibility)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              'Password',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(143, 134, 134, 1.0),
+                                  fontSize: 17),
+                            ),
+                          )
+                        ],
                       ),
-                    ),
-                    SizedBox(
-                      height: 8,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      children: [
-                        TextButton(
-                          onPressed: () {},
-                          child: const Text(
-                            ' Confirm Password',
-                            style: TextStyle(color: Color.fromRGBO(
-                                143, 142, 142, 1.0),fontSize: 17),
-                          ),
-                        )
-                      ],
-                    ),
-                    Container(
-                      // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
-                      decoration: BoxDecoration(
-                        color: Colors.grey,
-                        borderRadius: BorderRadius.circular(30),
+                      Container(
+                        // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: TextFormField(
+                          controller: passwordController,
+                          obscureText: true,
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              // label: Text("Password"),
+                              hintText: "Password",
+                              prefixIcon: Icon(Icons.visibility)),
+                        ),
                       ),
-                      child: TextFormField(
-                        controller: _confirmPasswordController,
-                        decoration: InputDecoration(
-                            border: InputBorder.none,
-                            // label: Text("Email"),
-                            hintText: "Confirm Password",
-                            prefixIcon: Icon(Icons.visibility)),
+                      SizedBox(
+                        height: 8,
                       ),
-                    ),
-
-                  ],
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          TextButton(
+                            onPressed: () {},
+                            child: const Text(
+                              ' Confirm Password',
+                              style: TextStyle(
+                                  color: Color.fromRGBO(143, 142, 142, 1.0),
+                                  fontSize: 17),
+                            ),
+                          )
+                        ],
+                      ),
+                      Container(
+                        // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                        decoration: BoxDecoration(
+                          color: Colors.grey,
+                          borderRadius: BorderRadius.circular(30),
+                        ),
+                        child: TextFormField(
+                          controller: confirmPasswordController,
+                          decoration: InputDecoration(
+                              border: InputBorder.none,
+                              // label: Text("Email"),
+                              hintText: "Confirm Password",
+                              prefixIcon: Icon(Icons.visibility)),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
               ),
               Container(
-                width: 250,
-                height: 40,
-                child: ElevatedButton(
-                  onPressed: (){
-                    Navigator.of(context).pushReplacement(
-                      MaterialPageRoute(
-                        builder: (BuildContext context) => LoginScreen(),
-                      ),
-                    );
-                  },
-                  style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(93, 108, 137, 1.0),
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(30),
-                      )),
-                  child: Text("Sign Up"),
-                )
-              ),
+                  width: 250,
+                  height: 40,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (BuildContext context) => LoginScreen(),
+                        ),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                        primary: Color.fromRGBO(93, 108, 137, 1.0),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                        )),
+                    child: Text("Sign Up"),
+                  )),
               SizedBox(
                 height: 10,
               ),
@@ -208,22 +214,22 @@ bool? checkBoxValue2 = false;
                 text: TextSpan(
                   text: "Already Have an Account? ",
                   style: const TextStyle(
-                    color:  Color.fromRGBO(93, 108, 137, 1.0),
+                    color: Color.fromRGBO(93, 108, 137, 1.0),
                     fontSize: 16,
                   ),
                   children: [
                     TextSpan(
                       text: "Login",
                       style: const TextStyle(
-                        color:  Color.fromRGBO(21, 34, 56, 1.0),
+                        color: Color.fromRGBO(21, 34, 56, 1.0),
                         fontSize: 18,
                       ),
-                      recognizer: TapGestureRecognizer()..onTap = () {
-                        Navigator.push(context, MaterialPageRoute(builder:
-                            (context) => LoginScreen()
-                        )
-
-                        );
+                      recognizer: TapGestureRecognizer()
+                        ..onTap = () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginScreen()));
                         },
                     )
                   ],
