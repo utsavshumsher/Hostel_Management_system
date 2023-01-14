@@ -33,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.alike().fontFamily,
       ),
-      home: Dashboard(),
+      home: LoginScreen(),
 
       // routes: {
       //   "/login": (BuildContext context) => LoginScreen(),
