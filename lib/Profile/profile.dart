@@ -323,6 +323,19 @@ class _ProfileState extends State<Profile> {
                       fontSize: 18),
                 ),
               ),
+              SizedBox(
+                height: 9,
+              ),
+              Container(
+                padding: EdgeInsets.only(left: 15),
+                child: Text(
+                  "Roshan@gmail.com",
+                  style: TextStyle(
+                      color: Color.fromARGB(255, 1, 3, 29),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18),
+                ),
+              ),
               TextButton(
                   onPressed: () {},
                   child: Text(
