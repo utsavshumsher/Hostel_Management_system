@@ -206,15 +206,17 @@ class _ProfileState extends State<Profile> {
                       SizedBox(
                         width: 12,
                       ),
-                      InkWell(
-                        splashColor: Color.fromRGBO(209, 209, 209, 1.0),
-                        onTap: () {},
-                        child: Text(
-                          "Complaints",
-                          style: TextStyle(
-                            color: Color.fromRGBO(105, 101, 101, 1.0),
-                            fontWeight: FontWeight.bold,
-                            fontSize: 21,
+                      Material(
+                        child: InkWell(
+                          splashColor: Color.fromARGB(255, 20, 146, 171),
+                          onTap: () {},
+                          child: Text(
+                            "Complaints",
+                            style: TextStyle(
+                              color: Color.fromRGBO(105, 101, 101, 1.0),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 21,
+                            ),
                           ),
                         ),
                       )
