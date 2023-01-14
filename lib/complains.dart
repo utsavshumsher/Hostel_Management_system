@@ -192,10 +192,13 @@ class _complainState extends State<complain> {
                         ),
                       ),
                     ),
+                    SizedBox(
+                      width: 20,
+                    ),
                     Container(
                       margin: EdgeInsets.only(right: 7),
                       height: 300,
-                      width: 200,
+                      width: 180,
                       decoration: BoxDecoration(
                           color: Color.fromARGB(255, 239, 213, 181),
                           borderRadius: BorderRadius.circular(30)),
