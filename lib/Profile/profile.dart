@@ -323,6 +323,15 @@ class _ProfileState extends State<Profile> {
                       fontSize: 18),
                 ),
               ),
+              TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    "Verify Email",
+                    style: TextStyle(
+                        fontSize: 19,
+                        color: Color.fromARGB(255, 1, 3, 29),
+                        fontWeight: FontWeight.bold),
+                  ))
             ],
           ),
         ),
