@@ -85,6 +85,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               // label: Text("Email"),
                               hintText: "Please enter your email",
                               prefixIcon: Icon(Icons.accessibility_outlined)),
+                          controller: emailController,
+                          validator: ((value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please enter Email";
+                            } else if (!value.contains("@")) {
+                              return "Please enter valid email";
+                            }
+                            return null;
+                          }),
                         ),
                       ),
                       SizedBox(
@@ -110,13 +119,20 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              // labelText: "Password",
-                              hintText: "Please enter your password",
-                              prefixIcon: Icon(Icons.visibility)),
-                        ),
+                            autofocus: false,
+                            obscureText: true,
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                // labelText: "Password",
+                                hintText: "Please enter your password",
+                                prefixIcon: Icon(Icons.visibility)),
+                            controller: passwordController,
+                            validator: ((value) {
+                              if (value == null || value.isEmpty) {
+                                return "Please Enter Password";
+                              }
+                              return null;
+                            })),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -140,9 +156,16 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 340,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (_formkey.currentState!.validate()) {
+                      setState(() {
+                        email = emailController.text;
+                        password = passwordController.text;
+                      });
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(93, 108, 137, 1.0),
+                      backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       )),
