@@ -28,18 +28,17 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          fontFamily: GoogleFonts.alike().fontFamily,
-        ),
-        home: EventCalendarScreen()
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: GoogleFonts.alike().fontFamily,
+      ),
+      home: Dashboard(),
 
-        // routes: {
-        //   "/login": (BuildContext context) => LoginScreen(),
-        //   "register": (BuildContext context) => RegisterScreen(),
-        // }
+      // routes: {
+      //   "/login": (BuildContext context) => LoginScreen(),
+      //   "register": (BuildContext context) => RegisterScreen(),
+      // }
     );
   }
 }
-

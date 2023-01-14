@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/dashboard.dart';
 
 class complain extends StatefulWidget {
-
   @override
   State<complain> createState() => _complainState();
 }
@@ -35,9 +35,15 @@ class _complainState extends State<complain> {
                 Container(
                   margin: EdgeInsets.only(top: 70, left: 15),
                   alignment: Alignment.topLeft,
-                  child: Icon(
-                    Icons.arrow_back,
-                    size: 40,
+                  child: InkWell(
+                    onTap: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => Dashboard()));
+                    },
+                    child: Icon(
+                      Icons.arrow_back,
+                      size: 40,
+                    ),
                   ),
                 ),
                 Row(
@@ -59,8 +65,7 @@ class _complainState extends State<complain> {
                         style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 40,
-                            color: Color.fromRGBO(49, 48, 48, 1.0)
-                        ),
+                            color: Color.fromRGBO(49, 48, 48, 1.0)),
                       ),
                     )
                   ],
@@ -79,80 +84,97 @@ class _complainState extends State<complain> {
                           color: Color.fromARGB(255, 255, 242, 231),
                           borderRadius: BorderRadius.circular(30)),
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 60,),
+                        padding: const EdgeInsets.only(
+                          top: 60,
+                        ),
                         child: Column(
                           children: [
                             ElevatedButton(
                               onPressed: () {
                                 showModalBottomSheet(
-                                context: context, 
-                                builder: (context) {
-                                  return  Column(
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(top: 40, right: 250),
-                      child: Text(
-                      "Complains",
-                      style: TextStyle(
-                      fontWeight: FontWeight.bold, fontSize: 28),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "Write your complains here",
-                      style:
-                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20,
-                            color: Color.fromARGB(255, 21, 34, 56),
-                          ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(40),
-                      child: Container(
-                        child: Column(
-                          children: [
-                            Container(
-                              child: TextFormField(
-                                decoration:
-                                    InputDecoration(labelText: "Write your complains here"),
-                              ),
-                            ),
-                           
-                            SizedBox(
-                              height: 30,
-                            ),
-                            Container(
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                    backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
-                                    padding: EdgeInsets.all(5),
-                                    minimumSize: Size(200, 30)),
-                                onPressed: () {
-                                          setState(() {
-                                          count++;
-                                      });
-                                 Navigator.of(context).pop();
-                                 },
-                                child: Text(
-                                  "Submit",
-                                  style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 30),
-                                ),
-                              ),
-                            )
-                          ],
-                        ),
-                      ),
-                    )
-                  ],
-                                  );
-                                });
+                                    context: context,
+                                    builder: (context) {
+                                      return Column(
+                                        children: [
+                                          Padding(
+                                            padding: const EdgeInsets.only(
+                                                top: 40, right: 250),
+                                            child: Text(
+                                              "Complains",
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                  fontSize: 28),
+                                            ),
+                                          ),
+                                          SizedBox(
+                                            height: 20,
+                                          ),
+                                          Text(
+                                            "Write your complains here",
+                                            style: TextStyle(
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 20,
+                                              color: Color.fromARGB(
+                                                  255, 21, 34, 56),
+                                            ),
+                                          ),
+                                          Padding(
+                                            padding: const EdgeInsets.all(40),
+                                            child: Container(
+                                              child: Column(
+                                                children: [
+                                                  Container(
+                                                    child: TextFormField(
+                                                      decoration: InputDecoration(
+                                                          labelText:
+                                                              "Write your complains here"),
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 30,
+                                                  ),
+                                                  Container(
+                                                    child: ElevatedButton(
+                                                      style: ElevatedButton
+                                                          .styleFrom(
+                                                              backgroundColor:
+                                                                  Color.fromRGBO(
+                                                                      93,
+                                                                      108,
+                                                                      137,
+                                                                      1.0),
+                                                              padding:
+                                                                  EdgeInsets
+                                                                      .all(5),
+                                                              minimumSize: Size(
+                                                                  200, 30)),
+                                                      onPressed: () {
+                                                        setState(() {
+                                                          count++;
+                                                        });
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      },
+                                                      child: Text(
+                                                        "Submit",
+                                                        style: TextStyle(
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 30),
+                                                      ),
+                                                    ),
+                                                  )
+                                                ],
+                                              ),
+                                            ),
+                                          )
+                                        ],
+                                      );
+                                    });
                               },
                               style: ElevatedButton.styleFrom(
-                                  backgroundColor: Color.fromARGB(
-                                      255, 206, 216, 209),
+                                  backgroundColor:
+                                      Color.fromARGB(255, 206, 216, 209),
                                   padding: EdgeInsets.all(8)),
                               child: Icon(
                                 Icons.add_circle_outline_rounded,
@@ -190,7 +212,6 @@ class _complainState extends State<complain> {
                 ),
               ]),
             ),
-          
           ],
         ),
       ),
