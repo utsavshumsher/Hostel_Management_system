@@ -191,12 +191,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: TextFormField(
-                          controller: confirmPasswordController,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               // label: Text("Email"),
                               hintText: "Confirm Password",
                               prefixIcon: Icon(Icons.visibility)),
+                          controller: confirmPasswordController,
+                          validator: (value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please Enter Password";
+                            }
+                            return null;
+                          },
                         ),
                       ),
                     ],
