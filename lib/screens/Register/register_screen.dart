@@ -112,12 +112,20 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: TextFormField(
-                          controller: emailController,
                           decoration: const InputDecoration(
                               border: InputBorder.none,
                               // label: Text("Email"),
                               hintText: "Email",
                               prefixIcon: Icon(Icons.phone)),
+                          controller: emailController,
+                          validator: ((value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please Enter Email";
+                            } else if (!value.contains("@")) {
+                              return "Plese Enter valid email";
+                            }
+                            return null;
+                          }),
                         ),
                       ),
                       SizedBox(
