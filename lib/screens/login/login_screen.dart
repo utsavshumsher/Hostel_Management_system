@@ -1,5 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/about/aboutusScreens.dart';
+import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/screens/Register/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -17,6 +19,11 @@ class _LoginScreenState extends State<LoginScreen> {
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  userLogin() {
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => Dashboard()));
+  }
 
   @override
   void dispose() {
@@ -162,6 +169,7 @@ class _LoginScreenState extends State<LoginScreen> {
                         email = emailController.text;
                         password = passwordController.text;
                       });
+                      userLogin();
                     }
                   },
                   style: ElevatedButton.styleFrom(
