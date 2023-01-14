@@ -214,14 +214,16 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   height: 40,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(
-                          builder: (BuildContext context) => LoginScreen(),
-                        ),
-                      );
+                      if (_formKey.currentState!.validate()) {
+                        setState(() {
+                          email = emailController.text;
+                          password = passwordController.text;
+                          confirmpassword = confirmPasswordController.text;
+                        });
+                      }
                     },
                     style: ElevatedButton.styleFrom(
-                        primary: Color.fromRGBO(93, 108, 137, 1.0),
+                        backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30),
                         )),
