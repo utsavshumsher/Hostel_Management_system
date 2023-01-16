@@ -24,7 +24,8 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Container(
                     child: Image.asset(
-                      "assets/images/MAKE YOURSELF ATA HOME.jpg", fit: BoxFit.cover,
+                      "assets/images/MAKE YOURSELF ATA HOME.jpg",
+                      fit: BoxFit.cover,
                       height: 250,
                       width: 250,
                     ),
@@ -131,10 +132,9 @@ class _LoginScreenState extends State<LoginScreen> {
               SizedBox(
                 height: 10,
               ),
-              InkWell( 
+              InkWell(
                 splashColor: Colors.blue,
-                onTap: (){
-                } ,
+                onTap: () {},
                 child: RichText(
                   text: TextSpan(
                     text: "Dont have account? ",
@@ -149,9 +149,13 @@ class _LoginScreenState extends State<LoginScreen> {
                           color: Colors.redAccent,
                           fontSize: 18,
                         ),
-                        recognizer: TapGestureRecognizer()..onTap = () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterScreen()));
-                        },
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => RegisterScreen()));
+                          },
                       )
                     ],
                   ),
