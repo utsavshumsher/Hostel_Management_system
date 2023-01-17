@@ -70,7 +70,13 @@ class _RegisterScreenState extends State<RegisterScreen> {
         }
       }
     } else {
-      print("Password and confirm Password dones not match");
+      print("Password and confirm Password does not match");
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(
+            "Password and confirm Password does not match",
+            style: TextStyle(fontSize: 19),
+          )));
     }
   }
 
