@@ -16,6 +16,8 @@ class RegisterScreen extends StatefulWidget {
 class _RegisterScreenState extends State<RegisterScreen> {
   final _formKey = GlobalKey<FormState>();
 
+  bool _obsecured = true;
+
   var email = "";
   var password = "";
   var confirmpassword = "";
@@ -171,12 +173,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: TextFormField(
-                          obscureText: true,
+                          obscureText: _obsecured,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               // label: Text("Password"),
                               hintText: "Password",
-                              prefixIcon: Icon(Icons.visibility)),
+                              prefixIcon: Icon(Icons.password),
+                              suffixIcon: IconButton(
+                                  onPressed: () {},
+                                  icon: _obsecured
+                                      ? const Icon(Icons.visibility)
+                                      : Icon(Icons.visibility_off))),
                           controller: passwordController,
                           validator: ((value) {
                             if (value == null || value.isEmpty) {
@@ -210,11 +217,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: TextFormField(
+                          obscureText: _obsecured,
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               // label: Text("Email"),
                               hintText: "Confirm Password",
-                              prefixIcon: Icon(Icons.visibility)),
+                              prefixIcon: Icon(Icons.password),
+                              suffixIcon: IconButton(
+                                onPressed: () {},
+                                icon: _obsecured
+                                    ? Icon(Icons.visibility)
+                                    : Icon(Icons.visibility_off),
+                              )),
                           controller: confirmPasswordController,
                           validator: (value) {
                             if (value == null || value.isEmpty) {
