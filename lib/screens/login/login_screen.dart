@@ -20,9 +20,11 @@ class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  userLogin() {
+  userLogin() async{
+  
     Navigator.push(
         context, MaterialPageRoute(builder: (context) => Dashboard()));
+        
   }
 
   @override
