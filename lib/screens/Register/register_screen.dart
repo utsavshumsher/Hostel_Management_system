@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/screens/login/login_screen.dart';
@@ -23,6 +24,24 @@ class _RegisterScreenState extends State<RegisterScreen> {
   final _fullNameController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
+
+  void dispose() {
+    emailController.dispose();
+    passwordController.dispose();
+    confirmPasswordController.dispose();
+    super.dispose();
+  }
+
+  registration() async {
+    if (password == confirmpassword) {
+      try {
+        await FirebaseAuth.instance
+            .createUserWithEmailAndPassword(email: email, password: password);
+      } catch (e) {}
+    } else {
+      print("Password and confirm Password dones not match");
+    }
+  }
 
   String radioClickedValue = "";
   bool? checkBoxValue1 = false;
@@ -220,6 +239,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           password = passwordController.text;
                           confirmpassword = confirmPasswordController.text;
                         });
+                        registration();
                       }
                     },
                     style: ElevatedButton.styleFrom(

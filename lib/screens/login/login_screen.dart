@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/about/aboutusScreens.dart';
@@ -20,12 +21,15 @@ class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
-  userLogin() async{
-  
-    Navigator.push(
-        context, MaterialPageRoute(builder: (context) => Dashboard()));
-        
+ userLogin()async{
+  try{
+
+  }catch(e){
+
   }
+
+ }
+
 
   @override
   void dispose() {
