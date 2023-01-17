@@ -15,21 +15,17 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formkey = GlobalKey<FormState>();
 
+  bool _obsecured = true;
+
   var email;
   var password;
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
 
- userLogin()async{
-  try{
-
-  }catch(e){
-
+  userLogin() async {
+    try {} catch (e) {}
   }
-
- }
-
 
   @override
   void dispose() {
@@ -133,12 +129,18 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         child: TextFormField(
                             autofocus: false,
-                            obscureText: true,
+                            obscureText: _obsecured,
                             decoration: InputDecoration(
                                 border: InputBorder.none,
                                 // labelText: "Password",
                                 hintText: "Please enter your password",
-                                prefixIcon: Icon(Icons.visibility)),
+                                prefixIcon: Icon(Icons.password),
+                                suffixIcon: IconButton(
+                                  icon: _obsecured
+                                      ? const Icon(Icons.visibility)
+                                      : Icon(Icons.visibility_off),
+                                  onPressed: () {},
+                                )),
                             controller: passwordController,
                             validator: ((value) {
                               if (value == null || value.isEmpty) {
