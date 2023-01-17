@@ -38,12 +38,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.alike().fontFamily,
       ),
-      home: Profile(),
+      home: LoginScreen(),
     );
   }
 }
-
-      // routes: {
-      //   "/login": (BuildContext context) => LoginScreen(),
-      //   "register": (BuildContext context) => RegisterScreen(),
-      // }
