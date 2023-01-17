@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../screens/login/login_screen.dart';
@@ -44,10 +45,13 @@ class _ProfileState extends State<Profile> {
                           ),
                           actions: <Widget>[
                             TextButton(
-                              onPressed: () => Navigator.of(context).push(
-                                MaterialPageRoute(
-                                    builder: (context) => LoginScreen()),
-                              ),
+                              onPressed: () async => {
+                                await FirebaseAuth.instance.signOut(),
+                                Navigator.of(context).push(
+                                  MaterialPageRoute(
+                                      builder: (context) => LoginScreen()),
+                                ),
+                              },
                               child: const Text(
                                 'Yes',
                                 style: TextStyle(
