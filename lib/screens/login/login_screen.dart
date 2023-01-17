@@ -1,5 +1,8 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/about/aboutusScreens.dart';
+import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/screens/Register/register_screen.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -12,11 +15,46 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _formkey = GlobalKey<FormState>();
 
+  bool _obsecured = true;
+
   var email;
   var password;
 
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
+
+  userLogin() async {
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      print(userCredential);
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Dashboard()));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.blue,
+          content: Text(
+            "Welcome to Hostel Management System",
+            style: TextStyle(fontSize: 19),
+          )));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print("No User fond for this E-mail");
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(
+              "No User Found for this Email",
+              style: TextStyle(fontSize: 19),
+            )));
+      } else if (e.code == "wrong-Password") ;
+      print("Wrong Password");
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(
+            "Wrong Password for this User",
+            style: TextStyle(fontSize: 19),
+          )));
+    }
+  }
 
   @override
   void dispose() {
@@ -85,6 +123,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               // label: Text("Email"),
                               hintText: "Please enter your email",
                               prefixIcon: Icon(Icons.accessibility_outlined)),
+                          controller: emailController,
+                          validator: ((value) {
+                            if (value == null || value.isEmpty) {
+                              return "Please enter Email";
+                            } else if (!value.contains("@")) {
+                              return "Please enter valid email";
+                            }
+                            return null;
+                          }),
                         ),
                       ),
                       SizedBox(
@@ -110,13 +157,30 @@ class _LoginScreenState extends State<LoginScreen> {
                           borderRadius: BorderRadius.circular(30),
                         ),
                         child: TextFormField(
-                          obscureText: true,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              // labelText: "Password",
-                              hintText: "Please enter your password",
-                              prefixIcon: Icon(Icons.visibility)),
-                        ),
+                            autofocus: false,
+                            obscureText: _obsecured,
+                            decoration: InputDecoration(
+                                border: InputBorder.none,
+                                // labelText: "Password",
+                                hintText: "Please enter your password",
+                                prefixIcon: Icon(Icons.password),
+                                suffixIcon: IconButton(
+                                  icon: _obsecured
+                                      ? const Icon(Icons.visibility)
+                                      : Icon(Icons.visibility_off),
+                                  onPressed: () {
+                                    setState(() {
+                                      _obsecured = !_obsecured;
+                                    });
+                                  },
+                                )),
+                            controller: passwordController,
+                            validator: ((value) {
+                              if (value == null || value.isEmpty) {
+                                return "Please Enter Password";
+                              }
+                              return null;
+                            })),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -140,9 +204,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 width: 340,
                 height: 50,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (_formkey.currentState!.validate()) {
+                      setState(() {
+                        email = emailController.text;
+                        password = passwordController.text;
+                      });
+                      userLogin();
+                    }
+                  },
                   style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(93, 108, 137, 1.0),
+                      backgroundColor: Color.fromRGBO(93, 108, 137, 1.0),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       )),

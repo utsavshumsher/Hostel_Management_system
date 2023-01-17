@@ -1,3 +1,6 @@
+import 'dart:developer';
+
+import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/ContactUs/ContactUs.dart';
@@ -21,8 +24,10 @@ import 'package:sleepholic/screens/login/login_screen.dart';
 import 'Foods/swipe.dart';
 import 'RulesScreen/rules.dart';
 
-void main() {
-  runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -32,16 +37,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        title: 'Flutter Demo',
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          fontFamily: GoogleFonts.alike().fontFamily,
-        ),
-        home: ChangePassword()
-        // routes: {
-        //   "/login": (BuildContext context) => LoginScreen(),
-        //   "register": (BuildContext context) => RegisterScreen(),
-        // }
-        );
+      title: 'Flutter Demo',
+      debugShowCheckedModeBanner: false,
+      theme: ThemeData(
+        fontFamily: GoogleFonts.alike().fontFamily,
+      ),
+      home: LoginScreen(),
+    );
   }
 }

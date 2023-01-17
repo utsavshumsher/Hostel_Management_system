@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "302010913465",
+    "project_id": "project-sem-3-a97c8",
+    "storage_bucket": "project-sem-3-a97c8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:302010913465:android:b5ad7fa2277b5a906c4168",
+        "android_client_info": {
+          "package_name": "com.sleepholic.sleepholic"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "302010913465-2921bq4jd2nn5uuqsk3bkut81epmsg98.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBB9BLRIbdp55FcYxN1qYq_8jY_lPVg58w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "302010913465-2921bq4jd2nn5uuqsk3bkut81epmsg98.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
