@@ -13,20 +13,20 @@ class One_Seater extends StatefulWidget {
 }
 
 class _One_SeaterState extends State<One_Seater> {
-
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-      expandedHeight: 530,
+              expandedHeight: 530,
               leading: InkWell(
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()
-                  )
-                  );
-                },
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()
+                    )
+                    );
+                  },
                   child: Icon(Icons.arrow_back)),
               flexibleSpace: FlexibleSpaceBar(
                 centerTitle: true,
@@ -34,7 +34,7 @@ class _One_SeaterState extends State<One_Seater> {
                   children: [
                     CircleAvatar(
                       backgroundImage:
-                          AssetImage("assets/images/oneseater.png"),
+                      AssetImage("assets/images/oneseater.png"),
                       radius: 27,
                     ),
                     SizedBox(
@@ -44,10 +44,10 @@ class _One_SeaterState extends State<One_Seater> {
                   ],
                 ),
                 background:
-                   Image.asset(
-                    "assets/images/oneseater.png",
-                    fit: BoxFit.cover,
-                  ),
+                Image.asset(
+                  "assets/images/oneseater.png",
+                  fit: BoxFit.cover,
+                ),
 
               )),
           SliverToBoxAdapter(
@@ -75,64 +75,81 @@ class _One_SeaterState extends State<One_Seater> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         SizedBox(width: 10,),
-                        Card(
-                          color: Color.fromRGBO(93, 108, 137,1),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                          child: Container(
-                            alignment: Alignment.center,
-                            margin: EdgeInsets.all(7),
-                            height: 75,
-                            width: 115,
-                            padding: EdgeInsets.all(10),
-                            decoration: BoxDecoration(
+                        GestureDetector(
+                          onTap: (){
+                            setState(() {
+                              selectedIndex = 0;
+                            });
+                          },
+                          child: Card(
+                            color: selectedIndex == 0 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              margin: EdgeInsets.all(7),
+                              height: 75,
+                              width: 115,
+                              padding: EdgeInsets.all(10),
+                              decoration: BoxDecoration(
+                              ),
+                              child: Text(
+                                "NPR 20,000/month",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 14.9
                                 ),
-                            child: Text(
-                              "NPR 20,000/month",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold, color: Colors.white,fontSize: 14.9
                               ),
                             ),
                           ),
                         ),
                         SizedBox(width: 10,),
-                        Card(
-                          color: Color.fromARGB(255, 177, 174, 174),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                          child: Container(
-                            alignment: Alignment.center,
-                            child: Text(
-                              "NPR 40,000/ \n Two month",
-                              style: TextStyle(
-                                fontWeight: FontWeight.bold,
-                                  color: Color.fromARGB(255, 59, 59, 59),
-                                  fontSize: 14.5
+                        GestureDetector(
+                          onTap: (){
+                            setState(() {
+                              selectedIndex=1;
+                            });
+                          },
+                          child: Card(
+                            color: selectedIndex == 1 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                            child: Container(
+                              alignment: Alignment.center,
+                              child: Text(
+                                "NPR 40,000/ \n Two month",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(255, 255, 255, 255),
+                                    fontSize: 14.5
+                                ),
                               ),
+                              height: 85,
+                              width: 115,
+                              padding: EdgeInsets.all(7),
                             ),
-                            height: 85,
-                            width: 115,
-                            padding: EdgeInsets.all(7),
                           ),
                         ),
                         SizedBox(width: 10,),
                         GestureDetector(
                           onTap: () {
                             setState(() {
+                              selectedIndex = 2;
 
                             });
-                            },
-                                child: Card(
-                                color: Color.fromARGB(255, 177, 174, 174),
+                          },
+                          child: Card(
+                            color: selectedIndex == 2 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
                             shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
                             child: Container(
-                            alignment: Alignment.center,
-                            height: 65,
-                            width: 110,
-                            margin: EdgeInsets.all(7),
-                            child: Text(
-                            "NPR 2,40,000/ \n Year",
-                            style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: Color.fromARGB(255, 59, 59, 59),
+                              alignment: Alignment.center,
+                              height: 65,
+                              width: 110,
+                              margin: EdgeInsets.all(7),
+                              child: Text(
+                                "NPR 2,40,000/ \n Year",
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(255, 255, 255, 255),
                                     fontSize: 14.5
                                 ),
                               ),
@@ -150,9 +167,9 @@ class _One_SeaterState extends State<One_Seater> {
                     child: Center(
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.all(5),
-                          backgroundColor:  Color.fromRGBO(93, 108, 137,1),
-                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22))
+                            padding: EdgeInsets.all(5),
+                            backgroundColor:  Color.fromRGBO(93, 108, 137,1),
+                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(22))
                         ),
                         onPressed: (() {
                           Navigator.push(context,
