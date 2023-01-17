@@ -1,3 +1,5 @@
+// ignore_for_file: unused_local_variable
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -37,9 +39,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
   registration() async {
     if (password == confirmpassword) {
       try {
-        await FirebaseAuth.instance
+        UserCredential userCredential = await FirebaseAuth.instance
             .createUserWithEmailAndPassword(email: email, password: password);
-      } catch (e) {}
+        print(UserCredential);
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: Colors.blue,
+            content: Text(
+              "Reistration Successfully.. Please Log-in",
+              style: TextStyle(fontSize: 19),
+            )));
+        Navigator.pushReplacement(
+            context, MaterialPageRoute(builder: (context) => LoginScreen()));
+      } on FirebaseAuthException catch (e) {
+        if (e.code == "weak-password") {
+          print("Password is too weak");
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              backgroundColor: Colors.red,
+              content: Text(
+                "Password is too weak",
+                style: TextStyle(fontSize: 19),
+              )));
+        } else if (e.code == "email-already-in-use") {
+          print("Account already exist");
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+              backgroundColor: Colors.red,
+              content: Text(
+                "Account already exist",
+                style: TextStyle(fontSize: 19),
+              )));
+        }
+      }
     } else {
       print("Password and confirm Password dones not match");
     }
