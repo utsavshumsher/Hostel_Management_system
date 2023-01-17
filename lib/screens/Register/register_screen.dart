@@ -212,7 +212,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           decoration: InputDecoration(
                               border: InputBorder.none,
                               // label: Text("Password"),
-                              // hintText: "Password",
+                              hintText: "Password",
                               prefixIcon: Icon(Icons.password),
                               suffixIcon: IconButton(
                                   onPressed: () {
