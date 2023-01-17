@@ -27,7 +27,7 @@ class _RoomViewDemoState extends State<RoomViewDemo> {
       controller: _controller,
       children: [
         One_Seater(),
-        Two_Seater(),
+        TwoSeater(),
         Three_Seater(),
         FourSeater(),
       ],
