@@ -215,7 +215,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               hintText: "Password",
                               prefixIcon: Icon(Icons.password),
                               suffixIcon: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    setState(() {
+                                      _obsecured = !_obsecured;
+                                    });
+                                  },
                                   icon: _obsecured
                                       ? const Icon(Icons.visibility)
                                       : Icon(Icons.visibility_off))),
@@ -259,7 +263,11 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               hintText: "Confirm Password",
                               prefixIcon: Icon(Icons.password),
                               suffixIcon: IconButton(
-                                onPressed: () {},
+                                onPressed: () {
+                                  setState(() {
+                                    _obsecured = !_obsecured;
+                                  });
+                                },
                                 icon: _obsecured
                                     ? Icon(Icons.visibility)
                                     : Icon(Icons.visibility_off),

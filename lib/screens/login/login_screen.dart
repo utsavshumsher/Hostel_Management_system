@@ -24,7 +24,36 @@ class _LoginScreenState extends State<LoginScreen> {
   final passwordController = TextEditingController();
 
   userLogin() async {
-    try {} catch (e) {}
+    try {
+      UserCredential userCredential = await FirebaseAuth.instance
+          .signInWithEmailAndPassword(email: email, password: password);
+      print(userCredential);
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => Dashboard()));
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.blue,
+          content: Text(
+            "Welcome to Hostel Management System",
+            style: TextStyle(fontSize: 19),
+          )));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print("No User fond for this E-mail");
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(
+              "No User Found for this Email",
+              style: TextStyle(fontSize: 19),
+            )));
+      } else if (e.code == "wrong-Password") ;
+      print("Wrong Password");
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.red,
+          content: Text(
+            "Wrong Password for this User",
+            style: TextStyle(fontSize: 19),
+          )));
+    }
   }
 
   @override
@@ -139,7 +168,11 @@ class _LoginScreenState extends State<LoginScreen> {
                                   icon: _obsecured
                                       ? const Icon(Icons.visibility)
                                       : Icon(Icons.visibility_off),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    setState(() {
+                                      _obsecured = !_obsecured;
+                                    });
+                                  },
                                 )),
                             controller: passwordController,
                             validator: ((value) {
