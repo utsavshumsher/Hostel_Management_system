@@ -26,7 +26,7 @@ class _TwoSeaterState extends State<TwoSeater> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => Three_Seater()));
+                            builder: (context) => ThreeSeater()));
                   },
                   child: Icon(Icons.arrow_forward),
                 )

@@ -28,7 +28,7 @@ class _RoomViewDemoState extends State<RoomViewDemo> {
       children: [
         One_Seater(),
         TwoSeater(),
-        Three_Seater(),
+        ThreeSeater(),
         FourSeater(),
       ],
     );
