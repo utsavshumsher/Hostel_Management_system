@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleepholic/dashboard.dart';
+import 'package:sleepholic/homepage/homepage.dart';
 
 class complain extends StatefulWidget {
   @override
@@ -38,7 +39,7 @@ class _complainState extends State<complain> {
                   child: InkWell(
                     onTap: () {
                       Navigator.push(context,
-                          MaterialPageRoute(builder: (context) => Dashboard()));
+                          MaterialPageRoute(builder: (context) => Homepage()));
                     },
                     child: Icon(
                       Icons.arrow_back,
@@ -135,8 +136,7 @@ class _complainState extends State<complain> {
                                                   ),
                                                   Container(
                                                     child: ElevatedButton(
-                                                      style: ElevatedButton
-                                                          .styleFrom(
+                                                      style: ElevatedButton.styleFrom(
                                                               backgroundColor:
                                                                   Color.fromRGBO(
                                                                       93,
@@ -171,7 +171,7 @@ class _complainState extends State<complain> {
                                         ],
                                       );
                                     });
-                                context: context, 
+                                context: context,
                                 builder: (context) {
                                   return  Column(
                   children: [
@@ -228,12 +228,12 @@ class _complainState extends State<complain> {
                               ),
                             )
                           ],
-                        ),
                       ),
                     )
+                                )
                   ],
-                                  );
-                                });
+                                );
+                                }
                               },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor:
