@@ -171,6 +171,69 @@ class _complainState extends State<complain> {
                                         ],
                                       );
                                     });
+                                context: context, 
+                                builder: (context) {
+                                  return  Column(
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.only(top: 40, right: 250),
+                      child: Text(
+                      "Complains",
+                      style: TextStyle(
+                      fontWeight: FontWeight.bold, fontSize: 28),
+                      ),
+                    ),
+                    SizedBox(
+                      height: 20,
+                    ),
+                    Text(
+                      "Write your complains on below Text-Field",
+                      style:
+                          TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(40),
+                      child: Container(
+                        child: Column(
+                          children: [
+                            Container(
+                              child: TextFormField(
+                                decoration:
+                                    InputDecoration(labelText: "Write your comlain here"),
+                              ),
+                            ),
+                           
+                            SizedBox(
+                              height: 30,
+                            ),
+                            Container(
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    padding: EdgeInsets.all(5),
+                                    minimumSize: Size(200, 30)),
+                              
+                                onPressed: () {
+                                          setState(() {
+                                          count++;
+                                      });
+                                 Navigator.of(context).pop();
+                                 
+                                },
+                                child: Text(
+                                  "Submit",
+                                  style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 30),
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                                  );
+                                });
                               },
                               style: ElevatedButton.styleFrom(
                                   backgroundColor:
