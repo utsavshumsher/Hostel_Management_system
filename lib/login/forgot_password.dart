@@ -14,6 +14,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xFFFFF6EA),
       appBar: AppBar(
           title: Center(
         child: Text('Forgot Password'),
@@ -26,6 +27,22 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
+              Container(
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  height: 240,
+                  width: 240,
+                ),
+              ),
+              Container(
+                child: Text(
+                  "Forgot password",
+                  style: TextStyle(fontSize: 45, fontWeight: FontWeight.normal),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 controller: emailController,
