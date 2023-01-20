@@ -133,7 +133,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         ],
                       ),
                       Container(
-                        // margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                         decoration: BoxDecoration(
                           color: Colors.grey,
                           borderRadius: BorderRadius.circular(30),
@@ -142,7 +141,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           controller: _fullNameController,
                           decoration: InputDecoration(
                               border: InputBorder.none,
-                              // label: Text("Email"),
                               labelText: "Full Name",
                               prefixIcon: Icon(Icons.accessibility_outlined)),
                         ),
