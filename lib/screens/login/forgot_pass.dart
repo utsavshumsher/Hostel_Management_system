@@ -1,3 +1,5 @@
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/login/login_screen.dart';
 import 'package:sleepholic/screens/Register/register_screen.dart';
@@ -16,7 +18,27 @@ class _Forgot_PassState extends State<Forgot_Pass> {
 
   final emailController = TextEditingController();
 
-  resetPassword() {}
+  resetPassword() async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.blue,
+          content: Text(
+            "Reset Password has been sent to your email",
+            style: TextStyle(fontSize: 20),
+          )));
+    } on FirebaseAuthException catch (e) {
+      if (e.code == "user-not-found") {
+        print("No User Found for this E-mail");
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(
+              "No User Found for this email",
+              style: TextStyle(fontSize: 20),
+            )));
+      }
+    }
+  }
 
   @override
   void dispose() {
