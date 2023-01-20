@@ -29,16 +29,16 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                   children: [
                     Container(
                       child: Image.asset(
-                        "assets/images/logo.png",
-                        height: 260,
-                        width: 200,
+                        "assets/images/MAKE YOURSELF ATA HOME.jpg",
+                        height: 310,
+                        width: 170,
                       ),
                     ),
                     Container(
                       child: Text(
                         "Forgot \n password ",
                         style: TextStyle(
-                            fontSize: 35, fontWeight: FontWeight.normal),
+                            fontSize: 30, fontWeight: FontWeight.normal),
                       ),
                     ),
                   ],
@@ -68,7 +68,7 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     if (value == null ||
                         value.isEmpty ||
                         !regex.hasMatch(value))
-                      return 'Enter a valid email address';
+                      return 'Enter valid email address';
                     else
                       return null;
                     //return null;
