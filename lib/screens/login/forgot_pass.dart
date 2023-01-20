@@ -13,14 +13,9 @@ class _Forgot_PassState extends State<Forgot_Pass> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(title: Text("Reset Password")),
       backgroundColor: Color(0xFFFFF6EA),
       body: Container(
-        decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(255, 123, 82, 234),
-            Color.fromARGB(172, 7, 56, 58)
-          ], begin: Alignment.topRight, end: Alignment.bottomLeft),
-        ),
         child: Padding(
           padding: const EdgeInsets.all(18.0),
           child: Column(children: [
@@ -32,12 +27,12 @@ class _Forgot_PassState extends State<Forgot_Pass> {
                   style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 27,
-                      color: Colors.white),
+                      color: Color.fromARGB(255, 3, 33, 49)),
                 ),
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 30,
             ),
             TextFormField(
               decoration: InputDecoration(
