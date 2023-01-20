@@ -10,6 +10,18 @@ class Forgot_Pass extends StatefulWidget {
 }
 
 class _Forgot_PassState extends State<Forgot_Pass> {
+  final _formkey = GlobalKey<FormState>();
+
+  var email = "";
+
+  final emailController = TextEditingController();
+
+  @override
+  void dispose() {
+    emailController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -21,7 +33,7 @@ class _Forgot_PassState extends State<Forgot_Pass> {
           child: Column(children: [
             Container(
               child: Form(
-                // key: _formkey,
+                key: _formkey,
                 child: Text(
                   "Reset  Link  will  be  sent  to  your  email  id!",
                   style: TextStyle(
@@ -51,7 +63,7 @@ class _Forgot_PassState extends State<Forgot_Pass> {
               },
             ),
             SizedBox(
-              height: 10,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.only(left: 90),
@@ -60,7 +72,7 @@ class _Forgot_PassState extends State<Forgot_Pass> {
                   ElevatedButton(
                     style: ElevatedButton.styleFrom(
                         padding: EdgeInsets.all(10),
-                        // minimumSize: Size(140, 45),
+                        minimumSize: Size(140, 45),
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(7))),
                     onPressed: () {
