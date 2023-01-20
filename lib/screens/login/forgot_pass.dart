@@ -16,6 +16,8 @@ class _Forgot_PassState extends State<Forgot_Pass> {
 
   final emailController = TextEditingController();
 
+  resetPassword() {}
+
   @override
   void dispose() {
     emailController.dispose();
@@ -52,7 +54,7 @@ class _Forgot_PassState extends State<Forgot_Pass> {
                   hintText: "Email",
                   enabledBorder: OutlineInputBorder(),
                   focusedBorder: OutlineInputBorder()),
-              // controller: emailController,
+              controller: emailController,
               validator: (value) {
                 if (value!.isEmpty) {
                   return "Please enter E-mail";
@@ -76,13 +78,12 @@ class _Forgot_PassState extends State<Forgot_Pass> {
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(7))),
                     onPressed: () {
-                      // if (_formkey.currentState!.validate()) {
-                      //   setState(() {
-                      //     email = emailController.text;
-                      //   }
-                      //   );
-                      //   resetPassword();
-                      // }
+                      if (_formkey.currentState!.validate()) {
+                        setState(() {
+                          email = emailController.text;
+                        });
+                        resetPassword();
+                      }
                     },
                     child: Text(
                       "Send Email",
