@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sleepholic/about/aboutusScreens.dart';
 import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/screens/Register/register_screen.dart';
+import 'package:sleepholic/screens/login/forgot_pass.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -186,7 +187,12 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => Forgot_Pass()));
+                            },
                             child: const Text(
                               'Forgot Password?',
                               style: TextStyle(
