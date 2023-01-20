@@ -95,7 +95,7 @@ class _Forgot_PassState extends State<Forgot_Pass> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 19,
-                          color: Colors.white),
+                          color: Color.fromARGB(255, 10, 40, 129)),
                     ),
                   ),
                 ],
@@ -119,7 +119,7 @@ class _Forgot_PassState extends State<Forgot_Pass> {
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 16,
-                          color: Colors.white),
+                          color: Color.fromARGB(255, 10, 40, 129)),
                     ),
                   ),
                   Text(
@@ -127,7 +127,7 @@ class _Forgot_PassState extends State<Forgot_Pass> {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 19,
-                        color: Colors.white),
+                        color: Color.fromARGB(255, 10, 40, 129)),
                   ),
                 ],
               ),
