@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/about/aboutusScreens.dart';
 import 'package:sleepholic/dashboard.dart';
+import 'package:sleepholic/homepage/homepage.dart';
 import 'package:sleepholic/screens/Register/register_screen.dart';
 import 'package:sleepholic/screens/login/forgot_pass.dart';
 
@@ -30,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
           .signInWithEmailAndPassword(email: email, password: password);
       print(userCredential);
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Dashboard()));
+          context, MaterialPageRoute(builder: (context) => Homepage()));
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
           backgroundColor: Colors.blue,
           content: Text(
@@ -232,7 +233,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               InkWell(
                 splashColor: Colors.blue,
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RegisterScreen()));
+                },
                 child: RichText(
                   text: TextSpan(
                     text: "Dont have account? ",

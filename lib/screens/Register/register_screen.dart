@@ -307,29 +307,36 @@ class _RegisterScreenState extends State<RegisterScreen> {
               SizedBox(
                 height: 10,
               ),
-              RichText(
-                text: TextSpan(
-                  text: "Already Have an Account? ",
-                  style: const TextStyle(
-                    color: Color.fromRGBO(93, 108, 137, 1.0),
-                    fontSize: 16,
+              InkWell(
+                splashColor: Colors.blue,
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: "Already Have an Account? ",
+                    style: const TextStyle(
+                      color: Color.fromRGBO(93, 108, 137, 1.0),
+                      fontSize: 16,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "Login",
+                        style: const TextStyle(
+                          color: Color.fromRGBO(21, 34, 56, 1.0),
+                          fontSize: 18,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen()));
+                          },
+                      )
+                    ],
                   ),
-                  children: [
-                    TextSpan(
-                      text: "Login",
-                      style: const TextStyle(
-                        color: Color.fromRGBO(21, 34, 56, 1.0),
-                        fontSize: 18,
-                      ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
-                        },
-                    )
-                  ],
                 ),
               ),
             ],
