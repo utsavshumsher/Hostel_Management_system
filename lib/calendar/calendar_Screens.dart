@@ -125,6 +125,21 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      backgroundColor: Color(0xFFFFF6EA),
+      appBar: AppBar(
+        elevation: 10,
+        centerTitle: true,
+        title: const Text(
+          ' Calendar ',
+          style: TextStyle(color: Colors.redAccent),
+        ),
+        backgroundColor: Color(0xFFFFF6EA),
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => _showAddEventDialog(),
+        label: const Text('Add Event'),
+      ),
+    );
   }
 }
