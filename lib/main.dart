@@ -11,6 +11,8 @@ import 'package:sleepholic/Laundry/laundry.dart';
 import 'package:sleepholic/OTP/ChangePassword.dart';
 import 'package:sleepholic/Payments/payment.dart';
 import 'package:sleepholic/Profile/profile.dart';
+import 'package:sleepholic/Rooms/room_main.dart';
+import 'package:sleepholic/about/aboutusScreens.dart';
 import 'package:sleepholic/calendar/calendar_Screens.dart';
 import 'package:sleepholic/complains.dart';
 import 'package:sleepholic/dashboard.dart';
@@ -42,7 +44,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.alike().fontFamily,
       ),
-      home: ForgotPasswordScreen(),
+      home: complain(),
     );
   }
 }
