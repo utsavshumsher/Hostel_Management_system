@@ -9,7 +9,7 @@ class complain extends StatefulWidget {
 
 class _complainState extends State<complain> {
   var count = 0;
-
+ final formKey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -125,10 +125,24 @@ class _complainState extends State<complain> {
                                               child: Column(
                                                 children: [
                                                   Container(
-                                                    child: TextFormField(
+                                                    child: Form(
+                                                      key: formKey,
+                                                      child: TextFormField(
+                                                        validator: (value) {
+                                                        if (value == null || value.isEmpty) {
+                                                          return 'Please enter some text';
+                                                        }else{
+                                                          Navigator.pop(context);
+                                                          setState(() {
+                                                            count++;
+                                                          });
+                                                        }
+                                                        return null;
+                                                      },
                                                       decoration: InputDecoration(
-                                                          labelText:
-                                                              "Write your complains here"),
+                                                            labelText:
+                                                                "Write your complains here"),
+                                                      ),
                                                     ),
                                                   ),
                                                   SizedBox(
@@ -136,6 +150,20 @@ class _complainState extends State<complain> {
                                                   ),
                                                   Container(
                                                     child: ElevatedButton(
+                                                      onPressed: () {
+                                                    // Validate returns true if the form is valid, or false otherwise.
+                                                    if (formKey.currentState!.validate()) {
+                                                      // If the form is valid, display a snackbar. In the real world,
+                                                      // you'd often call a server or save the information in a database.
+                                                      ScaffoldMessenger.of(context).showSnackBar(
+                                                      
+                                                        const SnackBar(content: Text('Processing Data')),
+                                                      );
+                                                    }
+                                                    // else{
+                                                    //   Navigator.pop(context);
+                                                    // }
+                                                    },
                                                       style: ElevatedButton.styleFrom(
                                                               backgroundColor:
                                                                   Color.fromRGBO(
@@ -148,13 +176,7 @@ class _complainState extends State<complain> {
                                                                       .all(5),
                                                               minimumSize: Size(
                                                                   200, 30)),
-                                                      onPressed: () {
-                                                        setState(() {
-                                                          count++;
-                                                        });
-                                                        Navigator.of(context)
-                                                            .pop();
-                                                      },
+                                                      
                                                       child: Text(
                                                         "Submit",
                                                         style: TextStyle(
