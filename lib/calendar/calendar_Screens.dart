@@ -66,59 +66,7 @@ class _EventCalendarScreenState extends State<EventCalendarScreen> {
             ),
           ],
         ),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(context),
-            child: const Text('Cancel'),
-          ),
-          TextButton(
-            child: const Text('Add Event'),
-            onPressed: () {
-              if (titleController.text.isEmpty &&
-                  descpController.text.isEmpty) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  const SnackBar(
-                    content: Text('Required title and description'),
-                    duration: Duration(seconds: 2),
-                  ),
-                );
-                //Navigator.pop(context);
-                return;
-              } else {
-                print(titleController.text);
-                print(descpController.text);
-
-                setState(() {
-                  if (mySelectedEvents[
-                          DateFormat('yyyy-MM-dd').format(_selectedDate!)] !=
-                      null) {
-                    mySelectedEvents[
-                            DateFormat('yyyy-MM-dd').format(_selectedDate!)]
-                        ?.add({
-                      "eventTitle": titleController.text,
-                      "eventDescp": descpController.text,
-                    });
-                  } else {
-                    mySelectedEvents[
-                        DateFormat('yyyy-MM-dd').format(_selectedDate!)] = [
-                      {
-                        "eventTitle": titleController.text,
-                        "eventDescp": descpController.text,
-                      }
-                    ];
-                  }
-                });
-
-                print(
-                    "New Event for backend developer ${json.encode(mySelectedEvents)}");
-                titleController.clear();
-                descpController.clear();
-                Navigator.pop(context);
-                return;
-              }
-            },
-          )
-        ],
+        actions: [],
       ),
     );
   }
