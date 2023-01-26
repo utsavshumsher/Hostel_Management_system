@@ -1,8 +1,12 @@
 // ignore_for_file: unused_local_variable
 
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/screens/login/login_screen.dart';
 
 import 'package:sleepholic/toast/toast.dart';
@@ -83,6 +87,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
   String radioClickedValue = "";
   bool? checkBoxValue1 = false;
   bool? checkBoxValue2 = false;
+
+  // ignore: unused_elementa
+  _handleGoogleBtnClick() {
+    _signInWithGoogle().then((user) {
+      log('\nUser: ${user.user} ');
+      log('\nUserAdditionalInfo: ${user.additionalUserInfo} ');
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Dashboard()));
+    });
+  }
+
+  Future<UserCredential> _signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -286,7 +318,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18))),
                 onPressed: () {
-                  // _handleGoogleBtnClick();
+                  _handleGoogleBtnClick();
                 },
                 child: Container(
                   height: 40,
