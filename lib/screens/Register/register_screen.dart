@@ -124,33 +124,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                           TextButton(
                             onPressed: () {},
                             child: const Text(
-                              'Full Name',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(143, 142, 142, 1.0),
-                                  fontSize: 17),
-                            ),
-                          )
-                        ],
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: TextFormField(
-                          controller: _fullNameController,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              labelText: "Full Name",
-                              prefixIcon: Icon(Icons.accessibility_outlined)),
-                        ),
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text(
                               'Email',
                               style: TextStyle(
                                   color: Color.fromRGBO(143, 142, 142, 1.0),
@@ -304,6 +277,37 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         )),
                     child: Text("Sign Up"),
                   )),
+              SizedBox(
+                height: 10,
+              ),
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 74, 188, 213),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18))),
+                onPressed: () {
+                  // _handleGoogleBtnClick();
+                },
+                child: Container(
+                  height: 40,
+                  width: 250,
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(12)),
+                  child: Row(
+                    children: [
+                      Image.network(
+                          "https://play-lh.googleusercontent.com/RZ5luCUwc5QtJP9xDn-ZCwEutT160GVyoh5K1eu4YJ5fD7v4LP5ptVdgR9mz4Hnr7A"),
+                      SizedBox(
+                        width: 18,
+                      ),
+                      Text(
+                        "Continue with Google",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
+                  ),
+                ),
+              ),
               SizedBox(
                 height: 10,
               ),
