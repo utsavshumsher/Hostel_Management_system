@@ -1,5 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:sleepholic/ChangePassword/change_password.dart';
+import 'package:sleepholic/Settings/settings.dart';
+import 'package:sleepholic/complains.dart';
 
 import '../screens/login/login_screen.dart';
 
@@ -165,7 +168,7 @@ class _ProfileState extends State<Profile> {
                   child: Row(
                     children: [
                       Icon(
-                        Icons.settings,
+                        Icons.key,
                         color: Color.fromRGBO(105, 101, 101, 1.0),
                         size: 30,
                       ),
@@ -175,9 +178,12 @@ class _ProfileState extends State<Profile> {
                       Material(
                         child: InkWell(
                           splashColor: Color.fromARGB(255, 40, 124, 165),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Changepassword()));
+                          },
                           child: Text(
-                            "Settings",
+                            "Change Password",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 21,
@@ -213,7 +219,11 @@ class _ProfileState extends State<Profile> {
                       Material(
                         child: InkWell(
                           splashColor: Color.fromARGB(255, 20, 146, 171),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => complain()));
+
+                          },
                           child: Text(
                             "Complaints",
                             style: TextStyle(
