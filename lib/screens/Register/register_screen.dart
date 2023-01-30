@@ -29,7 +29,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   var confirmpassword = "";
 
   final emailController = TextEditingController();
-  final _fullNameController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
