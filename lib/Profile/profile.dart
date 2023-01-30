@@ -165,7 +165,7 @@ class _ProfileState extends State<Profile> {
                   child: Row(
                     children: [
                       Icon(
-                        Icons.settings,
+                        Icons.password_outlined,
                         color: Color.fromRGBO(105, 101, 101, 1.0),
                         size: 30,
                       ),
@@ -177,7 +177,7 @@ class _ProfileState extends State<Profile> {
                           splashColor: Color.fromARGB(255, 40, 124, 165),
                           onTap: () {},
                           child: Text(
-                            "Settings",
+                            "Change Password",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 21,
