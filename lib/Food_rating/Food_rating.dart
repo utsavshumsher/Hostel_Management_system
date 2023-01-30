@@ -33,14 +33,14 @@ class _FoodRatingState extends State<FoodRating>{
             onRatingUpdate: (newValue) =>
           setState(() {
              ratingValue = newValue;
-             Container(
-              child: (
-              Image.asset("assets/images/Rating.jpg",fit: BoxFit.cover,
-                height: 250,
-                width: 250,
-              )
-              ),
-             );
+            // Container(
+             // child: (
+             // Image.asset("assets/images/Rating.jpg",fit: BoxFit.cover,
+              //  height: 250,
+              //  width: 250,
+             // )
+            //  ),
+            // );
           }),
         //  glowColor: Color(0xffffcb00),
 
