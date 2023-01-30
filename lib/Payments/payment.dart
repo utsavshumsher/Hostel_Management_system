@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:sleepholic/homepage/homepage.dart';
 
 class payment extends StatefulWidget {
   const payment({Key? key}) : super(key: key);
@@ -172,7 +173,9 @@ class _paymentState extends State<payment> {
               top: 70,
               left: 20,
               child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()));
+                  },
                   child: Icon(
                       Icons.arrow_back
                   )),
