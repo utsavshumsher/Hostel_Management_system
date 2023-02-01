@@ -1,18 +1,20 @@
-import 'dart:developer';
+
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
-import 'package:sleepholic/Profile/profile.dart';
+import 'package:khalti/khalti.dart';
 import 'package:sleepholic/homepage/homepage.dart';
-import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
 
-import 'ChangePassword/change_password.dart';
 
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+   await Khalti.init(
+     publicKey: "",
+     enabledDebugging: false
+   );
   runApp(MyApp());
 }
 
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.alike().fontFamily,
       ),
-      home: Homepage(),
+      home: khalti(),
     );
   }
 }

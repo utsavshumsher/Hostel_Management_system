@@ -65,7 +65,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   firebase_core: ^2.4.0
   firebase_auth: ^4.2.1
-
+  khalti: ^1.0.2
   google_sign_in: ^5.4.3
   firebase_database: ^10.0.7
   cloud_firestore: ^4.2.0

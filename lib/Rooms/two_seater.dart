@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sleepholic/Rooms/three_seater.dart';
-
-import '../Payments/Userpayment.dart';
-
+import '../Payments/payments.dart';
 
 class TwoSeater extends StatefulWidget {
   const TwoSeater({Key? key}) : super(key: key);
