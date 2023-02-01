@@ -50,10 +50,7 @@ class _changePasswordState extends State<changePassword> {
       ),
       body: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-            Color.fromARGB(255, 123, 82, 234),
-            Color.fromARGB(172, 7, 56, 58)
-          ], begin: Alignment.topRight, end: Alignment.bottomLeft),
+          color: Color.fromARGB(255, 131, 147, 179),
         ),
         child: Padding(
           padding: const EdgeInsets.all(38.0),
