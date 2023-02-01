@@ -126,7 +126,7 @@ class _ProfileState extends State<Profile> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 490),
+                padding: const EdgeInsets.only(top: 460),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -182,6 +182,30 @@ class _ProfileState extends State<Profile> {
               ),
               SizedBox(
                 height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Row(
+                  children: [
+                    Text(
+                      "Created:-  ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      "$creationTime",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 12,
               ),
               Padding(
                 padding: const EdgeInsets.only(left: 2),
