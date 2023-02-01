@@ -1,8 +1,12 @@
 // ignore_for_file: unused_local_variable
 
+import 'dart:developer';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/screens/login/login_screen.dart';
 
 import 'package:sleepholic/toast/toast.dart';
@@ -25,7 +29,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
   var confirmpassword = "";
 
   final emailController = TextEditingController();
-  final _fullNameController = TextEditingController();
   final passwordController = TextEditingController();
   final confirmPasswordController = TextEditingController();
 
@@ -84,6 +87,34 @@ class _RegisterScreenState extends State<RegisterScreen> {
   bool? checkBoxValue1 = false;
   bool? checkBoxValue2 = false;
 
+  // ignore: unused_elementa
+  _handleGoogleBtnClick() {
+    _signInWithGoogle().then((user) {
+      log('\nUser: ${user.user} ');
+      log('\nUserAdditionalInfo: ${user.additionalUserInfo} ');
+      Navigator.push(
+          context, MaterialPageRoute(builder: (context) => Dashboard()));
+    });
+  }
+
+  Future<UserCredential> _signInWithGoogle() async {
+    // Trigger the authentication flow
+    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+
+    // Obtain the auth details from the request
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
+
+    // Create a new credential
+    final credential = GoogleAuthProvider.credential(
+      accessToken: googleAuth?.accessToken,
+      idToken: googleAuth?.idToken,
+    );
+
+    // Once signed in, return the UserCredential
+    return await FirebaseAuth.instance.signInWithCredential(credential);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -118,33 +149,6 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   margin: EdgeInsets.all(30),
                   child: Column(
                     children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        children: [
-                          TextButton(
-                            onPressed: () {},
-                            child: const Text(
-                              'Full Name',
-                              style: TextStyle(
-                                  color: Color.fromRGBO(143, 142, 142, 1.0),
-                                  fontSize: 17),
-                            ),
-                          )
-                        ],
-                      ),
-                      Container(
-                        decoration: BoxDecoration(
-                          color: Colors.grey,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: TextFormField(
-                          controller: _fullNameController,
-                          decoration: InputDecoration(
-                              border: InputBorder.none,
-                              labelText: "Full Name",
-                              prefixIcon: Icon(Icons.accessibility_outlined)),
-                        ),
-                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
@@ -307,29 +311,67 @@ class _RegisterScreenState extends State<RegisterScreen> {
               SizedBox(
                 height: 10,
               ),
-              RichText(
-                text: TextSpan(
-                  text: "Already Have an Account? ",
-                  style: const TextStyle(
-                    color: Color.fromRGBO(93, 108, 137, 1.0),
-                    fontSize: 16,
-                  ),
-                  children: [
-                    TextSpan(
-                      text: "Login",
-                      style: const TextStyle(
-                        color: Color.fromRGBO(21, 34, 56, 1.0),
-                        fontSize: 18,
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    backgroundColor: Color.fromARGB(255, 74, 188, 213),
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18))),
+                onPressed: () {
+                  _handleGoogleBtnClick();
+                },
+                child: Container(
+                  height: 40,
+                  width: 250,
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(12)),
+                  child: Row(
+                    children: [
+                      Image.network(
+                          "https://play-lh.googleusercontent.com/RZ5luCUwc5QtJP9xDn-ZCwEutT160GVyoh5K1eu4YJ5fD7v4LP5ptVdgR9mz4Hnr7A"),
+                      SizedBox(
+                        width: 18,
                       ),
-                      recognizer: TapGestureRecognizer()
-                        ..onTap = () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => LoginScreen()));
-                        },
-                    )
-                  ],
+                      Text(
+                        "Continue with Google",
+                        style: TextStyle(fontSize: 18),
+                      )
+                    ],
+                  ),
+                ),
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              InkWell(
+                splashColor: Colors.blue,
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginScreen()));
+                },
+                child: RichText(
+                  text: TextSpan(
+                    text: "Already Have an Account? ",
+                    style: const TextStyle(
+                      color: Color.fromRGBO(93, 108, 137, 1.0),
+                      fontSize: 16,
+                    ),
+                    children: [
+                      TextSpan(
+                        text: "Login",
+                        style: const TextStyle(
+                          color: Color.fromRGBO(21, 34, 56, 1.0),
+                          fontSize: 18,
+                        ),
+                        recognizer: TapGestureRecognizer()
+                          ..onTap = () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => LoginScreen()));
+                          },
+                      )
+                    ],
+                  ),
                 ),
               ),
             ],

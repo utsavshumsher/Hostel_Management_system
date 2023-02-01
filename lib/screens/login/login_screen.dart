@@ -5,7 +5,7 @@ import 'package:sleepholic/about/aboutusScreens.dart';
 import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/homepage/homepage.dart';
 import 'package:sleepholic/screens/Register/register_screen.dart';
-import 'package:sleepholic/screens/login/forgot_pass.dart';
+import 'package:sleepholic/screens/forgot_pass.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -233,7 +233,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               InkWell(
                 splashColor: Colors.blue,
-                onTap: () {},
+                onTap: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => RegisterScreen()));
+                },
                 child: RichText(
                   text: TextSpan(
                     text: "Dont have account? ",

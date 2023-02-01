@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:sleepholic/ChangePassword/change_password.dart';
 import 'package:sleepholic/Settings/settings.dart';
 import 'package:sleepholic/complains.dart';
+import 'package:sleepholic/screens/login/changePassword.dart';
+
 
 import '../screens/login/login_screen.dart';
 
@@ -14,6 +16,23 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+  final uid = FirebaseAuth.instance.currentUser!.uid;
+  final email = FirebaseAuth.instance.currentUser!.email;
+  final creationTime = FirebaseAuth.instance.currentUser!.metadata.creationTime;
+
+  User? user = FirebaseAuth.instance.currentUser;
+  verifyEmail() async {
+    if (user != null && user!.emailVerified) {
+      await user!.sendEmailVerification();
+      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+          backgroundColor: Colors.deepOrange,
+          content: Text(
+            "Varification Email has been sent",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          )));
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,6 +188,7 @@ class _ProfileState extends State<Profile> {
                     children: [
                       Icon(
                         Icons.key,
+                        Icons.password_outlined,
                         color: Color.fromRGBO(105, 101, 101, 1.0),
                         size: 30,
                       ),
@@ -181,6 +201,10 @@ class _ProfileState extends State<Profile> {
                           onTap: () {
                             Navigator.push(context,
                                 MaterialPageRoute(builder: (context) => Changepassword()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => changePassword()));
                           },
                           child: Text(
                             "Change Password",
@@ -242,7 +266,7 @@ class _ProfileState extends State<Profile> {
           ),
         ),
         Container(
-          height: 360,
+          height: 370,
           width: 450,
           decoration: BoxDecoration(
               color: Color.fromRGBO(93, 108, 137, 1.0),
@@ -338,27 +362,45 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
               SizedBox(
-                height: 9,
+                height: 10,
+              ),
+              Text(
+                "User Id:- $uid",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              SizedBox(
+                height: 4,
               ),
               Container(
                 padding: EdgeInsets.only(left: 15),
                 child: Text(
-                  "Roshan@gmail.com",
+                  "Email:-  $email",
                   style: TextStyle(
                       color: Color.fromARGB(255, 1, 3, 29),
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 ),
               ),
-              TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Verify Email",
-                    style: TextStyle(
-                        fontSize: 19,
-                        color: Color.fromARGB(255, 1, 3, 29),
-                        fontWeight: FontWeight.bold),
-                  ))
+              user != null && user!.emailVerified
+                  ? Text(
+                      "Account Verified",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    )
+                  : TextButton(
+                      onPressed: (() => {verifyEmail()}),
+                      child: Text(
+                        "Verify Email",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      )),
             ],
           ),
         ),
