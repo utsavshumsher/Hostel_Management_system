@@ -1,11 +1,12 @@
+
+import 'dart:js';
+
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:sleepholic/ChangePassword/change_password.dart';
 import 'package:sleepholic/Settings/settings.dart';
 import 'package:sleepholic/complains.dart';
-import 'package:sleepholic/screens/login/changePassword.dart';
-
-
 import '../screens/login/login_screen.dart';
 
 class Profile extends StatefulWidget {
@@ -16,6 +17,7 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+
   final uid = FirebaseAuth.instance.currentUser!.uid;
   final email = FirebaseAuth.instance.currentUser!.email;
   final creationTime = FirebaseAuth.instance.currentUser!.metadata.creationTime;
@@ -32,6 +34,7 @@ class _ProfileState extends State<Profile> {
           )));
     }
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -220,48 +223,6 @@ class _ProfileState extends State<Profile> {
                   ),
                 ),
               ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 2,
-                  right: 2,
-                ),
-                child: Container(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Row(
-                    children: [
-                      Icon(
-                        color: Color.fromRGBO(105, 101, 101, 1.0),
-                        Icons.comment,
-                        size: 30,
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      Material(
-                        child: InkWell(
-                          splashColor: Color.fromARGB(255, 20, 146, 171),
-                          onTap: () {
-                            Navigator.push(context,
-                                MaterialPageRoute(builder: (context) => complain()));
-
-                          },
-                          child: Text(
-                            "Complaints",
-                            style: TextStyle(
-                              color: Color.fromRGBO(105, 101, 101, 1.0),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 21,
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
             ],
           ),
         ),
@@ -326,17 +287,54 @@ class _ProfileState extends State<Profile> {
               SizedBox(
                 height: 25,
               ),
-              Positioned(
-                top: 200,
-                left: 150,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(22),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/nice.jpg"),
-                    radius: 40,
+
+              Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Center(
+                      child: Container(
+                        height: 130,
+                        width: 130,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                                color: Colors.black26
+                            )
+                        ),
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              // child: _imageFile == null
+                              //     ? null   // added this line
+                              // // AssetImage("assets/images/profile.png") commented out
+                              //     : FileImage(File(_imageFile!.path)),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: ((builder) => bottomsheet()
+                          )
+                      );
+                    },
+                    child: CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Color.fromRGBO(255, 246, 234, 1.0),
+                      child: Icon(Icons.add, size: 18, color: Colors.black,),
+                    ),
+                  )
+                ],
               ),
+
+
               Container(
                 padding: EdgeInsets.only(right: 90),
                 child: Text(
@@ -401,6 +399,7 @@ class _ProfileState extends State<Profile> {
                           fontSize: 20,
                         ),
                       )),
+
             ],
           ),
         ),

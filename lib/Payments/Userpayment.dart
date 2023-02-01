@@ -10,18 +10,73 @@ class payment extends StatefulWidget {
 }
 
 class _paymentState extends State<payment> {
+  String referenceId = "";
+
   @override
   Widget build(BuildContext context) {
     String ? paying;
     return Scaffold(
       body: Stack(
           children: [
+      Column(
+      children: [
+      SizedBox(
+      height: 20,
+      ),
+      const Text(
+        "Payment Methods",
+        style: TextStyle(
+          fontSize: 28,
+          color: Color.fromARGB(255, 92, 15, 163),
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+      SizedBox(
+        height: 20,
+      ),
+      Divider(
+        color: Color.fromARGB(255, 92, 15, 163),
+        height: 20,
+        thickness: 1,
+      ),
+      SizedBox(
+        height: 20,
+      ),
+      //Image for Khalti
+      InkWell(
+        splashColor: Colors.grey,
+        onTap: () {
+          print("Image Tapped");
+        }, // Image tapped
+        child: Image.asset(
+          'assets/Images/khalti.png',
+          width: 180,
+        ),
+      ),
+      SizedBox(
+        height: 40,
+      ),
+      //Cash on Delivery
+      InkWell(
+          splashColor: Colors.grey,
+          onTap: () {
+            AlertDialog(
+              title: const Text("Cash on Delivery"),
+              content: const Text("Payment successful"),
+              actions: [
+                TextButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text("OK"))
+              ],
+            );
             Container(
               color: Color.fromARGB(255, 206, 216, 209),
               child: Align(
                 alignment: Alignment.bottomLeft,
               ),
-            ),
+            );
             Container(
               height: 760,
               width: 600,
@@ -58,7 +113,7 @@ class _paymentState extends State<payment> {
                   ),
                 ],
               ),
-            ),
+            );
             Positioned(
               top: 450,
               right: 5,
@@ -101,14 +156,19 @@ class _paymentState extends State<payment> {
                                         context: context,
                                         title: "Payment Successful",
                                         desc: "Thankyou for choosing us.",
-                                        image: Image.asset("assets/images/success.png"),
+                                        image: Image.asset(
+                                            "assets/images/success.png"),
                                         buttons: [
                                           DialogButton(
                                             child: Text(
                                               "Done",
-                                              style: TextStyle(color: Colors.white, fontSize: 20),
+                                              style: TextStyle(
+                                                  color: Colors.white,
+                                                  fontSize: 20),
                                             ),
-                                            onPressed: () { print("Done");},
+                                            onPressed: () {
+                                              print("Done");
+                                            },
                                             color: Color.fromRGBO(
                                                 93, 108, 137, 1.0),
                                             radius: BorderRadius.circular(18.0),
@@ -116,15 +176,15 @@ class _paymentState extends State<payment> {
                                         ],
                                       ).show();
                                     },
-                                        child: Text(
-                                          'Yes',
-                                          style: TextStyle(
-                                            fontSize: 20,
-                                            color: Color.fromRGBO(
-                                                21, 34, 56, 1.0),
-                                            fontWeight: FontWeight.normal,
-                                          ),
+                                      child: Text(
+                                        'Yes',
+                                        style: TextStyle(
+                                          fontSize: 20,
+                                          color: Color.fromRGBO(
+                                              21, 34, 56, 1.0),
+                                          fontWeight: FontWeight.normal,
                                         ),
+                                      ),
                                     ),
                                   ),
                                   TextButton(onPressed: () {
@@ -157,7 +217,7 @@ class _paymentState extends State<payment> {
                   ),
                 ),
               ),
-            ),
+            );
             Container(
               height: 360,
               width: 450,
@@ -168,18 +228,19 @@ class _paymentState extends State<payment> {
                     bottomRight: Radius.circular(80),
                   )
               ),
-            ),
+            );
             Positioned(
               top: 70,
               left: 20,
               child: InkWell(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => Homepage()));
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => Homepage()));
                   },
                   child: Icon(
                       Icons.arrow_back
                   )),
-            ),
+            );
             Positioned(
               top: 130,
               left: 170,
@@ -191,7 +252,7 @@ class _paymentState extends State<payment> {
                   radius: 40,
                 ),
               ),
-            ),
+            );
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: 50,
@@ -207,7 +268,7 @@ class _paymentState extends State<payment> {
                   ),
                 ),
               ),
-            ),
+            );
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: 70,
@@ -223,7 +284,7 @@ class _paymentState extends State<payment> {
                   ),
                 ),
               ),
-            ),
+            );
             Padding(
               padding: const EdgeInsets.symmetric(
                   horizontal: 40,
@@ -237,7 +298,7 @@ class _paymentState extends State<payment> {
                     fontSize: 20,
                   ),),
               ),
-            ),
+            );
             Positioned(
               top: 570,
               right: 200,
@@ -251,9 +312,13 @@ class _paymentState extends State<payment> {
                   ),
                 ),
               ),
-            ),
-          ]
+            );
+          }
+      )
+      ]
       ),
+    ]
+    )
     );
   }
 }

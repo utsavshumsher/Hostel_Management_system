@@ -4,6 +4,7 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/Profile/profile.dart';
+import 'package:sleepholic/homepage/homepage.dart';
 import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
 
 import 'ChangePassword/change_password.dart';

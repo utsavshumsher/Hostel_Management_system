@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sleepholic/Rooms/three_seater.dart';
 
-import '../Payments/payment.dart';
+import '../Payments/Userpayment.dart';
 
 
 class ThreeSeater extends StatefulWidget {
