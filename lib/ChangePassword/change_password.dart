@@ -11,7 +11,6 @@ import 'package:sleepholic/screens/login/login_screen.dart';
 import 'package:sleepholic/toast/toast.dart';
 
 class Changepassword extends StatefulWidget {
-  static String route = "RegisterScreen";
   const Changepassword ({Key? key}) : super(key: key);
 
   @override
@@ -145,7 +144,7 @@ class _ChangepasswordState extends State<Changepassword> {
                           controller: currentController,
                           validator: ((value) {
                             if (value == null || value.isEmpty) {
-                              return "    Please Enter Password";
+                              return "Please Enter Password";
                             }
                             return null;
                           }),
