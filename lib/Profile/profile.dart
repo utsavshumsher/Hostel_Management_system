@@ -7,7 +7,9 @@ import 'package:image_picker/image_picker.dart';
 import 'package:sleepholic/ChangePassword/change_password.dart';
 import 'package:sleepholic/Settings/settings.dart';
 import 'package:sleepholic/complains.dart';
+import '../screens/login/changePassword.dart';
 import '../screens/login/login_screen.dart';
+import 'bottom_sheet.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -26,7 +28,7 @@ class _ProfileState extends State<Profile> {
   verifyEmail() async {
     if (user != null && user!.emailVerified) {
       await user!.sendEmailVerification();
-      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+      ScaffoldMessenger.of(context as BuildContext).showSnackBar(SnackBar(
           backgroundColor: Colors.deepOrange,
           content: Text(
             "Varification Email has been sent",
@@ -215,7 +217,6 @@ class _ProfileState extends State<Profile> {
                     children: [
                       Icon(
                         Icons.key,
-                        Icons.password_outlined,
                         color: Color.fromRGBO(105, 101, 101, 1.0),
                         size: 30,
                       ),
