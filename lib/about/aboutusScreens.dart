@@ -64,7 +64,6 @@ class _AboutUsPageState extends State<AboutUsPage> {
                         },
                       ),
                       items: [
-                        Image.asset("assets/images/img_4.png"),
                         Image.asset("assets/images/img.png"),
                         Image.asset("assets/images/img_1.png"),
                         Image.asset("assets/images/img_2.png"),
