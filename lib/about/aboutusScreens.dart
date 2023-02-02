@@ -124,6 +124,23 @@ class _AboutUsPageState extends State<AboutUsPage> {
                   ],
                 ),
               ),
+              SizedBox(height: 16),
+              Container(
+                width: double.infinity,
+                margin: EdgeInsets.symmetric(horizontal: 10),
+                padding: EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(12),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black12,
+                      offset: Offset(0, 8),
+                      blurRadius: 8,
+                    ),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
