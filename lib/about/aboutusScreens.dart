@@ -150,6 +150,24 @@ class _AboutUsPageState extends State<AboutUsPage> {
                           TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
                     ),
                     SizedBox(height: 16),
+                    Column(
+                      children: [
+                        _buildServiceTile(
+                            "Room Allocation",
+                            "All rooms are allocated based on availability and preference.",
+                            "assets/images/1.png"),
+                        SizedBox(height: 16),
+                        _buildServiceTile(
+                            "Fee Management",
+                            "Pay your fees online with secure transactions.",
+                            "assets/images/2.png"),
+                        SizedBox(height: 16),
+                        _buildServiceTile(
+                            "Maintenance",
+                            "Report any maintenance issues and track its status.",
+                            "assets/images/3.png"),
+                      ],
+                    ),
                   ],
                 ),
               ),
