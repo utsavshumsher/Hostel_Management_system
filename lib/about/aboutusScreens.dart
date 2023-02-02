@@ -140,6 +140,18 @@ class _AboutUsPageState extends State<AboutUsPage> {
                     ),
                   ],
                 ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 16),
+                    Text(
+                      "Services Provided",
+                      style:
+                          TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                    ),
+                    SizedBox(height: 16),
+                  ],
+                ),
               ),
             ],
           ),
