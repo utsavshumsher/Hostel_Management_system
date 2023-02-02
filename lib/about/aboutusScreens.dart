@@ -178,6 +178,18 @@ class _AboutUsPageState extends State<AboutUsPage> {
     );
   }
 
+  Widget _buildDot(BuildContext context, bool isActive) {
+    return Container(
+      width: 8,
+      height: 8,
+      margin: EdgeInsets.symmetric(horizontal: 4),
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: isActive ? Theme.of(context).primaryColor : Colors.grey,
+      ),
+    );
+  }
+
   Widget _buildServiceTile(String title, String description, String imagePath) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
