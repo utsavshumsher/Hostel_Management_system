@@ -177,4 +177,39 @@ class _AboutUsPageState extends State<AboutUsPage> {
       ),
     );
   }
+
+  Widget _buildServiceTile(String title, String description, String imagePath) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Container(
+          width: double.infinity,
+          margin: EdgeInsets.symmetric(horizontal: 10),
+          padding: EdgeInsets.all(16),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(12),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black12,
+                offset: Offset(0, 8),
+                blurRadius: 8,
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Image.asset(imagePath, width: 48, height: 48),
+              SizedBox(height: 16),
+              Text(title,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              SizedBox(height: 8),
+              Text(description),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
 }
