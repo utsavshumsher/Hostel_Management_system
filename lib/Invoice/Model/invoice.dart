@@ -1,4 +1,3 @@
-/*
 import 'package:sleepholic/Invoice/Model/supplier.dart';
 
 import 'customer.dart';
@@ -46,4 +45,3 @@ class InvoiceItem {
     required this.unitPrice,
   });
 }
-*/
