@@ -2,8 +2,8 @@ import 'package:sleepholic/Invoice/Model/supplier.dart';
 
 import 'customer.dart';
 
-/class Invoice {
-  final InvoiceInfo info;
+class Invoice {
+  final  InvoiceInfo info;
  final Supplier supplier;
   final Customer customer;
   final List<InvoiceItem> items;
