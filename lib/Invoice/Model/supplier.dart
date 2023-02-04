@@ -1,4 +1,3 @@
-/*
 class Supplier {
   final String name;
   final String address;
@@ -9,4 +8,4 @@ class Supplier {
     required this.address,
     required this.paymentInfo,
   });
-}*/
+}
