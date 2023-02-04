@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>302010913465-7t4lm0e36rbms3stckpjca4oj40lvmd9.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.302010913465-7t4lm0e36rbms3stckpjca4oj40lvmd9</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAzi_1N5hurdUnaNygwTDwtwO9l_euv9uU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>302010913465</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.sleepholic.sleepholic</string>
+	<key>PROJECT_ID</key>
+	<string>project-sem-3-a97c8</string>
+	<key>STORAGE_BUCKET</key>
+	<string>project-sem-3-a97c8.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:302010913465:ios:084e14fb7bedd4bc6c4168</string>
+</dict>
+</plist>

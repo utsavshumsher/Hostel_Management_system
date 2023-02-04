@@ -1,7 +1,12 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-
+import 'package:image_picker/image_picker.dart';
+import 'package:sleepholic/ChangePassword/change_password.dart';
+import 'package:sleepholic/Settings/settings.dart';
+import 'package:sleepholic/complains.dart';
+import '../screens/login/changePassword.dart';
 import '../screens/login/login_screen.dart';
+import 'bottom_sheet.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -11,6 +16,25 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
+
+  final uid = FirebaseAuth.instance.currentUser!.uid;
+  final email = FirebaseAuth.instance.currentUser!.email;
+  final creationTime = FirebaseAuth.instance.currentUser!.metadata.creationTime;
+
+  User? user = FirebaseAuth.instance.currentUser;
+  verifyEmail() async {
+    if (user != null && user!.emailVerified) {
+      await user!.sendEmailVerification();
+      ScaffoldMessenger.of(context as BuildContext).showSnackBar(SnackBar(
+          backgroundColor: Colors.deepOrange,
+          content: Text(
+            "Varification Email has been sent",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          )));
+    }
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,7 +125,7 @@ class _ProfileState extends State<Profile> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 490),
+                padding: const EdgeInsets.only(top: 460),
                 child: SingleChildScrollView(
                   scrollDirection: Axis.horizontal,
                   child: Row(
@@ -159,13 +183,37 @@ class _ProfileState extends State<Profile> {
                 height: 30,
               ),
               Padding(
+                padding: const EdgeInsets.only(left: 20.0),
+                child: Row(
+                  children: [
+                    Text(
+                      "Created:-  ",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                    Text(
+                      "$creationTime",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 20,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+              SizedBox(
+                height: 12,
+              ),
+              Padding(
                 padding: const EdgeInsets.only(left: 2),
                 child: Container(
                   padding: EdgeInsets.only(left: 10),
                   child: Row(
                     children: [
                       Icon(
-                        Icons.settings,
+                        Icons.key,
                         color: Color.fromRGBO(105, 101, 101, 1.0),
                         size: 30,
                       ),
@@ -175,51 +223,20 @@ class _ProfileState extends State<Profile> {
                       Material(
                         child: InkWell(
                           splashColor: Color.fromARGB(255, 40, 124, 165),
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.push(context,
+                                MaterialPageRoute(builder: (context) => Changepassword()));
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => changePassword()));
+                          },
                           child: Text(
-                            "Settings",
+                            "Change Password",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 21,
                               color: Color.fromRGBO(105, 101, 101, 1.0),
-                            ),
-                          ),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Padding(
-                padding: const EdgeInsets.only(
-                  left: 2,
-                  right: 2,
-                ),
-                child: Container(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Row(
-                    children: [
-                      Icon(
-                        color: Color.fromRGBO(105, 101, 101, 1.0),
-                        Icons.comment,
-                        size: 30,
-                      ),
-                      SizedBox(
-                        width: 12,
-                      ),
-                      Material(
-                        child: InkWell(
-                          splashColor: Color.fromARGB(255, 20, 146, 171),
-                          onTap: () {},
-                          child: Text(
-                            "Complaints",
-                            style: TextStyle(
-                              color: Color.fromRGBO(105, 101, 101, 1.0),
-                              fontWeight: FontWeight.bold,
-                              fontSize: 21,
                             ),
                           ),
                         ),
@@ -232,7 +249,7 @@ class _ProfileState extends State<Profile> {
           ),
         ),
         Container(
-          height: 360,
+          height: 370,
           width: 450,
           decoration: BoxDecoration(
               color: Color.fromRGBO(93, 108, 137, 1.0),
@@ -292,17 +309,54 @@ class _ProfileState extends State<Profile> {
               SizedBox(
                 height: 25,
               ),
-              Positioned(
-                top: 200,
-                left: 150,
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(22),
-                  child: CircleAvatar(
-                    backgroundImage: AssetImage("assets/images/nice.jpg"),
-                    radius: 40,
+
+              Stack(
+                alignment: Alignment.bottomCenter,
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 10),
+                    child: Center(
+                      child: Container(
+                        height: 130,
+                        width: 130,
+                        decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            border: Border.all(
+                                color: Colors.black26
+                            )
+                        ),
+                        child: Stack(
+                          children: [
+                            ClipRRect(
+                              borderRadius: BorderRadius.circular(100),
+                              // child: _imageFile == null
+                              //     ? null   // added this line
+                              // // AssetImage("assets/images/profile.png") commented out
+                              //     : FileImage(File(_imageFile!.path)),
+                            )
+                          ],
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                          context: context,
+                          builder: ((builder) => bottomsheet()
+                          )
+                      );
+                    },
+                    child: CircleAvatar(
+                      radius: 15,
+                      backgroundColor: Color.fromRGBO(255, 246, 234, 1.0),
+                      child: Icon(Icons.add, size: 18, color: Colors.black,),
+                    ),
+                  )
+                ],
               ),
+
+
               Container(
                 padding: EdgeInsets.only(right: 90),
                 child: Text(
@@ -328,27 +382,46 @@ class _ProfileState extends State<Profile> {
                 ),
               ),
               SizedBox(
-                height: 9,
+                height: 10,
+              ),
+              Text(
+                "User Id:- $uid",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
+              ),
+              SizedBox(
+                height: 4,
               ),
               Container(
                 padding: EdgeInsets.only(left: 15),
                 child: Text(
-                  "Roshan@gmail.com",
+                  "Email:-  $email",
                   style: TextStyle(
                       color: Color.fromARGB(255, 1, 3, 29),
                       fontWeight: FontWeight.bold,
                       fontSize: 18),
                 ),
               ),
-              TextButton(
-                  onPressed: () {},
-                  child: Text(
-                    "Verify Email",
-                    style: TextStyle(
-                        fontSize: 19,
-                        color: Color.fromARGB(255, 1, 3, 29),
-                        fontWeight: FontWeight.bold),
-                  ))
+              user != null && user!.emailVerified
+                  ? Text(
+                      "Account Verified",
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    )
+                  : TextButton(
+                      onPressed: (() => {verifyEmail()}),
+                      child: Text(
+                        "Verify Email",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 20,
+                        ),
+                      )),
+
             ],
           ),
         ),

@@ -1,8 +1,9 @@
-import 'dart:developer';
+
 
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import 'package:sleepholic/ContactUs/ContactUs.dart';
 import 'package:sleepholic/Food_rating/Food_rating.dart';
 import 'package:sleepholic/Foods/food.dart';
@@ -19,19 +20,20 @@ import 'package:sleepholic/about/aboutusScreens.dart';
 import 'package:sleepholic/calendar/calendar_Screens.dart';
 import 'package:sleepholic/complains.dart';
 import 'package:sleepholic/dashboard.dart';
+=======
+import 'package:khalti/khalti.dart';
+>>>>>>> 60ca526bd0b7a13ec5aeac7e317fd4e46c99fdb2
 import 'package:sleepholic/homepage/homepage.dart';
-import 'package:sleepholic/login/forgot_password.dart';
-import 'package:sleepholic/login/otpScreen.dart';
-import 'package:sleepholic/screens/Register/register_screen.dart';
-import 'package:sleepholic/screens/Welcome/welcome_screen.dart';
-import 'package:sleepholic/screens/login/login_screen.dart';
 
-import 'Foods/swipe.dart';
-import 'RulesScreen/rules.dart';
+
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+   await Khalti.init(
+     publicKey: "",
+     enabledDebugging: false
+   );
   runApp(MyApp());
 }
 
@@ -47,7 +49,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.alike().fontFamily,
       ),
+<<<<<<< HEAD
       home: PdfPage(),
+=======
+      home: khalti(),
+>>>>>>> 60ca526bd0b7a13ec5aeac7e317fd4e46c99fdb2
     );
   }
 }

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:sleepholic/Invoice/Invoice.dart';
 import 'package:sleepholic/Rooms/swiping.dart';
+import 'package:sleepholic/about/aboutusScreens.dart';
 import 'package:sleepholic/complains.dart';
 
 class Dashboard extends StatelessWidget {
@@ -122,11 +124,10 @@ class Dashboard extends StatelessWidget {
                               child: InkWell(
                                 splashColor: Colors.blue,
                                 onTap: () {
-                                  // Navigator.of(context).pushReplacement(
-                                  //   MaterialPageRoute(
-                                  //     builder: (BuildContext context) => ),
-                                  //   ),
-                                  // );
+                                  Navigator.of(context).pushReplacement(
+                                    MaterialPageRoute(
+                                      builder: (BuildContext context) => Aboutus())
+                                  );
                                 },
                                 child: CircleAvatar(
                                   backgroundImage:
@@ -183,7 +184,9 @@ class Dashboard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(40),
                               child: InkWell(
                                 splashColor: Colors.blue,
-                                onTap: () {},
+                                onTap: () {
+                                  Navigator.push(context, MaterialPageRoute(builder: (context) => Invoice()));
+                                },
                                 child: CircleAvatar(
                                   backgroundImage:
                                       AssetImage("assets/images/money.jpg"),

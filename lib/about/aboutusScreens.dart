@@ -14,7 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
       ),
       home: Aboutus(),
     );
@@ -34,7 +33,14 @@ class _AboutusState extends State<Aboutus> {
     return Scaffold(
       backgroundColor: Color(0xFFFFF6EA),
       appBar: AppBar(
-        title: Text("About Us"),
+        backgroundColor: Colors.white54,
+        title: Text("About Us",
+        style: TextStyle(
+          fontSize: 30,
+          fontWeight: FontWeight.bold,
+          color: Color.fromRGBO(50, 50, 50, 1.0)
+        ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Column(
