@@ -1,4 +1,3 @@
-/*
 import 'package:flutter/material.dart';
 
 class TitleWidget extends StatelessWidget {
@@ -27,4 +26,4 @@ class TitleWidget extends StatelessWidget {
       ),
     ],
   );
-}*/
+}
