@@ -1,4 +1,3 @@
-/*
 import 'dart:io';
 
 import 'package:flutter/services.dart';
@@ -28,4 +27,4 @@ class PdfApi {
 
     await OpenFile.open(url);
   }
-}*/
+}
