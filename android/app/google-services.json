@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "302010913465-2921bq4jd2nn5uuqsk3bkut81epmsg98.apps.googleusercontent.com",
+          "client_id": "302010913465-cn2aa1l958gtifb5lnif5br6a3653f3q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sleepholic.sleepholic",
+            "certificate_hash": "8836c1662a6d50aafa5d034f4ebb2695f22c3c80"
+          }
+        },
+        {
+          "client_id": "302010913465-55bjc1f5p9k0tjdtsaok4n51b1r1n921.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -29,6 +37,13 @@
             {
               "client_id": "302010913465-2921bq4jd2nn5uuqsk3bkut81epmsg98.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "302010913465-7t4lm0e36rbms3stckpjca4oj40lvmd9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sleepholic.sleepholic"
+              }
             }
           ]
         }
