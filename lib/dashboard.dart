@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:sleepholic/Invoice/Invoice.dart';
 import 'package:sleepholic/Rooms/swiping.dart';
 import 'package:sleepholic/about/aboutusScreens.dart';
 import 'package:sleepholic/complains.dart';
+
+import 'Invoice/Model/invoice.dart';
 
 class Dashboard extends StatelessWidget {
   // const Dashboard({super.key});
@@ -185,7 +186,6 @@ class Dashboard extends StatelessWidget {
                               child: InkWell(
                                 splashColor: Colors.blue,
                                 onTap: () {
-                                  Navigator.push(context, MaterialPageRoute(builder: (context) => Invoice()));
                                 },
                                 child: CircleAvatar(
                                   backgroundImage:
