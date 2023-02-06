@@ -1,6 +1,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
+import 'package:sleepholic/Payments/khalti.dart';
 
 
 
@@ -93,31 +94,8 @@ class _paymentState extends State<payment> {
                                             actions: <Widget>[
                                               Container(
                                                 child: TextButton(onPressed: () {
-                                                  Navigator.pop(context);
-                                                  Alert(
-                                                    context: context,
-                                                    title: "Payment Successful",
-                                                    desc: "Thankyou for choosing us.",
-                                                    image: Image.asset(
-                                                        "assets/images/success.png"),
-                                                    buttons: [
-                                                      DialogButton(
-                                                        child: Text(
-                                                          "Done",
-                                                          style: TextStyle(
-                                                              color: Colors.white,
-                                                              fontSize: 20),
-                                                        ),
-                                                        onPressed: () {
-                                                          Navigator.pop(context);
-                                                          print("Done");
-                                                        },
-                                                        color: Color.fromRGBO(
-                                                            93, 108, 137, 1.0),
-                                                        radius: BorderRadius.circular(18.0),
-                                                      ),
-                                                    ],
-                                                  ).show();
+                                                  Navigator.push(context,
+                                                  MaterialPageRoute(builder: (context) => khalti()));
                                                 },
                                                   child: Text(
                                                     'Yes',

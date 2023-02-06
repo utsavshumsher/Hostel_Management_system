@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:khalti/khalti.dart';
+import 'package:sleepholic/Payments/payments.dart';
 import 'package:sleepholic/customs/app_bar.dart';
 import 'package:sleepholic/customs/custom_back_button.dart';
 
@@ -22,7 +23,9 @@ class _khaltiState extends State<khalti> {
         context,
         title: "Khalti Payment",
         actions: [],
-        leading: CustomBackButton(tapEvent: () {})
+        leading: CustomBackButton(tapEvent: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) => payment() ));
+        })
     ),
       body: Container(
         padding: EdgeInsets.all(15),

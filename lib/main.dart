@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:sleepholic/Invoice/pdf_page.dart';
 import 'package:khalti/khalti.dart';
+import 'package:sleepholic/homepage/homepage.dart';
 
 import 'Payments/khalti.dart';
 
@@ -34,7 +35,7 @@ class MyApp extends StatelessWidget {
         fontFamily: GoogleFonts.alike().fontFamily,
       ),
 
-      home: khalti(),
+      home: Homepage(),
     );
   }
 }
