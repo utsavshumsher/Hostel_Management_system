@@ -35,7 +35,8 @@ class Dashboard extends StatelessWidget {
                     bottomRight: Radius.circular(10))),
             child: Column(
               children: [
-                SingleChildScrollView( scrollDirection: Axis.horizontal,
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
                   child: Row(
                     children: [
                       Container(
@@ -63,15 +64,13 @@ class Dashboard extends StatelessWidget {
                       SizedBox(
                         width: 80,
                       ),
-                      
-                         Container(
-                          margin: EdgeInsets.only(top: 30),
-                          child: CircleAvatar(
-                            backgroundImage: AssetImage("assets/images/logo.png"),
-                            radius: 70,
-                          ),
+                      Container(
+                        margin: EdgeInsets.only(top: 30),
+                        child: CircleAvatar(
+                          backgroundImage: AssetImage("assets/images/logo.png"),
+                          radius: 70,
                         ),
-                      
+                      ),
                     ],
                   ),
                 ),
@@ -95,7 +94,8 @@ class Dashboard extends StatelessWidget {
                                 onTap: () {
                                   Navigator.of(context).pushReplacement(
                                     MaterialPageRoute(
-                                      builder: (BuildContext context) => RoomViewDemo(),
+                                      builder: (BuildContext context) =>
+                                          RoomViewDemo(),
                                     ),
                                   );
                                 },
@@ -126,9 +126,9 @@ class Dashboard extends StatelessWidget {
                                 splashColor: Colors.blue,
                                 onTap: () {
                                   Navigator.of(context).pushReplacement(
-                                    MaterialPageRoute(
-                                      builder: (BuildContext context) => Aboutus())
-                                  );
+                                      MaterialPageRoute(
+                                          builder: (BuildContext context) =>
+                                              AboutUsPage()));
                                 },
                                 child: CircleAvatar(
                                   backgroundImage:
@@ -155,11 +155,14 @@ class Dashboard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(40),
                               child: InkWell(
                                 splashColor: Colors.blue,
-                                onTap: (() { Navigator.of(context).pushReplacement(
+                                onTap: (() {
+                                  Navigator.of(context).pushReplacement(
                                     MaterialPageRoute(
-                                      builder: (BuildContext context) => complain(),
+                                      builder: (BuildContext context) =>
+                                          complain(),
                                     ),
-                                  );}),
+                                  );
+                                }),
                                 child: CircleAvatar(
                                   backgroundImage:
                                       AssetImage("assets/images/think.jpg"),
@@ -185,8 +188,7 @@ class Dashboard extends StatelessWidget {
                               borderRadius: BorderRadius.circular(40),
                               child: InkWell(
                                 splashColor: Colors.blue,
-                                onTap: () {
-                                },
+                                onTap: () {},
                                 child: CircleAvatar(
                                   backgroundImage:
                                       AssetImage("assets/images/money.jpg"),
@@ -226,8 +228,7 @@ class Dashboard extends StatelessWidget {
                     style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 22,
-                        color: Colors.white
-                    ),
+                        color: Colors.white),
                   )))
         ]),
       ),

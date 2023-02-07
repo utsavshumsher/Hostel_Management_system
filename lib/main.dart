@@ -1,5 +1,3 @@
-
-
 import 'package:firebase_core/firebase_core.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
@@ -9,16 +7,12 @@ import 'package:sleepholic/homepage/homepage.dart';
 
 import 'Payments/khalti.dart';
 
-
-
-
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-   await Khalti.init(
-     publicKey: "test_public_key_2abffc2f5fac45c981affa111407efd5",
-     enabledDebugging: false
-   );
+  await Khalti.init(
+      publicKey: "test_public_key_2abffc2f5fac45c981affa111407efd5",
+      enabledDebugging: false);
   runApp(MyApp());
 }
 
@@ -34,7 +28,6 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.alike().fontFamily,
       ),
-
       home: Homepage(),
     );
   }
