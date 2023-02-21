@@ -3,17 +3,22 @@ import 'package:flutter/material.dart';
 import 'package:rflutter_alert/rflutter_alert.dart';
 import 'package:sleepholic/Payments/khalti.dart';
 
+import '../Rooms/HostelPrice.dart';
+
 
 
 class payment extends StatefulWidget {
-  const payment({super.key});
 
+  payment(this.selectedIndex, this.data,  {super.key});
+  int selectedIndex;
+  List<HostelPrice> data;
   @override
   State<payment> createState() => _paymentState();
 }
 
 class _paymentState extends State<payment> {
   String? payment;
+
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +56,7 @@ class _paymentState extends State<payment> {
                                     topLeft: Radius.circular(20),
                                     bottomLeft: Radius.circular(20))),
                             child: Text(
-                              "NPR 20,000",
+                              "NPR ${widget.data[widget.selectedIndex].price}",
                               style: TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 20),
                             ),
@@ -70,6 +75,48 @@ class _paymentState extends State<payment> {
                                     bottomRight: Radius.circular(20))),
                             child: ElevatedButton(
                               onPressed: () =>
+                                  payment == "Cash"  ?
+                                  showDialog<String>(
+                                      context: context,
+                                      barrierDismissible: false,
+                                      builder: (BuildContext context) =>
+                                          AlertDialog(
+                                            title: Text(
+                                              'Congratulation',
+                                              style: TextStyle(
+                                                fontSize: 20,
+                                                color: Color.fromRGBO(93, 108, 137, 1.0),
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            content: Text(
+                                              'And celebration',
+                                              style: TextStyle(
+                                                  fontSize: 15,
+                                                  color: Color.fromRGBO(21, 34, 56, 1.0),
+                                                  fontWeight: FontWeight.normal
+                                              ),
+                                            ),
+                                            actions: <Widget>[
+                                              Container(
+                                                child: TextButton(onPressed: () {
+                                                  Navigator.of(context).pop();
+                                                },
+                                                  child: Text(
+                                                    'Thank you next',
+                                                    style: TextStyle(
+                                                      fontSize: 20,
+                                                      color: Color.fromRGBO(
+                                                          21, 34, 56, 1.0),
+                                                      fontWeight: FontWeight.normal,
+                                                    ),
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          )
+                                  )
+                                      :
                                   showDialog<String>(
                                       context: context,
                                       barrierDismissible: false,
@@ -209,7 +256,10 @@ class _paymentState extends State<payment> {
                         width: 10,
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          print("POPPING");
+                          Navigator.of(context).pop();
+                        },
                         child: Icon(
                           color: Color.fromRGBO(255, 246, 234, 1.0),
                           Icons.arrow_back,

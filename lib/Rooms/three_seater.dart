@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:sleepholic/Rooms/three_seater.dart';
 import '../Payments/payments.dart';
+import 'HostelPrice.dart';
 
 
 class ThreeSeater extends StatefulWidget {
@@ -36,7 +37,7 @@ class _ThreeSeaterState extends State<ThreeSeater> {
                   children: [
                     CircleAvatar(
                       backgroundImage:
-                      AssetImage("assets/images/twoseater.png"),
+                      AssetImage("assets/images/threeSeater.png"),
                       radius: 27,
                     ),
                     SizedBox(
@@ -51,7 +52,7 @@ class _ThreeSeaterState extends State<ThreeSeater> {
                   ],
                 ),
                 background: Image.asset(
-                  "assets/images/twoseater.png",
+                  "assets/images/threeSeater.png",
                   fit: BoxFit.cover,
                 ),
               )),
@@ -79,88 +80,36 @@ class _ThreeSeaterState extends State<ThreeSeater> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(width: 10,),
-                        GestureDetector(
-                          onTap: (){
-                            setState(() {
-                              selectedIndex = 0;
-                            });
-                          },
-                          child: Card(
-                            color: selectedIndex == 0 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            child: Container(
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.all(7),
-                              height: 75,
-                              width: 115,
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                              ),
-                              child: Text(
-                                "NPR 15,000/month",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Colors.white,
-                                  fontSize: 15,
+                        ...List.generate(threeSeater.length, (index) =>
+                            GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  selectedIndex = index;
+                                });
+                              },
+                              child: Card(
+                                color: selectedIndex == index ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  margin: EdgeInsets.all(7),
+                                  height: 75,
+                                  width: 115,
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                  ),
+                                  child: Text(
+                                    "NPR ${threeSeater[index].price}/\n${threeSeater[index].cat}",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 14.9
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 10,),
-                        GestureDetector(
-                          onTap: (){
-                            setState(() {
-                              selectedIndex = 1;
-                            });
-                          },
-                          child: Card(
-                            color: selectedIndex == 1 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            child: Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "NPR 30,000/ \n Two month",
-                                style: TextStyle(
-                                  fontWeight: FontWeight.bold,
-                                  color: Color.fromRGBO(59, 59, 59, 1.0),
-                                  fontSize: 14.5,
-                                ),
-                              ),
-                              height: 80,
-                              width: 115,
-                              padding: EdgeInsets.all(7),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 10,),
-                        GestureDetector(
-                          onTap: (){
-                            setState(() {
-                              selectedIndex = 2;
-                            });
-                          },
-                          child: Card(
-                            color: selectedIndex == 2 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            child: Container(
-                              alignment: Alignment.center,
-                              height: 65,
-                              width: 105,
-                              margin: EdgeInsets.all(7),
-                              child: Text(
-                                "NPR 1,80,000/ \n Year",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromRGBO(59, 59, 59, 1.0),
-                                    fontSize: 14.5
-                                ),
-                              ),
+                            ),),
 
-                            ),
-                          ),
-                        )
                       ],
                     ),
                   ),
@@ -177,7 +126,7 @@ class _ThreeSeaterState extends State<ThreeSeater> {
                         ),
                         onPressed: (() {
                           Navigator.push(context,
-                              MaterialPageRoute(builder:(context) => payment()
+                              MaterialPageRoute(builder:(context) => payment(selectedIndex, threeSeater)
                               ));
                         }),
                         child: Container(

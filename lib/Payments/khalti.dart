@@ -24,7 +24,7 @@ class _khaltiState extends State<khalti> {
         title: "Khalti Payment",
         actions: [],
         leading: CustomBackButton(tapEvent: () {
-          Navigator.push(context, MaterialPageRoute(builder: (context) => payment() ));
+          Navigator.of(context).pop();
         })
     ),
       body: Container(

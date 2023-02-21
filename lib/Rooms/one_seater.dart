@@ -3,6 +3,7 @@ import 'package:sleepholic/Rooms/two_seater.dart';
 import 'package:sleepholic/dashboard.dart';
 import 'package:sleepholic/homepage/homepage.dart';
 import '../Payments/payments.dart';
+import 'HostelPrice.dart';
 
 
 class One_Seater extends StatefulWidget {
@@ -11,6 +12,8 @@ class One_Seater extends StatefulWidget {
   @override
   State<One_Seater> createState() => _One_SeaterState();
 }
+
+
 
 class _One_SeaterState extends State<One_Seater> {
   int selectedIndex = 0;
@@ -74,89 +77,36 @@ class _One_SeaterState extends State<One_Seater> {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        SizedBox(width: 10,),
-                        GestureDetector(
-                          onTap: (){
-                            setState(() {
-                              selectedIndex = 0;
-                            });
-                          },
-                          child: Card(
-                            color: selectedIndex == 0 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            child: Container(
-                              alignment: Alignment.center,
-                              margin: EdgeInsets.all(7),
-                              height: 75,
-                              width: 115,
-                              padding: EdgeInsets.all(10),
-                              decoration: BoxDecoration(
-                              ),
-                              child: Text(
-                                "NPR 20,000/month",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 14.9
+                        ...List.generate(oneSeater.length, (index) =>
+                            GestureDetector(
+                              onTap: (){
+                                setState(() {
+                                  selectedIndex = index;
+                                });
+                              },
+                              child: Card(
+                                color: selectedIndex == index ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
+                                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+                                child: Container(
+                                  alignment: Alignment.center,
+                                  margin: EdgeInsets.all(7),
+                                  height: 75,
+                                  width: 115,
+                                  padding: EdgeInsets.all(10),
+                                  decoration: BoxDecoration(
+                                  ),
+                                  child: Text(
+                                    "NPR ${oneSeater[index].price}/\n${oneSeater[index].cat}",
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Color.fromARGB(255, 255, 255, 255),
+                                        fontSize: 14.9
+                                    ),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 10,),
-                        GestureDetector(
-                          onTap: (){
-                            setState(() {
-                              selectedIndex=1;
-                            });
-                          },
-                          child: Card(
-                            color: selectedIndex == 1 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            child: Container(
-                              alignment: Alignment.center,
-                              child: Text(
-                                "NPR 40,000/ \n Two month",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 14.5
-                                ),
-                              ),
-                              height: 85,
-                              width: 115,
-                              padding: EdgeInsets.all(7),
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 10,),
-                        GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              selectedIndex = 2;
+                            ),),
 
-                            });
-                          },
-                          child: Card(
-                            color: selectedIndex == 2 ? Color.fromRGBO(93, 108, 137,1) : Color.fromARGB(255, 177, 174, 174),
-                            shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-                            child: Container(
-                              alignment: Alignment.center,
-                              height: 65,
-                              width: 110,
-                              margin: EdgeInsets.all(7),
-                              child: Text(
-                                "NPR 2,40,000/ \n Year",
-                                style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    color: Color.fromARGB(255, 255, 255, 255),
-                                    fontSize: 14.5
-                                ),
-                              ),
-
-                            ),
-                          ),
-                        )
                       ],
                     ),
                   ),
@@ -173,7 +123,7 @@ class _One_SeaterState extends State<One_Seater> {
                         ),
                         onPressed: (() {
                           Navigator.push(context,
-                              MaterialPageRoute(builder: (context) => payment()
+                              MaterialPageRoute(builder: (context) => payment(selectedIndex, oneSeater)
                               )
                           );
                         }),

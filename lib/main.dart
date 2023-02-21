@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:sleepholic/Invoice/pdf_page.dart';
 import 'package:khalti/khalti.dart';
 import 'package:sleepholic/homepage/homepage.dart';
+import 'package:sleepholic/login/login_screen.dart';
 
 import 'Payments/khalti.dart';
 
@@ -28,7 +29,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         fontFamily: GoogleFonts.alike().fontFamily,
       ),
-      home: Homepage(),
+      home: LoginScreen(),
     );
   }
 }
